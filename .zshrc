@@ -10,13 +10,26 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH="$HOME/tools/node-v14.15.4-linux-x64/bin:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="ys"
+ZSH_THEME="robbyrussell"
 
+# 启动代理
+proxy () {
+  export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
+  echo "HTTP Proxy on"
+}
+
+# 关闭代理
+noproxy () {
+  unset http_proxy
+  unset https_proxy
+  unset all_proxy
+  echo "HTTP Proxy off"
+}
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -60,29 +73,6 @@ ZSH_THEME="ys"
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-alias cls='clear'
-alias n='neofetch'
-alias ra='ranger'
-alias lv='lvim'
-alias q='exit'
-alias vpn='cd clash && sudo clash -d .'
-alias up='sudo pacman -Syyu'
-alias run='cd mycode && make && ./coderun'
-alias t='fanyi'
-# 启动代理
-proxy () {
-  export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7891
-  echo "HTTP Proxy on"
-}
-
-# 关闭代理
-noproxy () {
-  unset http_proxy
-  unset https_proxy
-  unset all_proxy
-  echo "HTTP Proxy off"
-}
-
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -100,7 +90,32 @@ noproxy () {
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting vi-mode zsh-autosuggestions z web-search zsh-completions fzf)
+
+
+
+ZSH_WEB_SEARCH_ENGINES=(
+notion "https://www.notion.so/"
+shimo "https://shimo.im"
+asource "https://source.android.com/"
+bilibili "https://www.bilibili.com/"
+fengche "https://m.dm530p.in/"
+acwing "https://www.acwing.com"
+luogu "https://www.luogu.com.cn"
+leetcode "https://leetcode.cn/"
+atcode "https://atcoder.jp/"
+markdown "https://markdown.com.cn/basic-syntax/"
+csdn "https://blog.csdn.net/"
+
+)
+
+# z 是一款自动跳转的插件，对于你跳转后的目录，之后可以直接输入最终目录的名字，就可以正确跳转了
+# vi-mode就可以将vim党从这种尴尬的处境中解脱出来，安装好插件后，默认是输入模式，你可以正常输入，当需要跳转时，按下Esc轻松切换至命令模式，然后你就可以随意跳转了。
+## 1、ngg/nG （跳转到文件第n行，无需回车）
+
+## 2、:n （跳转到文件第n行，需要回车）
+
+## 3、vim +n filename （在打开文件后，跳转到文件的第n行）
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,8 +144,50 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 
+
+
+function ranger_func {
+    ranger $*
+    local quit_cd_wd_file="$HOME/.ranger_quit_cd_wd"
+    if [ -s "$quit_cd_wd_file" ]; then
+        cd "$(cat $quit_cd_wd_file)"
+        true > "$quit_cd_wd_file"
+    fi
+}
+
+
+
+
+alias cls='clear'
+alias n='neofetch'
+alias ra='ranger_func'
+alias lv='lvim'
+alias q='exit'
+alias vpn='cd clash && sudo clash -d .'
+alias up='sudo pacman -Syyu'
+alias run='cd /home/encounter/mycode/build/linux-debug/ && ./coderun'
+alias r1='cd build/linux-debug/ && ./project'
+alias t='wd'
+alias weather='curl wttr.in'
+alias gt='gitui'
+alias tt='taskwarrior-tui'
+alias ze='zellij'
+alias ls='lsd'
+alias ping='gping'
+alias e='exa --icons'
+alias tt='tldr'
+alias nv='nvim'
+alias top='btm'
+alias v='vim'
+alias scr='scrcpy --max-size 1920 --max-fps 120' 
+
+
+
+
+#source ~/powerlevel10k/powerlevel10k.zsh-theme
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+source /.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
