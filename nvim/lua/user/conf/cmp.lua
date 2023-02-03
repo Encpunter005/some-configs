@@ -200,12 +200,7 @@ cmp_config = {
       luasnip = 1,
     },
     duplicates_default = 0,
-    format = require("lspkind").cmp_format({
-      mode = 'symbol',
-      maxwidth = 50,
-      ellipsis_char = "...",
-
-      before = function(entry, vim_item)
+    format = function(entry, vim_item)
       local max_width = cmp_config.formatting.max_width
       if max_width ~= 0 and #vim_item.abbr > max_width then
         vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
@@ -216,7 +211,6 @@ cmp_config = {
           or cmp_config.formatting.duplicates_default
       return vim_item
     end,
-    })
   },
   snippet = {
     expand = function(args)

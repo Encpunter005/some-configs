@@ -115,6 +115,11 @@ _G.packer_plugins = {
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/autocmd-lua",
     url = "https://github.com/jakelinnzy/autocmd-lua"
   },
+  ["boo-colorscheme-nvim"] = {
+    loaded = true,
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/boo-colorscheme-nvim",
+    url = "https://github.com/rockerBOO/boo-colorscheme-nvim"
+  },
   ["browse.nvim"] = {
     loaded = true,
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/browse.nvim",
@@ -200,6 +205,12 @@ _G.packer_plugins = {
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
     url = "https://github.com/projekt0n/github-nvim-theme"
   },
+  ["hop.nvim"] = {
+    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0" },
+    loaded = true,
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
+  },
   ["iceberg.vim"] = {
     loaded = true,
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/iceberg.vim",
@@ -230,6 +241,12 @@ _G.packer_plugins = {
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lspsaga.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0" },
+    loaded = true,
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/glepnir/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -243,7 +260,7 @@ _G.packer_plugins = {
   ["markdown-preview.nvim"] = {
     commands = { "MarkdownPreview" },
     loaded = false,
-    needs_bufread = true,
+    needs_bufread = false,
     only_cond = false,
     path = "/home/encounter/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
@@ -257,6 +274,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
+  },
+  neovim = {
+    loaded = true,
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["neovim-cmake"] = {
     loaded = true,
@@ -272,6 +299,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/nord.nvim",
     url = "https://github.com/shaunsingh/nord.nvim"
+  },
+  ["nordic.nvim"] = {
+    loaded = true,
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/nordic.nvim",
+    url = "https://github.com/andersevenrud/nordic.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -409,6 +441,11 @@ _G.packer_plugins = {
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
   },
+  spaceduck = {
+    loaded = true,
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/spaceduck",
+    url = "https://github.com/pineapplegiant/spaceduck"
+  },
   ["sqlite.lua"] = {
     loaded = true,
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/sqlite.lua",
@@ -504,10 +541,10 @@ _G.packer_plugins = {
     path = "/home/encounter/.local/share/nvim/site/pack/packer/start/vim-startuptime",
     url = "https://github.com/dstein64/vim-startuptime"
   },
-  ["vim-substrata"] = {
+  ["vim-table-mode"] = {
     loaded = true,
-    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/vim-substrata",
-    url = "https://github.com/arzg/vim-substrata"
+    path = "/home/encounter/.local/share/nvim/site/pack/packer/start/vim-table-mode",
+    url = "https://github.com/dhruvasagar/vim-table-mode"
   },
   ["vim-translator"] = {
     loaded = true,
@@ -536,10 +573,18 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: lspsaga.nvim
+time([[Config for lspsaga.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\flspsaga\frequire\0", "config", "lspsaga.nvim")
+time([[Config for lspsaga.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

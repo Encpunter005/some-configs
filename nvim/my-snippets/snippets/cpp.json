@@ -1,0 +1,34 @@
+{
+    "solu": {
+        "prefix": "solu",
+        "body": [
+            "class Solution",
+            "{",
+            "public:",
+            "\t$1 $2($3) {",
+            "\t\t$4",
+            "\t}",
+            "};"
+        ],
+        "description": "leetcode class Solution template"
+    },
+    "ac": {
+        "prefix": "ac",
+        "body": [
+            "#include <iostream>",
+            "#include <cstring>",
+            "#include <string>",
+            "#include <algorithm>",
+            "using namespace std;",
+            "",
+            "",
+            "",
+            "int main() {",
+            "",
+            "",
+            "\treturn 0;",
+            "}"
+        ],
+        "description": "acwing template"
+    }
+}

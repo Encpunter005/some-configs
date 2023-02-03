@@ -14,7 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   print "Installing packer close and reopen Neovim..."
   vim.cmd [[packadd packer.nvim]]
 end
-
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
@@ -46,7 +45,11 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   -- colorschemes
-  use "arzg/vim-substrata"
+  use "marko-cerovac/material.nvim"
+  use 'rose-pine/neovim'
+  use 'rockerBOO/boo-colorscheme-nvim'
+  use "pineapplegiant/spaceduck"
+  use 'andersevenrud/nordic.nvim'
   use 'shaunsingh/nord.nvim'
   use 'folke/tokyonight.nvim'
   use "olimorris/onedarkpro.nvim"
@@ -60,6 +63,8 @@ return packer.startup(function(use)
   -- markdown
   use "mzlogin/vim-markdown-toc" -- gernerate contents 
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' } -- preview markdown files
+  use "dhruvasagar/vim-table-mode"
+
   -- auto save
   use({ "Pocco81/auto-save.nvim"})
   -- accelerate j k
@@ -99,6 +104,14 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- format
   use "ray-x/lsp_signature.nvim"
   use "j-hui/fidget.nvim" -- show the real status of lsp
+  use({
+    "glepnir/lspsaga.nvim",
+    branch = "main",
+    config = function()
+        require("lspsaga").setup({})
+    end,
+    requires = { {"nvim-tree/nvim-web-devicons"} }
+})
   -- use "lukas-reineke/lsp-format.nvim"
   -- nvim tree
   use {
@@ -113,7 +126,7 @@ return packer.startup(function(use)
   -- use "glepnir/galaxyline.nvim"
   use "rcarriga/nvim-notify" -- notify
   -- use "MunifTanjim/nui.nvim" -- UI
-  -- use "folke/noice.nvim"    NOTE: 这个插件会与lsp-signature相互冲突，bug待修，另外这个popmenu位置参数调了不知道为啥没生效;-;
+  -- use "folke/noice.nvim"  --  NOTE: 这个插件会与lsp-signature相互冲突，bug待修，另外这个popmenu位置参数调了不知道为啥没生效;-;
   
 
 
@@ -192,8 +205,16 @@ return packer.startup(function(use)
   use "Shatur/neovim-cmake"
   -- sniprun
   use "michaelb/sniprun"
-  -- jump line
+  -- jump
   use "nacro90/numb.nvim"
+  use {
+  'phaazon/hop.nvim',
+  branch = 'v2', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}
   -- start up time
   use "dstein64/vim-startuptime"
   use 'lewis6991/impatient.nvim' --optimize the startup time
