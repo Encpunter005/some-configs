@@ -1,0 +1,170 @@
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+vim.g.mapleader = " " -- make sure to set `mapleader` before lazy so your mappings are correct
+require("lazy").setup({
+    -- Important dependcies
+    "nvim-lua/popup.nvim",
+    "nvim-lua/plenary.nvim",
+
+    --colorschemes
+    "marko-cerovac/material.nvim",
+    'rose-pine/neovim',
+    'rockerBOO/boo-colorscheme-nvim',
+     "pineapplegiant/spaceduck",
+     'andersevenrud/nordic.nvim',
+     'shaunsingh/nord.nvim',
+     'folke/tokyonight.nvim',
+     "olimorris/onedarkpro.nvim",
+     "EdenEast/nightfox.nvim",
+     'projekt0n/github-nvim-theme',
+     "catppuccin/nvim",
+     "cocopon/iceberg.vim",
+     "Tsuzat/NeoSolarized.nvim",
+     "lunarvim/lunar.nvim",
+     'norcalli/nvim-colorizer.lua',
+
+     --markdown
+     "mzlogin/vim-markdown-toc", -- gernerate contents 
+    'iamcco/markdown-preview.nvim',-- preview files
+
+     -- auto-save
+     "Pocco81/auto-save.nvim",
+     -- acclerate j and k
+     'rainbowhxch/accelerated-jk.nvim',
+     -- cmp
+     "hrsh7th/nvim-cmp", -- The completion plugin
+     "hrsh7th/cmp-buffer", -- buffer completions
+     "hrsh7th/cmp-path", -- path completions
+     "hrsh7th/cmp-cmdline", -- cmdline completions
+     "saadparwaiz1/cmp_luasnip", -- snippet completions
+     {'tzachar/cmp-tabnine',
+        depedencise = {"hrsh7th/nvim-cmp"},
+     },
+     "hrsh7th/cmp-nvim-lsp",
+     "hrsh7th/cmp-nvim-lua",
+     "f3fora/cmp-spell",
+     -- snippets
+     "L3MON4D3/LuaSnip", --snippet engine
+     'hrsh7th/cmp-vsnip', --snippt engine
+     'hrsh7th/vim-vsnip',
+     "rafamadriz/friendly-snippets", -- a bunch of snippets to   
+     -- edit enhance
+     'numToStr/Comment.nvim',
+     "folke/todo-comments.nvim",
+     "folke/trouble.nvim",
+     "windwp/nvim-autopairs",
+     "windwp/nvim-spectre", -- replace some words
+
+     -- LSP
+     'onsails/lspkind-nvim',
+     "neovim/nvim-lspconfig", -- enable LSP
+     "williamboman/mason.nvim", -- simple to    language server installer
+     "williamboman/mason-lspconfig.nvim", -- simple to    language server installer
+     "jose-elias-alvarez/null-ls.nvim", -- format
+     "ray-x/lsp_signature.nvim",
+     {
+          "glepnir/lspsaga.nvim",
+        event = "BufRead",
+        config = function()
+            require("lspsaga").setup({})
+        end,
+        dependencies = { {"nvim-tree/nvim-web-devicons"} }
+     },
+
+     --File explorer
+     "nvim-tree/nvim-tree.lua",
+
+     --UI
+     'nvim-lualine/lualine.nvim',
+
+
+     -- Telescope
+     'nvim-telescope/telescope.nvim',
+     {"nvim-telescope/telescope-dap.nvim",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-telescope/telescope.nvim",
+
+        },
+     },
+     "nvim-telescope/telescope-ui-select.nvim",
+     "nvim-telescope/telescope-rg.nvim",
+     'nvim-telescope/telescope-fzf-native.nvim',
+     "nvim-telescope/telescope-live-grep-args.nvim",
+     'nvim-telescope/telescope-media-files.nvim',
+     "kkharji/sqlite.lua",
+     "nvim-telescope/telescope-frecency.nvim",
+
+
+     -- Dap
+     'mfussenegger/nvim-dap',
+     "rcarriga/nvim-dap-ui",
+     "theHamsta/nvim-dap-virtual-text",
+     -- Outline
+     "stevearc/aerial.nvim",
+     -- Tresssitter
+     "nvim-treesitter/nvim-treesitter",
+     "nvim-treesitter/nvim-treesitter-context",
+     "andymass/vim-matchup",
+     "joosepalviste/nvim-ts-context-commentstring",
+
+     -- Dashboard
+     "glepnir/dashboard-nvim", -- TODO : 有一个显示运势，暂时不知道咋搞
+    -- vim-illuminate
+     "RRethy/vim-illuminate",
+    -- Command + search
+     "mrjones2014/legendary.nvim",
+
+    -- Select board
+     "stevearc/dressing.nvim",
+    -- Terminal
+     "akinsho/toggleterm.nvim",
+
+    -- GPS
+     "fgheng/winbar.nvim",
+     "SmiteshP/nvim-navic",
+
+    -- Buffer
+    "akinsho/bufferline.nvim",
+    'ojroques/nvim-bufdel', -- close buffer
+     "lukas-reineke/indent-blankline.nvim", -- beautify indent
+     'gen740/SmoothCursor.nvim',
+     "xiyaowong/nvim-cursorword",
+     "luukvbaal/stabilize.nvim", -- stabilize buffer events
+    
+      -- auto-command
+     'jakelinnzy/autocmd-lua',
+  -- whiick key
+     "folke/which-key.nvim",
+  -- quickfix
+     "kevinhwang91/nvim-bqf",
+
+  -- background transparent
+     "xiyaowong/nvim-transparent",
+
+  -- translate some words
+     "voldikss/vim-translator",
+     "potamides/pantran.nvim",
+  -- cmake integration
+     "Shatur/neovim-cmake",
+  -- sniprun
+     "michaelb/sniprun",
+  -- jump
+     "nacro90/numb.nvim",
+     'phaazon/hop.nvim',
+    -- start up time
+     "dstein64/vim-startuptime",
+     -- web search
+     "lalitmee/browse.nvim",
+})

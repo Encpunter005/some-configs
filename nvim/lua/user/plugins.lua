@@ -45,6 +45,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   -- colorschemes
+  use 'glepnir/zephyr-nvim'
   use "marko-cerovac/material.nvim"
   use 'rose-pine/neovim'
   use 'rockerBOO/boo-colorscheme-nvim'
@@ -79,6 +80,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
   use "f3fora/cmp-spell"
+  use 'jc-doyle/cmp-pandoc-references'
   -- lspkind
   use 'onsails/lspkind-nvim'
   -- snippets
@@ -123,11 +125,9 @@ return packer.startup(function(use)
   }
   -- UI
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-  -- use "glepnir/galaxyline.nvim"
-  use "rcarriga/nvim-notify" -- notify
+  -- use "rcarriga/nvim-notify" -- notify
   -- use "MunifTanjim/nui.nvim" -- UI
   -- use "folke/noice.nvim"  --  NOTE: 这个插件会与lsp-signature相互冲突，bug待修，另外这个popmenu位置参数调了不知道为啥没生效;-;
-  
 
 
   -- Telescope
@@ -178,9 +178,9 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
 
   -- gps
-  use "SmiteshP/nvim-navic"
-  -- use "SmiteshP/nvim-gps"
-  use { 'fgheng/winbar.nvim' }
+  -- use "SmiteshP/nvim-navic"
+  -- -- use "SmiteshP/nvim-gps"
+  -- use { 'fgheng/winbar.nvim' }
   -- buffer
   use 'akinsho/bufferline.nvim'
   use 'ojroques/nvim-bufdel' -- close buffer
@@ -222,7 +222,7 @@ return packer.startup(function(use)
   -- web search
   use "lalitmee/browse.nvim"
 
-  -- Automatically set up your configuration after cloning packer.nvim
+    -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()

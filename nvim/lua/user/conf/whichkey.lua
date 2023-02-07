@@ -111,7 +111,7 @@ local mappings = {
 		name = "Support",
 		t = { "<cmd>TranslateW<cr>", "Translate" },
 		p = { "<cmd>Printf<CR>", "Print" },
-		o = { "<cmd>AerialToggle<cr>", "Outline" },
+		o = { "<cmd>Lspsaga outline<cr>", "Outline" },
 		T = { "<cmd>TransparentToggle<cr>", "Background transparency" },
 		s = { "<cmd>BrowseInputSearch<cr>", "WebSearch" },
 		S = { "<cmd>BrowseBookmarks<cr>", "BookMarkSearch" },
@@ -129,9 +129,11 @@ local mappings = {
 	m = {
 		name = "Markdown",
 		p = { "<cmd>MarkdownPreview<cr>", "Preview" },
-		c = { "<cmd>GenTocMarked<cr>", "Generate a content" },
-		u = { "<cmd>UpdateToc<cr>", "Update content" },
+		c = { "<cmd>GenTocGFM<cr>", "Generate a content" },
+		r = {"<cmd>RemoveToc<cr>", "Remove table" },
+    u = { "<cmd>UpdateToc<cr>", "Update content" },
 		t = { "<cmd>TableModeToggle<cr>", "Creat Table" },
+    o = {"<cmd>AerialToggle!<CR>", "Outline"},
 	},
 
 	-- ["o"] = {
@@ -205,7 +207,6 @@ local mappings = {
 		d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" },
 		w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 		q = { "<cmd>Trouble quickfix<cr>", "Quick Fix" },
-		u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
 		-- g = { "<cmd>Gitsigns setloclist<cr>", "Open changed hunk" },
 	},
 
@@ -288,7 +289,7 @@ local mappings = {
 
 	l = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+		a = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
 		d = {
 			"<cmd>Telescope diagnostics<cr>",
 			"Diagnostics",
@@ -300,29 +301,23 @@ local mappings = {
 		},
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		j = {
-			"<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
+			"<cmd>Lspsaga diagnostic_jump_next<CR>",
 			"Next Diagnostic",
 		},
 		k = {
-			"<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
+			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
 			"Prev Diagnostic",
 		},
     K = {"<cmd>Lspsaga hover_doc<CR>", "Signature"},
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-		R = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		R = { "<cmd>Lspsaga rename<CR>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
-		},
     p = {"<cmd>Lspsaga peek_definition<CR>" , "Peek_definition"},
     g = {"<Cmd>lua vim.lsp.buf.declaration()<CR>" , "Go to definition"},
     r = {"<cmd>Lspsaga lsp_finder<CR>" , "Reference"},
+    h = {"<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls"},	
+    u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
 
-
-		-- f = { require("lsp.utils").format, "Format" },
-		h = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Help" },
-	},
+},
 
 	-- h = {
 	--   a = { "<cmd>HSHighlight 1<cr>", "Hightlight 1" },

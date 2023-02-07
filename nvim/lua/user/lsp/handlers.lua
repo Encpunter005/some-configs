@@ -23,15 +23,16 @@ M.setup = function()
 	end
 
 	local config = {
-		virtual_text = {
-      update_in_insert = false,
-      severity_sort = true,
-      prefix = " ●",
-      source = "if_many", -- Or "always"
-      format = function(diag)
-        return diag.message .. "blah"
-      end,
-    }, -- disable virtual text
+      -- virtual_text = false,
+	virtual_text = {
+     update_in_insert = false,
+     severity_sort = true,
+     prefix = " ●",
+     source = "if_many", -- Or "always"
+     format = function(diag)
+       return diag.message .. "blah"
+     end,
+   }, -- disable virtual text
 		signs = {
 			active = signs, -- show signs
 		},
@@ -94,6 +95,10 @@ M.on_attach = function(client, bufnr)
 	end
 	illuminate.on_attach(client)
 end
+
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+
+
 
 return M
 

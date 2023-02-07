@@ -1,15 +1,16 @@
 local servers = {
   "sumneko_lua",
-  -- "cssls",
-  -- "html",
+  "cssls",
+  "html",
   -- "tsserver",
   "pyright",
   "bashls",
   "jsonls",
   "clangd",
-  "marksman",
-  
+  "cmake",
+  "marksman"
   -- "yamlls",
+  -- "grammarly"
 }
 
 local settings = {
