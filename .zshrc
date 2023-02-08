@@ -10,7 +10,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+export EDITOR="nvim"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -169,7 +169,8 @@ alias up='sudo pacman -Syyu'
 alias run='cd /home/encounter/mycode/build/linux-debug/ && ./coderun'
 alias r1='cd build/linux-debug/ && ./project'
 alias t='wd'
-alias weather='curl wttr.in'
+alias homew='curl https://wttr.in/Zhangzhou'
+alias schoolw='curl https://wttr.in/Ningbo'
 alias gt='gitui'
 alias tt='taskwarrior-tui'
 alias ze='zellij'
