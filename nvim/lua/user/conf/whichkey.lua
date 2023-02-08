@@ -313,8 +313,8 @@ local mappings = {
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     p = {"<cmd>Lspsaga peek_definition<CR>" , "Peek_definition"},
     g = {"<Cmd>lua vim.lsp.buf.declaration()<CR>" , "Go to definition"},
-    r = {"<cmd>Lspsaga lsp_finder<CR>" , "Reference"},
-    h = {"<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls"},	
+    F = {"<cmd>Lspsaga lsp_finder<CR>" , "Reference"},
+    h = {"<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls"},
     u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
 
 },
