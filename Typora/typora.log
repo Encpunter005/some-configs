@@ -1,0 +1,947 @@
+INFO 2023/2/1下午12:34:32  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/1下午12:34:32  launchFromDiffVersion, pre version is undefined
+INFO 2023/2/1下午12:34:32  start LM in devVersion=true
+INFO 2023/2/1下午12:34:32  [Raven] instanceKey = 282a50c3-e713-4303-a14d-91bbbabbd2fd
+INFO 2023/2/1下午12:34:32  ls put SLicense
+INFO 2023/2/1下午12:34:32  [validateTrail] installDate is 2/1/2023, trail remains: 15 days
+INFO 2023/2/1下午12:34:32  overwriteThemeFolder
+INFO 2023/2/1下午12:34:32  ------------------start------------------
+INFO 2023/2/1下午12:34:32  typora version: 0.11.18
+INFO 2023/2/1下午12:34:32  [focus] 1
+INFO 2023/2/1下午12:34:32  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/1下午12:34:32  synced recovery
+INFO 2023/2/1下午12:34:32  handle document.loadInitData
+INFO 2023/2/1下午12:34:32  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:34:32  synced recovery
+INFO 2023/2/1下午12:34:32  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/1下午12:34:32  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:34:33  [blur] 1
+INFO 2023/2/1下午12:34:33  [win] blur
+INFO 2023/2/1下午12:34:33  [focus] 1
+INFO 2023/2/1下午12:34:57  [blur] 1
+INFO 2023/2/1下午12:34:57  [win] blur
+INFO 2023/2/1下午12:35:08  [focus] 1
+INFO 2023/2/1下午12:35:08  addRecentFolder
+INFO 2023/2/1下午12:35:10  switchDocument 1 [/home/encounter/mycode/CMakeCache.txt]
+INFO 2023/2/1下午12:35:10  addRecentDocument
+INFO 2023/2/1下午12:35:10  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:35:10  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:35:10  synced recovery
+INFO 2023/2/1下午12:35:10  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:35:10  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:35:10  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:35:10  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:35:10  synced recovery
+INFO 2023/2/1下午12:35:14  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/1下午12:35:14  addRecentDocument
+INFO 2023/2/1下午12:35:14  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:35:14  synced recovery
+INFO 2023/2/1下午12:35:14  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:35:14  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:35:14  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:35:14  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:35:14  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:35:14  synced recovery
+INFO 2023/2/1下午12:35:22  synced recovery
+INFO 2023/2/1下午12:35:24  [blur] 1
+INFO 2023/2/1下午12:35:24  [win] blur
+INFO 2023/2/1下午12:35:28  [focus] 1
+INFO 2023/2/1下午12:35:28  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:35:28  switchDocument 1 [/home/encounter/mycode/Untitled.md]
+INFO 2023/2/1下午12:35:28  addRecentDocument
+INFO 2023/2/1下午12:35:28  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:35:28  synced recovery
+INFO 2023/2/1下午12:35:28  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:35:28  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:35:28  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:35:28  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:35:28  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:35:28  synced recovery
+INFO 2023/2/1下午12:35:29  synced recovery
+INFO 2023/2/1下午12:35:35  [blur] 1
+INFO 2023/2/1下午12:35:35  [win] blur
+INFO 2023/2/1下午12:35:51  [focus] 1
+INFO 2023/2/1下午12:36:00  [blur] 1
+INFO 2023/2/1下午12:36:00  [win] blur
+INFO 2023/2/1下午12:36:05  [focus] 1
+INFO 2023/2/1下午12:36:07  synced recovery
+INFO 2023/2/1下午12:36:09  synced recovery
+INFO 2023/2/1下午12:36:12  [blur] 1
+INFO 2023/2/1下午12:36:12  [win] blur
+INFO 2023/2/1下午12:36:15  [focus] 1
+INFO 2023/2/1下午12:36:15  window.File && File.option && (File.option.noWarnigForDeleteFile = true)
+INFO 2023/2/1下午12:36:15  synced recovery
+INFO 2023/2/1下午12:36:17  switchDocument 1 [/home/encounter/mycode/CMakeFiles/Makefile2]
+INFO 2023/2/1下午12:36:17  addRecentDocument
+INFO 2023/2/1下午12:36:17  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:36:17  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:36:17  synced recovery
+INFO 2023/2/1下午12:36:17  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:36:17  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:36:17  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:36:17  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:36:17  synced recovery
+INFO 2023/2/1下午12:36:19  switchDocument 1 [/home/encounter/mycode/STL/code]
+INFO 2023/2/1下午12:36:19  addRecentDocument
+INFO 2023/2/1下午12:36:19  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:36:19  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:36:19  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:36:19  synced recovery
+INFO 2023/2/1下午12:36:19  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:36:19  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:36:19  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:36:19  synced recovery
+INFO 2023/2/1下午12:36:20  switchDocument 1 [/home/encounter/mycode/notes/四舍五入.md]
+INFO 2023/2/1下午12:36:20  addRecentDocument
+INFO 2023/2/1下午12:36:20  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:36:20  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:36:20  synced recovery
+INFO 2023/2/1下午12:36:20  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:36:20  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:36:20  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:36:20  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:36:20  synced recovery
+INFO 2023/2/1下午12:36:26  [blur] 1
+INFO 2023/2/1下午12:36:26  [win] blur
+INFO 2023/2/1下午12:36:29  [focus] 1
+INFO 2023/2/1下午12:36:49  [blur] 1
+INFO 2023/2/1下午12:36:49  [win] blur
+INFO 2023/2/1下午12:38:07  [focus] 1
+INFO 2023/2/1下午12:38:08  synced recovery
+INFO 2023/2/1下午12:38:08  ----------------before-quit-----------------
+INFO 2023/2/1下午12:38:08  ------------------will-quit------------------
+INFO 2023/2/1下午12:38:08  -----------------quit------------------
+INFO 2023/2/1下午12:38:08  closeLogging
+INFO 2023/2/1下午12:38:14  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/1下午12:38:14  start LM in devVersion=true
+INFO 2023/2/1下午12:38:14  [Raven] instanceKey = cf058e01-7423-4167-9b63-c00cd9f4de08
+INFO 2023/2/1下午12:38:14  ls put SLicense
+INFO 2023/2/1下午12:38:14  [validateTrail] installDate is 2/1/2023, trail remains: 15 days
+INFO 2023/2/1下午12:38:14  overwriteThemeFolder
+INFO 2023/2/1下午12:38:14  ------------------start------------------
+INFO 2023/2/1下午12:38:14  typora version: 0.11.18
+INFO 2023/2/1下午12:38:14  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/1下午12:38:14  [focus] 1
+INFO 2023/2/1下午12:38:14  synced recovery
+INFO 2023/2/1下午12:38:15  handle document.loadInitData
+INFO 2023/2/1下午12:38:15  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:38:15  synced recovery
+INFO 2023/2/1下午12:38:15  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/1下午12:38:15  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:38:40  [blur] 1
+INFO 2023/2/1下午12:38:40  [win] blur
+INFO 2023/2/1下午12:39:07  [focus] 1
+INFO 2023/2/1下午12:39:12  synced recovery
+INFO 2023/2/1下午12:39:12  ----------------before-quit-----------------
+INFO 2023/2/1下午12:39:12  ------------------will-quit------------------
+INFO 2023/2/1下午12:39:12  -----------------quit------------------
+INFO 2023/2/1下午12:39:12  closeLogging
+INFO 2023/2/1下午12:39:18  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/1下午12:39:18  start LM in devVersion=true
+INFO 2023/2/1下午12:39:18  [Raven] instanceKey = 7a799301-9d2a-4430-b1d4-87b214351e60
+INFO 2023/2/1下午12:39:18  ls put SLicense
+INFO 2023/2/1下午12:39:18  [validateTrail] installDate is 2/1/2023, trail remains: 15 days
+INFO 2023/2/1下午12:39:18  ------------------start------------------
+INFO 2023/2/1下午12:39:18  typora version: 0.11.18
+INFO 2023/2/1下午12:39:18  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/1下午12:39:18  [focus] 1
+INFO 2023/2/1下午12:39:18  synced recovery
+INFO 2023/2/1下午12:39:18  handle document.loadInitData
+INFO 2023/2/1下午12:39:18  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:39:18  synced recovery
+INFO 2023/2/1下午12:39:18  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/1下午12:39:18  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:39:36  window.File && (function(){File.option.enableAutoSave = true;})();
+INFO 2023/2/1下午12:40:01  updateTheme
+INFO 2023/2/1下午12:40:16  File.setCanCollapsePinnedOutline(true);
+INFO 2023/2/1下午12:40:20  updateTheme
+INFO 2023/2/1下午12:40:22  updateTheme
+INFO 2023/2/1下午12:40:26  updateTheme
+INFO 2023/2/1下午12:40:32  updateTheme
+INFO 2023/2/1下午12:40:37  File.option.useCustomFontSize=true
+INFO 2023/2/1下午12:40:37  document.body.parentElement.style.fontSize = '14px'
+INFO 2023/2/1下午12:40:39  File.option.customFontSize=15
+INFO 2023/2/1下午12:40:39  document.body.parentElement.style.fontSize = '15px'
+INFO 2023/2/1下午12:40:40  File.option.customFontSize=15
+INFO 2023/2/1下午12:40:40  document.body.parentElement.style.fontSize = '15px'
+INFO 2023/2/1下午12:40:55  [blur] 1
+INFO 2023/2/1下午12:40:55  [win] blur
+INFO 2023/2/1下午12:40:59  [focus] 1
+INFO 2023/2/1下午12:40:59  addRecentFolder
+INFO 2023/2/1下午12:41:01  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/1下午12:41:01  addRecentDocument
+INFO 2023/2/1下午12:41:01  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:41:01  synced recovery
+INFO 2023/2/1下午12:41:01  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:41:01  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:41:01  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:41:01  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:41:01  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:41:01  synced recovery
+INFO 2023/2/1下午12:41:48  [blur] 1
+INFO 2023/2/1下午12:41:48  [win] blur
+INFO 2023/2/1下午12:41:50  [focus] 1
+INFO 2023/2/1下午12:42:41  switchDocument 1 [/home/encounter/mycode/notes/problems.md]
+INFO 2023/2/1下午12:42:41  addRecentDocument
+INFO 2023/2/1下午12:42:41  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午12:42:41  synced recovery
+INFO 2023/2/1下午12:42:41  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午12:42:41  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午12:42:41  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:42:41  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午12:42:41  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午12:42:41  synced recovery
+INFO 2023/2/1下午12:42:45  [blur] 1
+INFO 2023/2/1下午12:42:45  [win] blur
+INFO 2023/2/1下午12:42:45  [focus] 1
+INFO 2023/2/1下午12:43:44  synced recovery
+INFO 2023/2/1下午12:43:46  synced recovery
+INFO 2023/2/1下午12:43:48  [blur] 1
+INFO 2023/2/1下午12:43:48  [win] blur
+INFO 2023/2/1下午12:44:15  [focus] 1
+INFO 2023/2/1下午12:44:16  [blur] 1
+INFO 2023/2/1下午12:44:16  [win] blur
+INFO 2023/2/1下午12:44:22  [focus] 1
+INFO 2023/2/1下午12:44:27  [blur] 1
+INFO 2023/2/1下午12:44:27  [win] blur
+INFO 2023/2/1下午12:45:16  [focus] 1
+INFO 2023/2/1下午12:45:18  synced recovery
+INFO 2023/2/1下午12:45:20  synced recovery
+INFO 2023/2/1下午12:45:21  [blur] 1
+INFO 2023/2/1下午12:45:21  [win] blur
+INFO 2023/2/1下午12:45:27  [focus] 1
+INFO 2023/2/1下午12:45:30  [blur] 1
+INFO 2023/2/1下午12:45:30  [win] blur
+INFO 2023/2/1下午12:45:44  [focus] 1
+INFO 2023/2/1下午12:46:01  [blur] 1
+INFO 2023/2/1下午12:46:01  [win] blur
+INFO 2023/2/1下午12:46:01  [focus] 1
+INFO 2023/2/1下午12:46:01  [blur] 1
+INFO 2023/2/1下午12:46:01  [win] blur
+INFO 2023/2/1下午12:46:03  [focus] 1
+INFO 2023/2/1下午12:46:04  [blur] 1
+INFO 2023/2/1下午12:46:04  [win] blur
+INFO 2023/2/1下午12:47:04  [focus] 1
+INFO 2023/2/1下午12:47:38  [blur] 1
+INFO 2023/2/1下午12:47:38  [win] blur
+INFO 2023/2/1下午12:47:51  [focus] 1
+INFO 2023/2/1下午12:47:56  [blur] 1
+INFO 2023/2/1下午12:47:56  [win] blur
+INFO 2023/2/1下午12:54:50  [focus] 1
+INFO 2023/2/1下午12:54:55  [blur] 1
+INFO 2023/2/1下午12:54:55  [win] blur
+INFO 2023/2/1下午1:22:18  [focus] 1
+INFO 2023/2/1下午1:22:19  [blur] 1
+INFO 2023/2/1下午1:22:19  [win] blur
+INFO 2023/2/1下午1:31:04  [focus] 1
+INFO 2023/2/1下午1:31:06  [blur] 1
+INFO 2023/2/1下午1:31:06  [win] blur
+INFO 2023/2/1下午1:31:11  [focus] 1
+INFO 2023/2/1下午1:31:28  [blur] 1
+INFO 2023/2/1下午1:31:28  [win] blur
+INFO 2023/2/1下午1:31:33  [focus] 1
+INFO 2023/2/1下午1:31:33  load file [/tmp/1675229493384-0.3005260703163619.html] for PDF export
+INFO 2023/2/1下午1:31:33  [blur] 1
+INFO 2023/2/1下午1:31:33  [win] blur
+INFO 2023/2/1下午1:31:33  generate print window with id 2
+INFO 2023/2/1下午1:31:34  get PDF data
+INFO 2023/2/1下午1:31:34  get background color
+INFO 2023/2/1下午1:31:37  [focus] 1
+INFO 2023/2/1下午1:31:37  [RenderProcess 1][Log] export PDF to 
+INFO 2023/2/1下午1:31:38  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/1下午1:31:38  addRecentDocument
+INFO 2023/2/1下午1:31:38  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午1:31:38  synced recovery
+INFO 2023/2/1下午1:31:38  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午1:31:38  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午1:31:38  [RenderProcess 1][Log] do restoreEditStateFromData true false
+INFO 2023/2/1下午1:31:38  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午1:31:38  [RenderProcess 1][Log] [UndoManager] restoreFromJson all: 0 at: -1
+INFO 2023/2/1下午1:31:38  synced recovery
+INFO 2023/2/1下午1:31:48  [blur] 1
+INFO 2023/2/1下午1:31:48  [win] blur
+INFO 2023/2/1下午1:31:49  [focus] 1
+INFO 2023/2/1下午1:31:50  load file [/tmp/1675229510330-0.07587397857464362.html] for PDF export
+INFO 2023/2/1下午1:31:50  [blur] 1
+INFO 2023/2/1下午1:31:50  [win] blur
+INFO 2023/2/1下午1:31:50  generate print window with id 3
+INFO 2023/2/1下午1:31:53  [focus] 1
+INFO 2023/2/1下午1:31:53  [RenderProcess 1][Log] export PDF to /home/encounter/mycode/notes/note.pdf
+ERROR 2023/2/1下午1:31:53  unhandledRejection Error: Script failed to execute, this normally means an error was thrown. Check the renderer console for the error.
+    at WebFrame.e.startsWith.e.startsWith.WebFrame.<computed> [as _executeJavaScript] (electron/js2c/renderer_init.js:89:1563)
+    at electron/js2c/renderer_init.js:117:435
+    at EventEmitter.<anonymous> (electron/js2c/renderer_init.js:101:375)
+    at EventEmitter.emit (events.js:315:20)
+    at Object.onMessage (electron/js2c/renderer_init.js:93:1117)
+INFO 2023/2/1下午1:31:55  get PDF data
+INFO 2023/2/1下午1:31:55  get background color
+INFO 2023/2/1下午1:31:55  [blur] 1
+INFO 2023/2/1下午1:31:55  [win] blur
+INFO 2023/2/1下午1:33:17  [focus] 1
+INFO 2023/2/1下午1:33:20  synced recovery
+INFO 2023/2/1下午1:33:20  ----------------before-quit-----------------
+INFO 2023/2/1下午1:33:20  ------------------will-quit------------------
+INFO 2023/2/1下午1:33:20  -----------------quit------------------
+INFO 2023/2/1下午1:33:20  closeLogging
+INFO 2023/2/1下午1:35:29  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/1下午1:35:29  start LM in devVersion=true
+INFO 2023/2/1下午1:35:29  [Raven] instanceKey = a2722cdd-2aea-4069-b142-1eb7f61573ea
+INFO 2023/2/1下午1:35:29  ls put SLicense
+INFO 2023/2/1下午1:35:29  [validateTrail] installDate is 2/1/2023, trail remains: 15 days
+INFO 2023/2/1下午1:35:29  ------------------start------------------
+INFO 2023/2/1下午1:35:29  typora version: 0.11.18
+INFO 2023/2/1下午1:35:29  [focus] 1
+INFO 2023/2/1下午1:35:29  synced recovery
+INFO 2023/2/1下午1:35:29  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/1下午1:35:29  handle document.loadInitData
+INFO 2023/2/1下午1:35:29  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午1:35:29  synced recovery
+INFO 2023/2/1下午1:35:29  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/1下午1:35:29  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午1:35:32  synced recovery
+INFO 2023/2/1下午1:35:32  ----------------before-quit-----------------
+INFO 2023/2/1下午1:35:32  ------------------will-quit------------------
+INFO 2023/2/1下午1:35:32  -----------------quit------------------
+INFO 2023/2/1下午1:35:32  closeLogging
+INFO 2023/2/1下午6:11:03  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/1下午6:11:03  start LM in devVersion=true
+INFO 2023/2/1下午6:11:03  [Raven] instanceKey = 735bc5df-3bbf-42d0-8246-339e8994800b
+INFO 2023/2/1下午6:11:03  ls put SLicense
+INFO 2023/2/1下午6:11:03  [validateTrail] installDate is 2/1/2023, trail remains: 15 days
+INFO 2023/2/1下午6:11:03  ------------------start------------------
+INFO 2023/2/1下午6:11:03  typora version: 0.11.18
+INFO 2023/2/1下午6:11:03  [focus] 1
+INFO 2023/2/1下午6:11:03  synced recovery
+INFO 2023/2/1下午6:11:03  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/1下午6:11:04  handle document.loadInitData
+INFO 2023/2/1下午6:11:04  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午6:11:04  synced recovery
+INFO 2023/2/1下午6:11:04  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/1下午6:11:04  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午6:11:06  addRecentFolder
+INFO 2023/2/1下午6:11:08  switchDocument 1 [/home/encounter/mycode/notes/四舍五入.md]
+INFO 2023/2/1下午6:11:08  addRecentDocument
+INFO 2023/2/1下午6:11:08  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午6:11:08  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午6:11:08  synced recovery
+INFO 2023/2/1下午6:11:08  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午6:11:08  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:11:08  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午6:11:08  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:11:08  synced recovery
+INFO 2023/2/1下午6:11:09  switchDocument 1 [/home/encounter/mycode/notes/linux.md]
+INFO 2023/2/1下午6:11:09  addRecentDocument
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午6:11:09  synced recovery
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:11:09  synced recovery
+INFO 2023/2/1下午6:11:09  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/1下午6:11:09  addRecentDocument
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午6:11:09  synced recovery
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午6:11:09  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:11:10  synced recovery
+INFO 2023/2/1下午6:11:16  File.option.noHintForOpenLink=true;
+INFO 2023/2/1下午6:11:49  [blur] 1
+INFO 2023/2/1下午6:11:49  [win] blur
+INFO 2023/2/1下午6:11:50  [focus] 1
+INFO 2023/2/1下午6:11:52  synced recovery
+INFO 2023/2/1下午6:14:12  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/1下午6:14:12  start LM in devVersion=true
+INFO 2023/2/1下午6:14:12  [Raven] instanceKey = 67228af4-3165-4270-a243-8735f6756563
+INFO 2023/2/1下午6:14:12  ls put SLicense
+INFO 2023/2/1下午6:14:12  [validateTrail] installDate is 2/1/2023, trail remains: 15 days
+INFO 2023/2/1下午6:14:12  ------------------start------------------
+INFO 2023/2/1下午6:14:12  typora version: 0.11.18
+INFO 2023/2/1下午6:14:12  [focus] 1
+INFO 2023/2/1下午6:14:12  synced recovery
+INFO 2023/2/1下午6:14:12  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/1下午6:14:12  handle document.loadInitData
+INFO 2023/2/1下午6:14:13  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午6:14:13  synced recovery
+INFO 2023/2/1下午6:14:13  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/1下午6:14:13  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午6:14:16  addRecentFolder
+INFO 2023/2/1下午6:14:19  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/1下午6:14:19  addRecentDocument
+INFO 2023/2/1下午6:14:19  [RenderProcess 1][Log] getContent
+INFO 2023/2/1下午6:14:19  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/1下午6:14:19  synced recovery
+INFO 2023/2/1下午6:14:19  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/1下午6:14:19  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:14:19  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/1下午6:14:19  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/1下午6:14:19  synced recovery
+INFO 2023/2/1下午6:14:36  [blur] 1
+INFO 2023/2/1下午6:14:36  [win] blur
+INFO 2023/2/1下午6:14:56  [focus] 1
+INFO 2023/2/1下午6:15:30  [blur] 1
+INFO 2023/2/1下午6:15:30  [win] blur
+INFO 2023/2/1下午6:15:40  synced recovery
+INFO 2023/2/1下午6:15:40  ----------------before-quit-----------------
+INFO 2023/2/1下午6:15:40  ------------------will-quit------------------
+INFO 2023/2/1下午6:15:40  -----------------quit------------------
+INFO 2023/2/1下午6:15:40  closeLogging
+INFO 2023/2/2上午11:45:43  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/2上午11:45:43  start LM in devVersion=true
+INFO 2023/2/2上午11:45:43  [Raven] instanceKey = 67a539e5-7941-4863-9c51-691bc4ca5476
+INFO 2023/2/2上午11:45:43  ls put SLicense
+INFO 2023/2/2上午11:45:43  [validateTrail] installDate is 2/2/2023, trail remains: 15 days
+INFO 2023/2/2上午11:45:43  ------------------start------------------
+INFO 2023/2/2上午11:45:43  typora version: 0.11.18
+INFO 2023/2/2上午11:45:43  [focus] 1
+INFO 2023/2/2上午11:45:43  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/2上午11:45:43  synced recovery
+INFO 2023/2/2上午11:45:43  handle document.loadInitData
+INFO 2023/2/2上午11:45:43  [RenderProcess 1][Log] getContent
+INFO 2023/2/2上午11:45:43  synced recovery
+INFO 2023/2/2上午11:45:44  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/2上午11:45:44  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2上午11:45:53  synced recovery
+INFO 2023/2/2上午11:45:53  synced recovery
+INFO 2023/2/2上午11:45:55  synced recovery
+INFO 2023/2/2上午11:45:55  synced recovery
+INFO 2023/2/2上午11:45:55  synced recovery
+INFO 2023/2/2上午11:45:57  [blur] 1
+INFO 2023/2/2上午11:45:57  [win] blur
+INFO 2023/2/2上午11:46:00  [focus] 1
+INFO 2023/2/2上午11:46:07  synced recovery
+INFO 2023/2/2上午11:46:08  synced recovery
+INFO 2023/2/2上午11:46:08  synced recovery
+INFO 2023/2/2上午11:46:10  [blur] 1
+INFO 2023/2/2上午11:46:10  [win] blur
+INFO 2023/2/2上午11:47:35  [focus] 1
+INFO 2023/2/2上午11:47:38  [blur] 1
+INFO 2023/2/2上午11:47:38  [win] blur
+INFO 2023/2/2上午11:47:39  [focus] 1
+INFO 2023/2/2上午11:47:39  [blur] 1
+INFO 2023/2/2上午11:47:39  [win] blur
+INFO 2023/2/2上午11:47:41  [focus] 1
+INFO 2023/2/2上午11:47:46  addRecentFolder
+INFO 2023/2/2上午11:47:49  switchDocument 1 [/home/encounter/mycode/notes/setprecision(调整浮点数精度).md]
+INFO 2023/2/2上午11:47:49  addRecentDocument
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] getContent
+INFO 2023/2/2上午11:47:49  synced recovery
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:49  synced recovery
+INFO 2023/2/2上午11:47:49  switchDocument 1 [/home/encounter/mycode/notes/四舍五入.md]
+INFO 2023/2/2上午11:47:49  addRecentDocument
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] getContent
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2上午11:47:49  synced recovery
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2上午11:47:49  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:49  synced recovery
+INFO 2023/2/2上午11:47:50  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/2上午11:47:50  addRecentDocument
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] getContent
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/2上午11:47:50  synced recovery
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:50  synced recovery
+INFO 2023/2/2上午11:47:50  switchDocument 1 [/home/encounter/mycode/notes/linux.md]
+INFO 2023/2/2上午11:47:50  addRecentDocument
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] getContent
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2上午11:47:50  synced recovery
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2上午11:47:50  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2上午11:47:50  synced recovery
+INFO 2023/2/2上午11:47:51  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/2上午11:47:51  addRecentDocument
+INFO 2023/2/2上午11:47:51  [RenderProcess 1][Log] getContent
+INFO 2023/2/2上午11:47:51  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2上午11:47:51  synced recovery
+INFO 2023/2/2上午11:47:51  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/2上午11:47:51  [RenderProcess 1][Log] do restoreEditStateFromData true false
+INFO 2023/2/2上午11:47:51  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2上午11:47:51  [RenderProcess 1][Log] [UndoManager] restoreFromJson all: 0 at: -1
+INFO 2023/2/2上午11:47:51  synced recovery
+INFO 2023/2/2上午11:48:19  [blur] 1
+INFO 2023/2/2上午11:48:19  [win] blur
+INFO 2023/2/2上午11:55:55  [focus] 1
+INFO 2023/2/2上午11:55:59  [blur] 1
+INFO 2023/2/2上午11:55:59  [win] blur
+INFO 2023/2/2下午12:03:50  [focus] 1
+INFO 2023/2/2下午12:03:52  [blur] 1
+INFO 2023/2/2下午12:03:52  [win] blur
+INFO 2023/2/2下午12:12:19  [focus] 1
+INFO 2023/2/2下午12:12:34  [blur] 1
+INFO 2023/2/2下午12:12:34  [win] blur
+INFO 2023/2/2下午12:13:01  [focus] 1
+INFO 2023/2/2下午12:13:01  [blur] 1
+INFO 2023/2/2下午12:13:01  [win] blur
+INFO 2023/2/2下午12:13:01  [focus] 1
+INFO 2023/2/2下午12:13:11  [blur] 1
+INFO 2023/2/2下午12:13:11  [win] blur
+INFO 2023/2/2下午12:21:28  [focus] 1
+INFO 2023/2/2下午12:21:34  [blur] 1
+INFO 2023/2/2下午12:21:34  [win] blur
+INFO 2023/2/2下午12:22:01  [focus] 1
+INFO 2023/2/2下午12:22:03  synced recovery
+INFO 2023/2/2下午12:22:03  synced recovery
+INFO 2023/2/2下午12:22:04  synced recovery
+INFO 2023/2/2下午12:22:06  synced recovery
+INFO 2023/2/2下午12:22:06  synced recovery
+INFO 2023/2/2下午12:22:06  synced recovery
+INFO 2023/2/2下午12:22:06  synced recovery
+INFO 2023/2/2下午12:22:09  synced recovery
+INFO 2023/2/2下午12:22:09  synced recovery
+INFO 2023/2/2下午12:22:09  synced recovery
+INFO 2023/2/2下午12:22:09  synced recovery
+INFO 2023/2/2下午12:22:10  synced recovery
+INFO 2023/2/2下午12:22:12  synced recovery
+INFO 2023/2/2下午12:22:13  synced recovery
+INFO 2023/2/2下午12:22:14  synced recovery
+INFO 2023/2/2下午12:22:17  synced recovery
+INFO 2023/2/2下午12:22:18  synced recovery
+INFO 2023/2/2下午12:22:19  synced recovery
+INFO 2023/2/2下午12:22:20  [RenderProcess 1][Log] File.reloadContent, {"delayRefresh":true,"skipChangeCount":true,"skipStore":true}
+INFO 2023/2/2下午12:22:20  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2下午12:22:28  [blur] 1
+INFO 2023/2/2下午12:22:28  [win] blur
+INFO 2023/2/2下午12:22:33  [focus] 1
+INFO 2023/2/2下午12:22:34  [blur] 1
+INFO 2023/2/2下午12:22:34  [win] blur
+INFO 2023/2/2下午12:22:42  [focus] 1
+INFO 2023/2/2下午12:23:15  [blur] 1
+INFO 2023/2/2下午12:23:15  [win] blur
+INFO 2023/2/2下午12:36:00  [focus] 1
+INFO 2023/2/2下午12:36:33  [blur] 1
+INFO 2023/2/2下午12:36:33  [win] blur
+INFO 2023/2/2下午12:36:48  [focus] 1
+INFO 2023/2/2下午12:36:57  [blur] 1
+INFO 2023/2/2下午12:36:57  [win] blur
+INFO 2023/2/2下午12:37:04  [focus] 1
+INFO 2023/2/2下午12:37:05  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:06  synced recovery
+INFO 2023/2/2下午12:37:08  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:09  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:10  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:11  synced recovery
+INFO 2023/2/2下午12:37:12  synced recovery
+INFO 2023/2/2下午12:37:13  synced recovery
+INFO 2023/2/2下午12:37:13  synced recovery
+INFO 2023/2/2下午12:37:13  synced recovery
+INFO 2023/2/2下午12:37:14  synced recovery
+INFO 2023/2/2下午12:37:19  [RenderProcess 1][Log] File.reloadContent, {"delayRefresh":true,"skipChangeCount":true,"skipStore":true}
+INFO 2023/2/2下午12:37:19  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2下午12:37:22  synced recovery
+INFO 2023/2/2下午12:37:22  synced recovery
+INFO 2023/2/2下午12:37:23  synced recovery
+INFO 2023/2/2下午12:37:35  [blur] 1
+INFO 2023/2/2下午12:37:35  [win] blur
+INFO 2023/2/2下午12:42:09  [focus] 1
+INFO 2023/2/2下午12:42:23  [blur] 1
+INFO 2023/2/2下午12:42:23  [win] blur
+INFO 2023/2/2下午4:38:11  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/2下午4:38:11  start LM in devVersion=true
+INFO 2023/2/2下午4:38:11  [Raven] instanceKey = b258b644-d3f7-4a46-bef0-9b965923b0bb
+INFO 2023/2/2下午4:38:11  ls put SLicense
+INFO 2023/2/2下午4:38:11  [validateTrail] installDate is 2/2/2023, trail remains: 15 days
+INFO 2023/2/2下午4:38:11  ------------------start------------------
+INFO 2023/2/2下午4:38:11  typora version: 0.11.18
+INFO 2023/2/2下午4:38:11  launch from abnormal quit
+INFO 2023/2/2下午4:38:11  recoverWindow {"id":1,"path":"/home/encounter/mycode/notes/note.md","useCRLF":false,"hasUnsaved":false,"scrollPos":34939,"syncDate":1675312643976,"mountFolder":"/home/encounter/mycode/notes"}
+INFO 2023/2/2下午4:38:11  addRecentDocument
+INFO 2023/2/2下午4:38:11  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/2下午4:38:11  [focus] 1
+INFO 2023/2/2下午4:38:11  synced recovery
+INFO 2023/2/2下午4:38:12  handle document.loadInitData
+INFO 2023/2/2下午4:38:12  [RenderProcess 1][Log] getContent
+INFO 2023/2/2下午4:38:12  synced recovery
+INFO 2023/2/2下午4:38:13  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/2下午4:38:13  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2下午4:38:14  switchDocument 1 [/home/encounter/mycode/notes/problems.md]
+INFO 2023/2/2下午4:38:14  addRecentDocument
+INFO 2023/2/2下午4:38:14  [RenderProcess 1][Log] getContent
+INFO 2023/2/2下午4:38:14  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/2下午4:38:14  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/2下午4:38:14  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2下午4:38:14  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/2下午4:38:14  synced recovery
+INFO 2023/2/2下午4:38:14  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/2下午4:38:14  synced recovery
+INFO 2023/2/2下午4:38:20  [blur] 1
+INFO 2023/2/2下午4:38:20  [win] blur
+INFO 2023/2/2下午4:44:01  [focus] 1
+INFO 2023/2/2下午4:44:03  [blur] 1
+INFO 2023/2/2下午4:44:03  [win] blur
+INFO 2023/2/2下午4:44:04  [focus] 1
+INFO 2023/2/2下午4:44:04  [blur] 1
+INFO 2023/2/2下午4:44:04  [win] blur
+INFO 2023/2/2下午4:44:05  [focus] 1
+INFO 2023/2/2下午4:44:07  [blur] 1
+INFO 2023/2/2下午4:44:07  [win] blur
+INFO 2023/2/2下午4:45:55  [focus] 1
+INFO 2023/2/2下午4:45:58  [blur] 1
+INFO 2023/2/2下午4:45:58  [win] blur
+INFO 2023/2/2下午4:46:00  [focus] 1
+INFO 2023/2/2下午4:46:02  [blur] 1
+INFO 2023/2/2下午4:46:02  [win] blur
+INFO 2023/2/2下午4:46:49  [focus] 1
+INFO 2023/2/2下午4:47:05  [blur] 1
+INFO 2023/2/2下午4:47:05  [win] blur
+INFO 2023/2/2下午4:47:07  [focus] 1
+INFO 2023/2/2下午4:47:08  [blur] 1
+INFO 2023/2/2下午4:47:08  [win] blur
+INFO 2023/2/2下午4:50:03  [focus] 1
+INFO 2023/2/2下午4:50:09  [blur] 1
+INFO 2023/2/2下午4:50:09  [win] blur
+INFO 2023/2/2下午4:50:40  [focus] 1
+INFO 2023/2/2下午4:50:45  [blur] 1
+INFO 2023/2/2下午4:50:45  [win] blur
+INFO 2023/2/2下午4:51:27  [focus] 1
+INFO 2023/2/2下午4:51:27  synced recovery
+INFO 2023/2/2下午4:51:27  ----------------before-quit-----------------
+INFO 2023/2/2下午4:51:27  ------------------will-quit------------------
+INFO 2023/2/2下午4:51:27  -----------------quit------------------
+INFO 2023/2/2下午4:51:27  closeLogging
+INFO 2023/2/3上午11:25:41  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/3上午11:25:41  start LM in devVersion=true
+INFO 2023/2/3上午11:25:41  [Raven] instanceKey = 08c7880d-487c-448f-84e6-6853ac52fdab
+INFO 2023/2/3上午11:25:41  ls put SLicense
+INFO 2023/2/3上午11:25:41  [validateTrail] installDate is 2/3/2023, trail remains: 15 days
+INFO 2023/2/3上午11:25:41  ------------------start------------------
+INFO 2023/2/3上午11:25:41  typora version: 0.11.18
+INFO 2023/2/3上午11:25:41  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/3上午11:25:41  [focus] 1
+INFO 2023/2/3上午11:25:41  synced recovery
+INFO 2023/2/3上午11:25:41  handle document.loadInitData
+INFO 2023/2/3上午11:25:41  [RenderProcess 1][Log] getContent
+INFO 2023/2/3上午11:25:41  synced recovery
+INFO 2023/2/3上午11:25:41  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/3上午11:25:41  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/3上午11:25:44  addRecentFolder
+INFO 2023/2/3上午11:25:45  switchDocument 1 [/home/encounter/mycode/notes/note.md]
+INFO 2023/2/3上午11:25:45  addRecentDocument
+INFO 2023/2/3上午11:25:45  [RenderProcess 1][Log] getContent
+INFO 2023/2/3上午11:25:45  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/3上午11:25:45  synced recovery
+INFO 2023/2/3上午11:25:45  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/3上午11:25:45  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/3上午11:25:45  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/3上午11:25:45  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/3上午11:25:45  synced recovery
+INFO 2023/2/3上午11:26:05  [blur] 1
+INFO 2023/2/3上午11:26:05  [win] blur
+INFO 2023/2/3上午11:26:22  [focus] 1
+INFO 2023/2/3上午11:26:26  synced recovery
+INFO 2023/2/3上午11:26:29  synced recovery
+INFO 2023/2/3上午11:26:29  synced recovery
+INFO 2023/2/3上午11:26:31  synced recovery
+INFO 2023/2/3上午11:26:32  [blur] 1
+INFO 2023/2/3上午11:26:32  [win] blur
+INFO 2023/2/3上午11:27:38  [focus] 1
+INFO 2023/2/3上午11:27:42  [blur] 1
+INFO 2023/2/3上午11:27:42  [win] blur
+INFO 2023/2/3上午11:39:09  [focus] 1
+INFO 2023/2/3上午11:39:10  synced recovery
+INFO 2023/2/3上午11:39:10  ----------------before-quit-----------------
+INFO 2023/2/3上午11:39:10  ------------------will-quit------------------
+INFO 2023/2/3上午11:39:10  -----------------quit------------------
+INFO 2023/2/3上午11:39:10  closeLogging
+INFO 2023/2/4下午12:31:22  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/4下午12:31:22  start LM in devVersion=true
+INFO 2023/2/4下午12:31:22  [Raven] instanceKey = 8d8f23d6-1061-40a2-9105-ca2a0b572424
+INFO 2023/2/4下午12:31:22  ls put SLicense
+INFO 2023/2/4下午12:31:22  [validateTrail] installDate is 2/4/2023, trail remains: 15 days
+INFO 2023/2/4下午12:31:22  ------------------start------------------
+INFO 2023/2/4下午12:31:22  typora version: 0.11.18
+INFO 2023/2/4下午12:31:22  [focus] 1
+INFO 2023/2/4下午12:31:22  synced recovery
+INFO 2023/2/4下午12:31:22  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/4下午12:31:23  handle document.loadInitData
+INFO 2023/2/4下午12:31:23  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:31:23  synced recovery
+INFO 2023/2/4下午12:31:23  [RenderProcess 1][Log] onBecomeActive
+INFO 2023/2/4下午12:31:23  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/4下午12:31:25  [blur] 1
+INFO 2023/2/4下午12:31:25  [win] blur
+INFO 2023/2/4下午12:31:27  [focus] 1
+INFO 2023/2/4下午12:31:28  [blur] 1
+INFO 2023/2/4下午12:31:28  [win] blur
+INFO 2023/2/4下午12:31:28  [focus] 1
+INFO 2023/2/4下午12:31:30  [blur] 1
+INFO 2023/2/4下午12:31:30  [win] blur
+INFO 2023/2/4下午12:31:34  [focus] 1
+INFO 2023/2/4下午12:31:38  [blur] 1
+INFO 2023/2/4下午12:31:38  [win] blur
+INFO 2023/2/4下午12:31:51  [focus] 1
+INFO 2023/2/4下午12:31:51  addRecentFolder
+INFO 2023/2/4下午12:31:52  switchDocument 1 [/home/encounter/Projects/Grammar of CPP/grammar.md]
+INFO 2023/2/4下午12:31:52  addRecentDocument
+INFO 2023/2/4下午12:31:52  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:31:52  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/4下午12:31:52  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/4下午12:31:52  synced recovery
+INFO 2023/2/4下午12:31:52  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/4下午12:31:52  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:31:52  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/4下午12:31:52  synced recovery
+INFO 2023/2/4下午12:32:06  [blur] 1
+INFO 2023/2/4下午12:32:06  [win] blur
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:32:10  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:32:10  synced recovery
+INFO 2023/2/4下午12:32:21  [focus] 1
+INFO 2023/2/4下午12:32:31  [blur] 1
+INFO 2023/2/4下午12:32:31  [win] blur
+INFO 2023/2/4下午12:32:34  [focus] 1
+INFO 2023/2/4下午12:32:37  [blur] 1
+INFO 2023/2/4下午12:32:37  [win] blur
+INFO 2023/2/4下午12:32:37  [focus] 1
+INFO 2023/2/4下午12:32:37  [blur] 1
+INFO 2023/2/4下午12:32:37  [win] blur
+INFO 2023/2/4下午12:32:37  [focus] 1
+INFO 2023/2/4下午12:32:37  [blur] 1
+INFO 2023/2/4下午12:32:37  [win] blur
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:33:25  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:33:55  synced recovery
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:37:00  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:37:30  synced recovery
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:41:23  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:41:38  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:42:08  synced recovery
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:42:15  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:42:45  synced recovery
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:44:30  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:44:46  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:44:48  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:45:18  synced recovery
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:49:37  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:49:58  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:50:28  synced recovery
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] presentedItemChanged did happen
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] doHandlerPresentedItemChange
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] File.reloadContent, {"fromDiskChange":true}
+INFO 2023/2/4下午12:51:13  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午12:51:43  synced recovery
+INFO 2023/2/4下午12:51:46  [RenderProcess 1][Log] presentedItemChanged, path is 110854754
+INFO 2023/2/4下午12:51:46  [RenderProcess 1][Log] getDataFromFile
+INFO 2023/2/4下午12:51:46  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午12:51:46  [RenderProcess 1][Log] presentedItemChanged ignore because content not changed
+INFO 2023/2/4下午1:32:42  [focus] 1
+INFO 2023/2/4下午1:32:45  synced recovery
+INFO 2023/2/4下午1:33:13  [blur] 1
+INFO 2023/2/4下午1:33:13  [win] blur
+INFO 2023/2/4下午1:33:14  [focus] 1
+INFO 2023/2/4下午1:33:33  synced recovery
+INFO 2023/2/4下午1:33:33  ----------------before-quit-----------------
+INFO 2023/2/4下午1:33:33  ------------------will-quit------------------
+INFO 2023/2/4下午1:33:33  -----------------quit------------------
+INFO 2023/2/4下午1:33:33  closeLogging
+INFO 2023/2/4下午7:18:00  launch with argv [/usr/share/typora/Typora]
+INFO 2023/2/4下午7:18:00  start LM in devVersion=true
+INFO 2023/2/4下午7:18:00  [Raven] instanceKey = 28091d68-755b-4745-9f71-24f33d75f6f5
+INFO 2023/2/4下午7:18:00  ls put SLicense
+INFO 2023/2/4下午7:18:00  [validateTrail] installDate is 2/4/2023, trail remains: 15 days
+INFO 2023/2/4下午7:18:00  ------------------start------------------
+INFO 2023/2/4下午7:18:00  typora version: 0.11.18
+INFO 2023/2/4下午7:18:00  [Raven] userId = 9ae12ffc-4d65-4cf1-9f85-254a4da84415
+INFO 2023/2/4下午7:18:00  [focus] 1
+INFO 2023/2/4下午7:18:00  synced recovery
+INFO 2023/2/4下午7:18:01  handle document.loadInitData
+INFO 2023/2/4下午7:18:01  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午7:18:01  synced recovery
+INFO 2023/2/4下午7:18:03  synced recovery
+INFO 2023/2/4下午7:18:07  [blur] 1
+INFO 2023/2/4下午7:18:07  [win] blur
+INFO 2023/2/4下午7:18:08  [focus] 1
+INFO 2023/2/4下午7:18:10  addRecentFolder
+INFO 2023/2/4下午7:18:12  switchDocument 1 [/home/encounter/Projects/Grammar of CPP/header.md]
+INFO 2023/2/4下午7:18:12  addRecentDocument
+INFO 2023/2/4下午7:18:12  [RenderProcess 1][Log] getContent
+INFO 2023/2/4下午7:18:12  [RenderProcess 1][Log] File.activeWindow = true
+INFO 2023/2/4下午7:18:12  synced recovery
+INFO 2023/2/4下午7:18:12  [RenderProcess 1][Log] onSwitchDocumentTarget
+INFO 2023/2/4下午7:18:12  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/4下午7:18:12  [RenderProcess 1][Log] reset NodeMap
+INFO 2023/2/4下午7:18:12  [RenderProcess 1][Log] [UndoManager] reset commandStack
+INFO 2023/2/4下午7:18:12  synced recovery
+INFO 2023/2/4下午7:18:33  [blur] 1
+INFO 2023/2/4下午7:18:33  [win] blur
+INFO 2023/2/4下午7:18:40  [focus] 1
+INFO 2023/2/4下午7:18:45  synced recovery
+INFO 2023/2/4下午7:18:45  ----------------before-quit-----------------
+INFO 2023/2/4下午7:18:45  ------------------will-quit------------------
+INFO 2023/2/4下午7:18:45  -----------------quit------------------
+INFO 2023/2/4下午7:18:45  closeLogging
