@@ -1,7 +1,0 @@
-[](/*file: test.cpp*/
-/*#include <a.h> -> #include <b.h>*/ 
-int b;
-······
-/*#include <b.h>*/
-int b;
-······)
