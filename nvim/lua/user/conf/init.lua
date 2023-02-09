@@ -5,6 +5,7 @@
 -- require "user.conf.alpha"
 -- require "user.conf.nvim-navic"
 require "user.conf.dashboard"
+require "user.conf.windowpicker" -- WARNING : It doesn't seems to work 
 require "user.conf.aerial"
 require "user.conf.auto-pairs"
 require "user.conf.cmp"

@@ -100,7 +100,9 @@ local mappings = {
 	-- ["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+  ["w"] = { "<cmd>lua print(require('window-picker').pick_window())<CR>" , "Picker a window"},
 	-- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+
 
 	-- ["p"] = { "<cmd>SessionManager load_session<cr>", "Projects" },
 
@@ -130,10 +132,10 @@ local mappings = {
 		name = "Markdown",
 		p = { "<cmd>MarkdownPreview<cr>", "Preview" },
 		c = { "<cmd>GenTocGFM<cr>", "Generate a content" },
-		r = {"<cmd>RemoveToc<cr>", "Remove table" },
-    u = { "<cmd>UpdateToc<cr>", "Update content" },
+		r = { "<cmd>RemoveToc<cr>", "Remove table" },
+		u = { "<cmd>UpdateToc<cr>", "Update content" },
 		t = { "<cmd>TableModeToggle<cr>", "Creat Table" },
-    o = {"<cmd>AerialToggle!<CR>", "Outline"},
+		o = { "<cmd>AerialToggle!<CR>", "Outline" },
 	},
 
 	-- ["o"] = {
@@ -252,27 +254,27 @@ local mappings = {
 	-- },
 
 	g = {
-	   name = "Git",
-	   -- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-	   f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
-	   p = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
-	   n = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-	   N = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-	   l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-	   r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-	   R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-	   s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-	   S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Hunk" },
-	   u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
-	   U = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk", },
-	   o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-	   b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-	   c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-	   -- d = {
-	   --   "<cmd>Gitsigns diffthis HEAD<cr>",
-	   --   "Diff",
-	   -- },
-	 },
+		name = "Git",
+		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+		f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
+		p = { "<cmd>DiffviewOpen<CR>", "Diff Project" },
+		n = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+		N = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+		S = { "<cmd>lua require 'gitsigns'.stage_buffer()<cr>", "Stage Hunk" },
+		u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+		U = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
+		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+		-- d = {
+		--   "<cmd>Gitsigns diffthis HEAD<cr>",
+		--   "Diff",
+		-- },
+	},
 
 	R = {
 		name = "Replace",
@@ -308,16 +310,15 @@ local mappings = {
 			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
 			"Prev Diagnostic",
 		},
-    K = {"<cmd>Lspsaga hover_doc<CR>", "Signature"},
+		K = { "<cmd>Lspsaga hover_doc<CR>", "Signature" },
 		R = { "<cmd>Lspsaga rename<CR>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    p = {"<cmd>Lspsaga peek_definition<CR>" , "Peek_definition"},
-    g = {"<Cmd>lua vim.lsp.buf.declaration()<CR>" , "Go to definition"},
-    F = {"<cmd>Lspsaga lsp_finder<CR>" , "Reference"},
-    h = {"<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls"},
-    u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
-
-},
+		p = { "<cmd>Lspsaga peek_definition<CR>", "Peek_definition" },
+		g = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Go to definition" },
+		F = { "<cmd>Lspsaga lsp_finder<CR>", "Reference" },
+		h = { "<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls" },
+		u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
+	},
 
 	-- h = {
 	--   a = { "<cmd>HSHighlight 1<cr>", "Hightlight 1" },
@@ -344,4 +345,3 @@ local mappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
-
