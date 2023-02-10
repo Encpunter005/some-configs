@@ -29,7 +29,6 @@ set number
 set noerrorbells
 set nocompatible
 syntax on
-set showcmd
 set mouse=a
 set t_Co=256
 filetype indent on
@@ -55,7 +54,7 @@ set wildmode=longest:list,full
 let mapleader = " "  
 map <leader>e :NERDTreeToggle<CR>
 map <C-s> :w<CR>
-
+map <C-c> <esc>
 
 
 let g:vim_markdown_math = 1
