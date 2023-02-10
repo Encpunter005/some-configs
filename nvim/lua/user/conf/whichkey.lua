@@ -85,7 +85,7 @@ local vopts = {
 
 local vmappings = {
 	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle" },
-	["r"] = { "<cmd>Sniprun<cr>", "Sniprun" },
+	["r"] = { "<cmd>SnipRun<cr>", "SnipRun" }, -- FIX: It doesn't seem to work correctly
 	["t"] = { "<cmd>TranslateW<cr>,", "Translate" },
 }
 
