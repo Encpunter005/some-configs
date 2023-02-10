@@ -66,7 +66,7 @@ keymap("n", "<S-c>", ":BufDel<cr>", opts)
 -- Press jk fast to enter
 keymap("i", "<esc>", "<nop>", opts) -- NOTE: Just get used to use "jk" or "<C-c>" to escape
 keymap("i", "jk", "<ESC>", opts)
-
+keymap("i", "<C-c>", "<ESC>" , opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<A-l>", "<gv", opts)
