@@ -96,7 +96,7 @@ M.on_attach = function(client, bufnr)
 	illuminate.on_attach(client)
 end
 
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
+-- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
 
 
