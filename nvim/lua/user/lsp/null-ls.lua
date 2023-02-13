@@ -18,5 +18,8 @@ null_ls.setup({
     -- formatting.cmake_format,
     formatting.markdownlint,
 		-- diagnostics.flake8
+    diagnostics.codespell,
+    diagnostics.clang_check,
+    diagnostics.cmake_lint,
 	},
 })
