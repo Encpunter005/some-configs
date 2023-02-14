@@ -81,6 +81,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lua"
   use "f3fora/cmp-spell"
   use 'jc-doyle/cmp-pandoc-references'
+  use "zbirenbaum/copilot.lua"
   -- lspkind
   use 'onsails/lspkind-nvim'
   -- snippets
@@ -164,8 +165,8 @@ return packer.startup(function(use)
   use "joosepalviste/nvim-ts-context-commentstring"
 
   -- dashboard
-  -- use "goolord/alpha-nvim"
-  use "glepnir/dashboard-nvim" -- TODO : 有一个显示运势，暂时不知道咋搞
+  use "goolord/alpha-nvim"
+  -- use "glepnir/dashboard-nvim" -- TODO : 有一个显示运势，暂时不知道咋搞
   -- vim-illuminate
   use "RRethy/vim-illuminate"
   -- commend + search
