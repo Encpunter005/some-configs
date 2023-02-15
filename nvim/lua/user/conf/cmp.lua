@@ -133,6 +133,7 @@ if not status_luasnip_ok then
 	return
 end
 
+local compare = require("cmp.config.compare")
 require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
 require("luasnip.loaders.from_vscode").load({
 	paths = { -- load custom snippets
@@ -237,6 +238,7 @@ cmp_config = {
 		{ name = "treesitter" },
 		{ name = "crates" },
 		{ name = "pandoc_references" },
+    { name = "copilot"},
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),

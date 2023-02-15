@@ -5,21 +5,14 @@ end
 
 copilot.setup {
   cmp = {
-    enabled = true,
-    method = "getCompletionsCycling",
+          enabled = true,
+          method = "getCompletionsCycling",
   },
-  panel = { -- no config options yet
-    enabled = true,
+  filetypes = {
+          ["dap-repl"] = false,
+          ["big_file_disabled_ft"] = false,
+          ["cpp"] = false,
   },
-  ft_disable = { "markdown" },
-  -- plugin_manager_path = vim.fn.stdpath "data" .. "/site/pack/packer",
-  server_opts_overrides = {
-    -- trace = "verbose",
-    settings = {
-      advanced = {
-        -- listCount = 10, -- #completions for panel
-        inlineSuggestCount = 3, -- #completions for getCompletions
-      },
-    },
-  },
+  suggestion = {enabled = false},
+  panel = {enabled = false},
 }

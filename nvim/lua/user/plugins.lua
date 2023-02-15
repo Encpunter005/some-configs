@@ -82,6 +82,14 @@ return packer.startup(function(use)
   use "f3fora/cmp-spell"
   use 'jc-doyle/cmp-pandoc-references'
   use "zbirenbaum/copilot.lua"
+  use {
+  "zbirenbaum/copilot-cmp",
+  after = { "copilot.lua" },
+  config = function ()
+    require("copilot_cmp").setup()
+  end
+}
+
   -- lspkind
   use 'onsails/lspkind-nvim'
   -- snippets
