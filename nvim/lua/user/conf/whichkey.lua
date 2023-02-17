@@ -117,7 +117,7 @@ local mappings = {
 		T = { "<cmd>TransparentToggle<cr>", "Background transparency" },
 		s = { "<cmd>BrowseInputSearch<cr>", "WebSearch" },
 		S = { "<cmd>BrowseBookmarks<cr>", "BookMarkSearch" },
-		w = { "<cmd>Pantran", "Sentences" },
+		w = { "<cmd>Pantran<CR>", "Sentences" },
 	},
 	p = {
 		name = "Packer",
