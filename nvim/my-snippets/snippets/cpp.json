@@ -15,10 +15,7 @@
     "ac": {
         "prefix": "ac",
         "body": [
-            "#include <iostream>",
-            "#include <cstring>",
-            "#include <string>",
-            "#include <algorithm>",
+            "#include <bits/stdc++.h>",
             "using namespace std;",
             "using LL = long long;",
             "using PII = pair<int , int>;",
