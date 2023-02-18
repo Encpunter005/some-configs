@@ -85,12 +85,12 @@ local vopts = {
 
 local vmappings = {
 	["/"] = { "<Plug>(comment_toggle_linewise_visual)", "Comment toggle" },
-	["r"] = { "<cmd>SnipRun<cr>", "SnipRun" }, -- FIX: It doesn't seem to work correctly
+	["r"] = { "<cmd>SnipRun<cr>", "SnipRun" },
 	["t"] = { "<cmd>TranslateW<cr>,", "Translate" },
 }
 
 local mappings = {
-	["a"] = { "<cmd>Dashboard<cr>", "Welcome" },
+	["a"] = { "<cmd>Alpha<cr>", "Welcome" },
 	["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 	-- ["b"] = {
 	--   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
