@@ -4,6 +4,8 @@
 -- require "user.conf.nvim-gps"
 require "user.conf.alpha"
 -- require "user.conf.nvim-navic"
+require "user.conf.nvim-bqf"
+require "user.conf.filetype"
 require "user.conf.diffview"
 require "user.conf.sniprun"
 -- require "user.conf.dashboard"
