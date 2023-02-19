@@ -227,6 +227,7 @@ return packer.startup(function(use)
   -- start up time
   use "dstein64/vim-startuptime"
   use 'lewis6991/impatient.nvim' --optimize the startup time
+  use "nathom/filetype.nvim"
 
   -- web search
   use "lalitmee/browse.nvim"
