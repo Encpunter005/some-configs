@@ -2,7 +2,7 @@
     "solu": {
         "prefix": "solu",
         "body": [
-            "class Solution",
+            "class solve",
             "{",
             "public:",
             "\t$1 $2($3) {",
@@ -10,7 +10,7 @@
             "\t}",
             "};"
         ],
-        "description": "leetcode class Solution template"
+        "description": "leetcode class solution template"
     },
     "ac": {
         "prefix": "ac",
@@ -20,7 +20,7 @@
             "using LL = long long;",
             "using PII = pair<int , int>;",
             "",
-            "void solution()",
+            "void solve()",
             "{",
             "",
             "}",
@@ -33,7 +33,7 @@
             "\tios::sync_with_stdio(false);",
             "\tcin.tie(nullptr);",
             "",
-            "\tsolution();",
+            "\tsolve();",
             "",
             "",
             "\treturn 0;",
