@@ -3,6 +3,7 @@
 -- require "user.conf.toptabline"
 -- require "user.conf.nvim-gps"
 require "user.conf.alpha"
+require "user.conf.transparent"
 -- require "user.conf.nvim-navic"
 require "user.conf.nvim-bqf"
 require "user.conf.filetype"
