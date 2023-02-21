@@ -234,6 +234,17 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  -- Session manager
+  use {
+  'rmagatti/auto-session',
+  config = function()
+    require("auto-session").setup {
+      log_level = "error",
+      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+    }
+  end
+}
+
   -- Window picker
   -- use {'s1n7ax/nvim-window-picker',tag = 'v1.*'}
   -- Automatically set up your configuration after cloning packer.nvim
