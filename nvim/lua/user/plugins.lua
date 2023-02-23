@@ -133,7 +133,19 @@ return packer.startup(function(use)
     tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
   -- UI
-  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  -- use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+-- 
+  use( 'glepnir/galaxyline.nvim')
+  
+
+
+
+
+
+  use {
+      'yamatsum/nvim-nonicons',
+        requires = {'kyazdani42/nvim-web-devicons'}
+      }
   -- use "rcarriga/nvim-notify" -- notify
   -- use "MunifTanjim/nui.nvim" -- UI
   -- use "folke/noice.nvim"  --  NOTE: 这个插件会与lsp-signature相互冲突，bug待修，另外这个popmenu位置参数调了不知道为啥没生效;-;
@@ -235,15 +247,16 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
   -- Session manager
-  use {
-  'rmagatti/auto-session',
-  config = function()
-    require("auto-session").setup {
-      log_level = "error",
-      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-    }
-  end
-}
+--   use {
+--   'rmagatti/auto-session',
+--   config = function()
+--     require("auto-session").setup {
+--       log_level = "error",
+--       auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+--     }
+--   end
+-- }
+  use "Shatur/neovim-session-manager"
 
   -- Window picker
   -- use {'s1n7ax/nvim-window-picker',tag = 'v1.*'}
