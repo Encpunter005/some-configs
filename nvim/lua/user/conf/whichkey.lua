@@ -100,7 +100,8 @@ local mappings = {
 	-- ["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["w"] = { "<cmd>lua print(require('window-picker').pick_window())<CR>" , "Picker a window"},
+  ["S"] = { "<cmd>SessionManager save_current_session<CR>", "Save session"},
+  -- ["w"] = { "<cmd>lua print(require('window-picker').pick_window())<CR>" , "Picker a window"},
 	-- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
 
@@ -270,10 +271,10 @@ local mappings = {
 		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-		-- d = {
-		--   "<cmd>Gitsigns diffthis HEAD<cr>",
-		--   "Diff",
-		-- },
+		d = {
+		  "<cmd>Gitsigns diffthis HEAD<cr>",
+		  "Diff",
+		},
 	},
 
 	R = {
