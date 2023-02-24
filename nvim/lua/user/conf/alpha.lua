@@ -53,7 +53,7 @@ local function footer()
 	--local fortune = handle:read("*a")
 	--handle:close()
 	--return fortune
-		return "   Have Fun with neovim -- Encounter005"
+		return "   Have Fun with neovim  -- Encounter005"
 end
 
 
