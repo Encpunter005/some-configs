@@ -238,7 +238,6 @@ cmp_config = {
 		{ name = "treesitter" },
 		{ name = "crates" },
 		{ name = "pandoc_references" },
-    { name = "copilot"},
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),

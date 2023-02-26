@@ -41,7 +41,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
 	dashboard.button("S", "  Last session", ":SessionManager load_current_dir_session<CR>"),
 	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-  dashboard.button("p", "  Last project" , ":Telescope project"),
+  dashboard.button("p", "  Last project" , ":Telescope project<CR>"),
 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
 	dashboard.button("s", " Scheme change", ":Telescope colorscheme<cr>"),
