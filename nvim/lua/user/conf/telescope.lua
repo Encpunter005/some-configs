@@ -200,8 +200,12 @@ telescope.setup {
         -- even more opts
       }
     },
+    file_browser = {
+      theme = "ivy",
+      hijack_netrw = true,
+    },
     live_grep_raw = {
-      auto_quoting = false, -- enable/disable auto-quoting
+      auto_quoting = true, -- enable/disable auto-quotingtele
     }
   },
 }
@@ -214,5 +218,7 @@ telescope.load_extension('dap')
 telescope.load_extension("live_grep_args")
 telescope.load_extension("aerial")
 telescope.load_extension("frecency")
-
+telescope.load_extension("project")
+-- telescope.load_extension("rg")
+-- telescope.load_extension("file_browser")
 -- load project extension. see project.lua file

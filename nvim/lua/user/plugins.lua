@@ -160,11 +160,13 @@ return packer.startup(function(use)
   }
   use "nvim-telescope/telescope-dap.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
-  use "nvim-telescope/telescope-rg.nvim"
+  -- use "nvim-telescope/telescope-rg.nvim"
   use {
     'nvim-telescope/telescope-fzf-native.nvim',
     run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   }
+  -- use "nvim-telescope/telescope-file-browser.nvim"
+  use "nvim-telescope/telescope-project.nvim"
   use {
     "nvim-telescope/telescope-live-grep-args.nvim",
     commit = "9f62ecc6f6282e65adedaa3a0f18daea05664e64"
@@ -258,7 +260,13 @@ return packer.startup(function(use)
 --   end
 -- }
   use "Shatur/neovim-session-manager"
-
+  -- Highlight search
+  use {
+    'glepnir/hlsearch.nvim', event = 'BufRead',
+    config = function()
+      require('hlsearch').setup()
+    end
+  }
   -- Window picker
   -- use {'s1n7ax/nvim-window-picker',tag = 'v1.*'}
   -- Automatically set up your configuration after cloning packer.nvim
