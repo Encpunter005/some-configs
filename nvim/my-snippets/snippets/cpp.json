@@ -16,7 +16,7 @@
         "prefix": "ac",
         "body": [
             "/*",
-            "Link :",
+            "Link: ", 
             "*/",
             "#include <bits/stdc++.h>",
             "using namespace std;",
