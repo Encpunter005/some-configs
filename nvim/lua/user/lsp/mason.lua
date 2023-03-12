@@ -8,7 +8,7 @@ local servers = {
   "jsonls",
   "clangd",
   "cmake",
-  "marksman"
+  "marksman",
   -- "yamlls",
   -- "grammarly"
 }
