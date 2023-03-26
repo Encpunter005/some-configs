@@ -18,6 +18,7 @@ Plug 'majutsushi/tagbar'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug '907th/vim-auto-save'
 Plug 'skywind3000/vim-terminal-help'
 " colorscheme
@@ -35,7 +36,10 @@ let g:tokyonight_enable_italic = 1
 "let g:tokyonight_transparent_background = 1
 colorscheme tokyonight
 
-
+" auto-save
+let g:auto_save = 1 " enable AutoSave on Vim startup
+let g:auto_save_no_updatetime = 1  " do not change the 'updatetime' option
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 set clipboard=unnamedplus
 
@@ -101,7 +105,8 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 "设置向前跳转键
 let g:UltiSnipsJumpBackwardTrigger = '<S-tab>' 
 "设置文件目录
-let g:UltiSnipsSnippetDirectories=["path/of/snippetDirectories"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips","mysnippets"]
+
 "设置打开配置文件时为垂直打开
 let g:UltiSnipsEditSplit="vertical"
 
