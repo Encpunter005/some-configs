@@ -1,4 +1,3 @@
-
 call plug#begin()
 Plug 'https://github.com/enml/nord-vim.git'
 Plug 'https://github.com/itchyny/vim-cursorword.git'
@@ -19,12 +18,26 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'SirVer/ultisnips'
 Plug '907th/vim-auto-save'
+" colorscheme
+Plug 'sainnhe/sonokai'
+Plug 'ray-x/aurora'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 
-colorscheme default
+set termguicolors
 
-set clipboard^=unnamed,unnamedplus
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+"let g:tokyonight_transparent_background = 1
+colorscheme tokyonight
+
+
+
+
+
+set clipboard=unnamedplus
 set number
 set noerrorbells
 set nocompatible
@@ -54,16 +67,14 @@ set wildmode=longest:list,full
 let mapleader = " "  
 map <leader>e :NERDTreeToggle<CR>
 map <C-s> :w<CR>
-map <C-c> <esc>
+
 
 
 let g:vim_markdown_math = 1
 
-"激活tagbar扩展
-let g:airline#extensions#tagbar#enabled = 1
+"激活tagbar扩展let g:airline#extensions#tagbar#enabled = 1
 
-"设置tagber对于markdown的支持
-let g:tagbar_type_markdown = {
+"设置tagber对于markdown的支持let g:tagbar_type_markdown = {
     \ 'ctagstype' : 'markdown',
     \ 'kinds' : [
         \ 'h:Chapter',
@@ -76,16 +87,11 @@ let g:tagbar_type_markdown = {
 
 
 
-"设置tab键为触发键
-let g:UltiSnipsExpandTrigger = '<tab>'
-"设置向后跳转键
-let g:UltiSnipsJumpForwardTrigger = '<tab>' 
-"设置向前跳转键
-let g:UltiSnipsJumpBackwardTrigger = '<S-tab>' 
-"设置文件目录
-let g:UltiSnipsSnippetDirectories=["path/of/snippetDirectories"]
-"设置打开配置文件时为垂直打开
-let g:UltiSnipsEditSplit="vertical"
+"设置tab键为触发键let g:UltiSnipsExpandTrigger = '<tab>'
+"设置向后跳转键let g:UltiSnipsJumpForwardTrigger = '<tab>' 
+"设置向前跳转键let g:UltiSnipsJumpBackwardTrigger = '<S-tab>' 
+"设置文件目录let g:UltiSnipsSnippetDirectories=["path/of/snippetDirectories"]
+"设置打开配置文件时为垂直打开let g:UltiSnipsEditSplit="vertical"
 
 
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
