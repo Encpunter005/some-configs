@@ -11,6 +11,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
+export FZF_DEFAULT_OPTS="--height 90% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -90,7 +91,7 @@ noproxy () {
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting vi-mode zsh-autosuggestions z web-search zsh-completions fzf)
+plugins=(git zsh-syntax-highlighting vi-mode zsh-autosuggestions web-search zsh-completions fzf z)
 
 
 
@@ -106,6 +107,7 @@ leetcode "https://leetcode.cn/"
 atcode "https://atcoder.jp/"
 markdown "https://markdown.com.cn/basic-syntax/"
 csdn "https://blog.csdn.net/"
+pta "https://pintia.cn/"
 
 )
 
@@ -164,11 +166,13 @@ alias n='neofetch'
 alias ra='ranger_func'
 alias lv='lvim'
 alias q='exit'
-alias vpn='cd clash && sudo clash -d .'
+alias lazy='lazygit'
+alias vpn='cd clash && sudo ./clash -d .'
 alias up='sudo pacman -Syyu'
 alias run='cd /home/encounter/mycode/build/linux-debug/ && ./coderun'
 alias r1='cd build/linux-debug/ && ./project'
 alias t='wd'
+alias tree='lsd --tree'
 alias homew='curl https://wttr.in/Zhangzhou'
 alias schoolw='curl https://wttr.in/Ningbo'
 alias gt='gitui'
@@ -181,7 +185,9 @@ alias tt='tldr'
 alias nv='nvim'
 alias top='btm'
 alias v='vim'
-alias scr='scrcpy --max-size 1920 --max-fps 120' 
+alias scr='scrcpy --max-size 1920 --max-fps 120'
+alias edit='nvim $(fzf)'
+alias cf='$(find * -type d | fzf)'
 
 
 
