@@ -162,7 +162,7 @@ function ranger_func {
 
 
 alias cls='clear'
-alias n='neofetch'
+alias n='neofetch --w3m ~/Pictures/headers.jpg'
 alias ra='ranger_func'
 alias lv='lvim'
 alias q='exit'
