@@ -210,6 +210,7 @@ local mappings = {
 		d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" },
 		w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 		q = { "<cmd>Trouble quickfix<cr>", "Quick Fix" },
+    c = { "<cmd>TodoTrouble<cr>", "Todo-comment"},
 		-- g = { "<cmd>Gitsigns setloclist<cr>", "Open changed hunk" },
 	},
 
