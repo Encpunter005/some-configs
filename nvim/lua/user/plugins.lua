@@ -210,8 +210,6 @@ return packer.startup(function(use)
   -- quickfix
   use "kevinhwang91/nvim-bqf"
 
-  -- background transparent
-  use "xiyaowong/nvim-transparent"
 
   -- translate some words
   use "voldikss/vim-translator"
