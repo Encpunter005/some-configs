@@ -127,8 +127,9 @@ return packer.startup(function(use)
   -- UI
   -- use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
 -- 
-  use( 'glepnir/galaxyline.nvim')
-  
+ use( 'glepnir/galaxyline.nvim')
+  --use({"rebelot/heirline.nvim"})
+
 
 
 
