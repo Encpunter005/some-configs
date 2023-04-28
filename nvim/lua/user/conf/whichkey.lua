@@ -119,6 +119,7 @@ local mappings = {
 		s = { "<cmd>BrowseInputSearch<cr>", "WebSearch" },
 		S = { "<cmd>BrowseBookmarks<cr>", "BookMarkSearch" },
 		w = { "<cmd>Pantran<CR>", "Sentences" },
+    m = { "<cmd>MinimapToggle<cr>", "Show minimap window"},
 	},
 	p = {
 		name = "Packer",

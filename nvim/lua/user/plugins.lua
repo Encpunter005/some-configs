@@ -95,7 +95,7 @@ return packer.startup(function(use)
   --  use "terrortylor/nvim-comment"
   use "folke/todo-comments.nvim"
   use "folke/trouble.nvim"
-  use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
+ use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end }
   use "mptre/vim-printf"  -- NOTE : :cmdPrintf<CR> 自动帮你补全输出代码 :D
   use "windwp/nvim-spectre" -- replace some words
 
@@ -173,6 +173,7 @@ return packer.startup(function(use)
   use "theHamsta/nvim-dap-virtual-text"
   -- outline
   use "stevearc/aerial.nvim"
+  use 'rinx/nvim-minimap'
   -- treesitter
   use "nvim-treesitter/nvim-treesitter"
   use "nvim-treesitter/nvim-treesitter-context"
