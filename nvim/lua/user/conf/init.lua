@@ -7,7 +7,7 @@ require "user.conf.alpha"
 require "user.conf.nvim-bqf"
 require "user.conf.filetype"
 require "user.conf.diffview"
-require "user.conf.sniprun"
+--require "user.conf.sniprun"
 -- require "user.conf.dashboard"
 -- require "user.conf.windowpicker" -- WARNING : It doesn't seems to work 
 require"user.conf.neovim-session-manager"

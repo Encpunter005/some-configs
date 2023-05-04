@@ -33,20 +33,14 @@ vim.opt.signcolumn = "yes"                      -- always show the sign column, 
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.scrolloff = 10                           -- is one of my fav
 vim.opt.sidescrolloff = 10
-
 vim.opt.shortmess:append "c"
 
 
 
 -- indenting
 vim.opt.list = true
-vim.opt.listchars:append "space:⋅"
+-- vim.opt.listchars:append "space:⋅"
 vim.opt.listchars:append "eol:↴"
-
-
-
-
-
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]

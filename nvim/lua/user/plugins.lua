@@ -130,11 +130,6 @@ return packer.startup(function(use)
  use( 'glepnir/galaxyline.nvim')
   --use({"rebelot/heirline.nvim"})
 
-
-
-
-
-
   use {
       'yamatsum/nvim-nonicons',
         requires = {'kyazdani42/nvim-web-devicons'}

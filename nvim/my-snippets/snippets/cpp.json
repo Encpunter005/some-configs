@@ -20,7 +20,7 @@
             "using LL = long long;",
             "using PII = pair<int , int>;",
             "",
-            "void slove() {",
+            "void solve() {",
             "",
             "}",
             "",
