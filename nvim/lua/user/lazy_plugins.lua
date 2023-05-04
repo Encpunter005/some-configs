@@ -166,6 +166,11 @@ require("lazy").setup({
    'akinsho/bufferline.nvim',
   'ojroques/nvim-bufdel', -- close buffer
   "lukas-reineke/indent-blankline.nvim", -- beautify indent
+  {
+    "echasnovski/mini.indentscope",
+    version = false,
+    event = {"BufReadPre" , "BufNewFile"},
+  }
   'gen740/SmoothCursor.nvim',
   "xiyaowong/nvim-cursorword",
   "luukvbaal/stabilize.nvim", -- stabilize buffer events
@@ -197,8 +202,8 @@ require("lazy").setup({
 
     -- start up time
   "dstein64/vim-startuptime",
-  'lewis6991/impatient.nvim', --optimize the startup time
-  "nathom/filetype.nvim",
+--  'lewis6991/impatient.nvim', --optimize the startup time
+--  "nathom/filetype.nvim",
 
   -- web search
   "lalitmee/browse.nvim",

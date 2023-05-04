@@ -15,13 +15,20 @@ vim.cmd [[highlight IndentBlanklineIndent5 guifg=#61AFEF gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
 
+-- indent_blankline.setup {
+--   -- for example, context is off by default, use this to turn it on
+--     space_char_blankline = " ",
+--     show_current_context = true,
+--     show_current_context_start = true,
+--     -- show_end_of_line = true,
+--     char_highlight_list = {
+--       "IndentBlanklineIndent5"
+--     },
+-- }
+
 indent_blankline.setup {
-  -- for example, context is off by default, use this to turn it on
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
-    -- show_end_of_line = true,
-    char_highlight_list = {
-      "IndentBlanklineIndent5"
-    },
+  char = "│",
+  filetype_exclude = {"help" , "alpha" , "mason" , "Trouble" , "lazy"},
+  show_trailing_blankline_indent = false,
+  show_current_context = false,
 }
