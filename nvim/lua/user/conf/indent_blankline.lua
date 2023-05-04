@@ -28,7 +28,7 @@ vim.cmd [[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]]
 
 indent_blankline.setup {
   char = "│",
-  filetype_exclude = {"help" , "alpha" , "mason" , "Trouble" , "lazy"},
+filetype_exclude = { "help",  "neo-tree", "Trouble", "lazy" },
   show_trailing_blankline_indent = false,
   show_current_context = false,
 }
