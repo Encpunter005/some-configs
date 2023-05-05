@@ -10,7 +10,7 @@ require "user.conf.diffview"
 --require "user.conf.sniprun"
 -- require "user.conf.dashboard"
 -- require "user.conf.windowpicker" -- WARNING : It doesn't seems to work 
-require"user.conf.neovim-session-manager"
+require "user.conf.neovim-session-manager"
 require "user.conf.aerial"
 require "user.conf.pantran"
 require "user.conf.auto-pairs"

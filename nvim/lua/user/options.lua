@@ -45,3 +45,7 @@ vim.opt.listchars:append "eol:↴"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+-- nvim tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1

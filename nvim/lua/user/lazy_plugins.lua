@@ -108,14 +108,14 @@ require("lazy").setup({
 		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 	-- use "lukas-reineke/lsp-format.nvim"
-	-- file browser
-	--{
+	--file browser
+	-- {
 	-- 'nvim-tree/nvim-tree.lua',
 	--  dependencies = {
 	--   'nvim-tree/nvim-web-devicons', -- optional, for file icons
 	-- },
 	-- version = 'nightly' -- optional, updated every week. (see issue #1193)
-	--},
+	-- },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
