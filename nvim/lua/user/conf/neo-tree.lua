@@ -27,4 +27,14 @@ neo.setup({
       expander_highlight = "NeoTreeExpander",
     },
   },
+
+  source_selector = {
+    winbar = true,
+    -- statusline = true,
+    show_scrolled_off_parent_node = false, -- this will replace the tabs with the parent path
+                                           -- of the top visible node when scrolled down.
+  },
+
+  close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
+
 })
