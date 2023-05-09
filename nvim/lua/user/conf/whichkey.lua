@@ -323,7 +323,13 @@ local mappings = {
 		h = { "<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls" },
 		u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
 	},
-
+  w = {
+    name = "Windows",
+    m = { "<cmd>WindowsMaximize<CR>" , "Window Maximize"},
+    v = { "<cmd>WindowsMaximizeVertically<CR>" , "Window Vertically Maximize"},
+    h = { "<cmd>WindowsMaximizeHorizontally<CR>" , "Window Horizontally Maximize"},
+    e = { "<cmd>WindowsEqualize<CR>" , "Window Equalize"},
+  },
 	-- h = {
 	--   a = { "<cmd>HSHighlight 1<cr>", "Hightlight 1" },
 	--   b = { "<cmd>HSHighlight 2<cr>", "Hightlight 2" },

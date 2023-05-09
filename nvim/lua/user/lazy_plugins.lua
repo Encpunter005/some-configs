@@ -89,6 +89,28 @@ require("lazy").setup({
 			require("nvim-autopairs").setup({})
 		end,
 	},
+
+	{
+		-- 将没有使用的变量进行暗淡处理
+		"zbirenbaum/neodim",
+		lazy = true,
+		event = "LspAttach",
+		config = function()
+			require("neodim").setup({
+				alpha = 0.75,
+				blend_color = "#000000",
+				update_in_insert = {
+					enable = true,
+					delay = 100,
+				},
+				hide = {
+					virtual_text = true,
+					signs = false,
+					underline = false,
+				},
+			})
+		end,
+	},
 	--  "mptre/vim-printf"  -- NOTE : :cmdPrintf<CR> 自动帮你补全输出代码 :D
 	--  "windwp/nvim-spectre" -- replace some words
 
@@ -171,10 +193,9 @@ require("lazy").setup({
 	--use({"rebelot/heirline.nvim"})
 
 	{ "yamatsum/nvim-nonicons" },
-	-- use "rcarriga/nvim-notify" -- notify
+	-- "rcarriga/nvim-notify", -- notify
 	-- use "MunifTanjim/nui.nvim" -- UI
-	-- use "folke/noice.nvim"  --  NOTE: 这个插件会与lsp-signature相互冲突，bug待修，另外这个popmenu位置参数调了不知道为啥没生效;-;
-
+	"folke/noice.nvim",
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
@@ -210,9 +231,22 @@ require("lazy").setup({
 	-- treesitter
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-treesitter/nvim-treesitter-context",
-	"andymass/vim-matchup",
-	"joosepalviste/nvim-ts-context-commentstring",
+	{
+		"andymass/vim-matchup",
+		-- Highlight, jump between pairs like if..else
+		lazy = true,
+		event = { "User FileOpened" },
+		config = function()
+			vim.g.matchup_matchparen_offscreen = { method = "popup" }
+			lvim.builtin.treesitter.matchup.enable = true
+		end,
+	},
 
+	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		lazy = true,
+		event = { "User FileOpened" },
+	},
 	-- dashboard
 	"goolord/alpha-nvim",
 	--"glepnir/dashboard-nvim", -- TODO : 有一个显示运势，暂时不知道咋搞
@@ -270,7 +304,7 @@ require("lazy").setup({
 	-- start up time
 	"dstein64/vim-startuptime",
 	--  'lewis6991/impatient.nvim', --optimize the startup time
-	 "nathom/filetype.nvim",
+	"nathom/filetype.nvim",
 
 	-- web search
 	"lalitmee/browse.nvim",
@@ -294,6 +328,49 @@ require("lazy").setup({
 		event = "BufRead",
 		config = function()
 			require("hlsearch").setup()
+		end,
+	},
+
+	{
+		--通过几个函数可以将当前neovim窗口进行全屏/垂直全屏/水平全屏/等分
+		"anuvyklack/windows.nvim",
+		lazy = true,
+		cmd = {
+			"WindowsMaximize",
+			"WindowsMaximizeVertically",
+			"WindowsMaximizeHorizontally",
+			"WindowsEqualize",
+		},
+		dependencies = {
+			"anuvyklack/middleclass",
+			"anuvyklack/animation.nvim",
+		},
+		config = function()
+			require("windows").setup({
+				autowidth = {
+					enable = false,
+				},
+				ignore = {
+					buftype = { "quickfix" },
+					filetype = {
+						"neo-tree",
+						"qf",
+						"toggleterm",
+						"alpha",
+						"TelescopePrompt",
+					},
+				},
+			})
+		end,
+	},
+
+	{
+		-- 打开多窗口时，在当前焦点窗口周围显示紫色边框
+		"nvim-zh/colorful-winsep.nvim",
+		lazy = true,
+		event = "WinNew",
+		config = function()
+			require("colorful-winsep").setup()
 		end,
 	},
 })
