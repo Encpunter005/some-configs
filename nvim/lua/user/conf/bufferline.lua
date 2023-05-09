@@ -4,6 +4,10 @@ if not status_ok then
 end
 
 bufferline.setup({
+  options = {
+    -- numbers = "buffer_id",
+		separator_style = "padded_slant", -- | "thick" | "thin" | { 'any', 'any' },
+  },
 	-- options = {
 	-- 	numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
 	-- 	close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"

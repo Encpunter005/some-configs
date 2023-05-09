@@ -270,7 +270,7 @@ require("lazy").setup({
 	-- start up time
 	"dstein64/vim-startuptime",
 	--  'lewis6991/impatient.nvim', --optimize the startup time
-	--  "nathom/filetype.nvim",
+	 "nathom/filetype.nvim",
 
 	-- web search
 	"lalitmee/browse.nvim",
