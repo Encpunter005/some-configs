@@ -131,22 +131,22 @@ require("lazy").setup({
 	},
 	-- use "lukas-reineke/lsp-format.nvim"
 	--file browser
-	-- {
-	-- 'nvim-tree/nvim-tree.lua',
-	--  dependencies = {
-	--   'nvim-tree/nvim-web-devicons', -- optional, for file icons
-	-- },
-	-- version = 'nightly' -- optional, updated every week. (see issue #1193)
-	-- },
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
+		"nvim-tree/nvim-tree.lua",
 		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
+			"nvim-tree/nvim-web-devicons", -- optional, for file icons
 		},
+		version = "nightly", -- optional, updated every week. (see issue #1193)
 	},
+	-- {
+	-- 	"nvim-neo-tree/neo-tree.nvim",
+	-- 	branch = "v2.x",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- },
 
 	-- UI
 	-- use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
@@ -372,5 +372,30 @@ require("lazy").setup({
 		config = function()
 			require("colorful-winsep").setup()
 		end,
+	},
+
+	--AI
+	-- "github/copilot.vim",
+	{
+		"jackMort/ChatGPT.nvim",
+		-- event = "VeryLazy",
+		config = function()
+			require("chatgpt").setup({
+				keymaps = {
+					submit = "<C-Enter>",
+					yank_last_code = "<C-y>",
+				},
+				edit_with_instructions = {
+					keymaps = {
+						use_output_as_input = "<C-I>",
+					},
+				},
+			})
+		end,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
 	},
 })

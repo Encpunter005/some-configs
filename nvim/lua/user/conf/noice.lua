@@ -28,7 +28,15 @@ require("noice").setup({
 	notify = {
 		enabled = false,
 	},
-  documentation = {
+  -- documentation = {
+  --   enabled = false,
+  -- },
+  signature = {
     enabled = false,
+    auto_open = {
+      enabled = false,
+      trigger = false,
+      throttle = false,
+    },
   },
 })
