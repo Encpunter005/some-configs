@@ -116,7 +116,6 @@ local mappings = {
 		t = { "<cmd>TranslateW<cr>", "Translate" },
 		p = { "<cmd>Printf<CR>", "Print" },
 		o = { "<cmd>Lspsaga outline<cr>", "Outline" },
-		T = { "<cmd>TransparentToggle<cr>", "Background transparency" },
 		s = { "<cmd>BrowseInputSearch<cr>", "WebSearch" },
 		S = { "<cmd>BrowseBookmarks<cr>", "BookMarkSearch" },
 		w = { "<cmd>Pantran<CR>", "Sentences" },

@@ -19,6 +19,7 @@
             "using namespace std;",
             "using LL = long long;",
             "using PII = pair<int , int>;",
+            "#define debug(x) cerr << #x << "=" << x << endl;",
             "",
             "void solve() {",
             "",
