@@ -22,7 +22,7 @@ neo.setup({
 					show_path = "relative", -- "none", "relative", "absolute"
 				},
 			},
-			["<A-n>"] = "navigate_up",
+			["<bs>"] = "navigate_up",
 			["/"] = "fuzzy_finder",
 			["D"] = "fuzzy_finder_directory",
 			fuzzy_finder_mappings = {

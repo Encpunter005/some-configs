@@ -12,11 +12,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  ui = {
-    border = "single",
-    title_pos = "center",
-  },
-
+	ui = {
+		border = "single",
+		title_pos = "center",
+	},
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
 	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
 	-- colorschemes
@@ -68,14 +67,14 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lua",
 	"f3fora/cmp-spell",
 	"jc-doyle/cmp-pandoc-references",
-  "hrsh7th/cmp-nvim-lsp-signature-help",
+	"hrsh7th/cmp-nvim-lsp-signature-help",
 	-- lspkind
 	"onsails/lspkind-nvim",
 	-- snippets
-  {
-    "L3MON4D3/LuaSnip",
-    build = "make install_jsregexp",
-  }, --snippet engine
+	{
+		"L3MON4D3/LuaSnip",
+		build = "make install_jsregexp",
+	}, --snippet engine
 	"hrsh7th/cmp-vsnip", --snippt engine
 	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
 	-- edit enhance
@@ -95,7 +94,6 @@ require("lazy").setup({
 			require("nvim-autopairs").setup({})
 		end,
 	},
-
 	{
 		-- 将没有使用的变量进行暗淡处理
 		"zbirenbaum/neodim",
@@ -153,19 +151,17 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 		},
 	},
-
 	-- UI
 	-- use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
 	--
-  --
+	--
 	"glepnir/galaxyline.nvim",
 	--use({"rebelot/heirline.nvim"})
 	{ "yamatsum/nvim-nonicons" },
 	-- "rcarriga/nvim-notify", -- notify
 	-- use "MunifTanjim/nui.nvim" -- UI
 	"folke/noice.nvim",
-
-
+	"lukas-reineke/indent-blankline.nvim", -- beautify indent
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",
@@ -189,7 +185,6 @@ require("lazy").setup({
 	"nvim-telescope/telescope-media-files.nvim",
 	{ "kkharji/sqlite.lua" },
 	{ "nvim-telescope/telescope-frecency.nvim" },
-
 	-- dap
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
@@ -211,7 +206,6 @@ require("lazy").setup({
 			lvim.builtin.treesitter.matchup.enable = true
 		end,
 	},
-
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		lazy = true,
@@ -237,7 +231,6 @@ require("lazy").setup({
 	-- buffer
 	"akinsho/bufferline.nvim",
 	"ojroques/nvim-bufdel", -- close buffer
-	"lukas-reineke/indent-blankline.nvim", -- beautify indent
 	{
 		"echasnovski/mini.indentscope",
 		version = false,
@@ -252,7 +245,6 @@ require("lazy").setup({
 	"folke/which-key.nvim",
 	-- quickfix
 	"kevinhwang91/nvim-bqf",
-
 	-- translate some words
 	"voldikss/vim-translator",
 	"potamides/pantran.nvim",
@@ -270,7 +262,6 @@ require("lazy").setup({
 			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
 		end,
 	},
-
 	-- start up time
 	"dstein64/vim-startuptime",
 	--  'lewis6991/impatient.nvim', --optimize the startup time
@@ -300,7 +291,6 @@ require("lazy").setup({
 			require("hlsearch").setup()
 		end,
 	},
-
 	{
 		--通过几个函数可以将当前neovim窗口进行全屏/垂直全屏/水平全屏/等分
 		"anuvyklack/windows.nvim",
@@ -333,7 +323,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-
 	{
 		-- 打开多窗口时，在当前焦点窗口周围显示紫色边框
 		"nvim-zh/colorful-winsep.nvim",
@@ -343,7 +332,6 @@ require("lazy").setup({
 			require("colorful-winsep").setup()
 		end,
 	},
-
 	--AI
 	-- "github/copilot.vim",
 	{
@@ -368,10 +356,10 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim",
 		},
 	},
-  -- {
-  --   "xeluxee/competitest.nvim",
-  --   config = function ()
-  --     require("competitest").setup()
-  --   end
-  -- },
+	-- {
+	--   "xeluxee/competitest.nvim",
+	--   config = function ()
+	--     require("competitest").setup()
+	--   end
+	-- },
 })

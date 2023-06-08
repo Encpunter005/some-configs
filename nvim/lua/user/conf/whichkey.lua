@@ -205,7 +205,7 @@ local mappings = {
 		U = { "<cmd>lua require'dapui'.toggle()<cr>", "Toggle UI" },
 	},
 
-	T = {
+	t = {
 		name = "Trouble",
 		t = { "<cmd>Trouble<cr>", "ToggleTrouble" },
 		d = { "<cmd>Trouble document_diagnostics<cr>", "Document Diagnostics" },
