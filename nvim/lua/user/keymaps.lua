@@ -48,6 +48,11 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 keymap("n", "<leader>fc", ":Telescope colorscheme<cr>", opts)
 keymap("n", "<leader>fs", "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", opts)
 
+
+-- float terminal
+
+keymap("n" , "<C-\\>" , ":Lspsaga term_toggle<CR>" , opts)
+
 -- outline
 keymap("n", "go", ":AerialToggle<cr>", opts)
 
