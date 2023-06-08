@@ -134,12 +134,23 @@ if not status_luasnip_ok then
 end
 
 local compare = require("cmp.config.compare")
-require("luasnip.loaders.from_vscode").lazy_load() -- load freindly-snippets
-require("luasnip.loaders.from_vscode").load({
-	paths = { -- load custom snippets
-		vim.fn.stdpath("config") .. "/my-snippets",
-	},
-}) -- Load snippets from my-snippets folder
+-- load snippets from path/of/your/nvim/config/my-cool-snippets
+local luasnip_loader = require("luasnip.loaders.from_vscode")
+luasnip_loader.lazy_load()
+luasnip_loader.lazy_load({ paths = { "~/.config/nvim/snip/" } })
+--require("luasnip.loaders.from_vscode").lazy_load({paths = {"~/.config/nvim/snippets/"}})
+
+--local keymap = vim.api.nvim_set_keymap
+--local opts = { noremap = true, silent = true }
+--keymap("i", "<c-n>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+--keymap("s", "<c-n>", "<cmd>lua require'luasnip'.jump(1)<CR>", opts)
+--keymap("i", "<c-e>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+--keymap("s", "<c-e>", "<cmd>lua require'luasnip'.jump(-1)<CR>", opts)
+
+require("luasnip").config.setup({
+	region_check_events = "CursorHold,InsertLeave,InsertEnter",
+	delete_check_events = "TextChanged,InsertEnter",
+})
 
 cmp_config = {
 	confirm_opts = {
@@ -191,7 +202,6 @@ cmp_config = {
 			path = "(Path)",
 			calc = "(Calc)",
 			cmp_tabnine = "(Tabnine)",
-			vsnip = "(Snippet)",
 			luasnip = "(Snippet)",
 			buffer = "(Buffer)",
 			spell = "(Spell)",
@@ -238,6 +248,8 @@ cmp_config = {
 		{ name = "treesitter" },
 		{ name = "crates" },
 		{ name = "pandoc_references" },
+		{ name = "luasnip" },
+    { name = "nvim_lsp_signature_help" },
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -275,7 +287,6 @@ cmp_config = {
 			"i",
 			"s",
 		}),
-
 		["<C-p>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping(function(fallback)

@@ -64,13 +64,15 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lua",
 	"f3fora/cmp-spell",
 	"jc-doyle/cmp-pandoc-references",
-
+  "hrsh7th/cmp-nvim-lsp-signature-help",
 	-- lspkind
 	"onsails/lspkind-nvim",
 	-- snippets
-	"L3MON4D3/LuaSnip", --snippet engine
+  {
+    "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp",
+  }, --snippet engine
 	"hrsh7th/cmp-vsnip", --snippt engine
-	"hrsh7th/vim-vsnip",
 	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
 	-- edit enhance
 
@@ -304,7 +306,7 @@ require("lazy").setup({
 	-- start up time
 	"dstein64/vim-startuptime",
 	--  'lewis6991/impatient.nvim', --optimize the startup time
-	"nathom/filetype.nvim",
+	-- "nathom/filetype.nvim",
 
 	-- web search
 	"lalitmee/browse.nvim",
@@ -398,4 +400,10 @@ require("lazy").setup({
 			"nvim-telescope/telescope.nvim",
 		},
 	},
+  -- {
+  --   "xeluxee/competitest.nvim",
+  --   config = function ()
+  --     require("competitest").setup()
+  --   end
+  -- },
 })
