@@ -16,6 +16,8 @@ local cfg = {
   -- set to 0 if you DO NOT want any API comments be shown
   -- This setting only take effect in insert mode, it does not affect signature help in normal
   -- mode, 10 by default
+  noice = true,
+  wrap = true,
 
   floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
 

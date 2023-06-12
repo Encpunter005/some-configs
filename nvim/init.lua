@@ -11,7 +11,7 @@ require "user.conf"
 require "user.lsp"
 require "user.dap"
 require "user.Line"
--- require "user.neovide"
+require "user.neovide"
 
 
 

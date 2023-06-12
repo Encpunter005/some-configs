@@ -7,7 +7,7 @@ end
 
 neo.setup({
 	close_if_last_window = true,
-	popup_border_style = "double",
+	popup_border_style = "rounded",
 	enable_git_status = true,
 	enable_diagnostics = true,
 	window = {
@@ -27,8 +27,8 @@ neo.setup({
 			["D"] = "fuzzy_finder_directory",
 			fuzzy_finder_mappings = {
 				-- define keymaps for filter popup window in fuzzy_finder_mode
-				["<down>"] = "move_cursor_down",
-				["<up>"] = "move_cursor_up",
+				["<down>"] = "<C-Left>",
+				["<up>"] = "<C-Right>",
 			},
 		},
 	},

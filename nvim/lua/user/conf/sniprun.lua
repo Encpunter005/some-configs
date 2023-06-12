@@ -11,8 +11,14 @@ sniprun.setup({
   interpreter_options = {         --# intepreter-specific options, see docs / :SnipInfo <name>
     GFM_original = {
       use_on_filetypes = {"markdown.pandoc"}    --# the 'use_on_filetypes' configuration key is
-                                                --# available for every interpreter
-    }
+    },
+    Cpp_original = {
+      compiler = "clang --debug",
+    },
+    C_original = {
+      compiler = "clang",
+    },
+
   },
 
   --# you can combo different display modes as desired
@@ -53,7 +59,8 @@ sniprun.setup({
   inline_messages = 0,             --# inline_message (0/1) is a one-line way to display messages
 				   --# to workaround sniprun not being able to display anything
 
-  borders = 'single',               --# display borders around floating windows
+  borders = 'rounded',               --# display borders around floating windows
                                    --# possible values are 'none', 'single', 'double', or 'shadow'
-  live_mode_toggle='off'       --# live mode toggle, see Usage - Running for more info
+  live_mode_toggle='off',       --# live mode toggle, see Usage - Running for more info
+
 })

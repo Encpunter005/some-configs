@@ -13,12 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	ui = {
-		border = "single",
+		border = "rounded",
 		title_pos = "center",
 	},
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
 	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
 	-- colorschemes
+  "ray-x/aurora",
 	"kvrohit/substrata.nvim",
 	"glepnir/zephyr-nvim",
 	"marko-cerovac/material.nvim",
@@ -251,7 +252,10 @@ require("lazy").setup({
 	-- cmake integration
 	"Shatur/neovim-cmake",
 	-- sniprun
-	--"michaelb/sniprun"
+  {
+    "michaelb/sniprun",
+    build = "sh ./install.sh",
+  },
 	-- jump
 	"nacro90/numb.nvim",
 	{
@@ -355,7 +359,11 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
+
+
 	},
+  -- file manager
+  'is0n/fm-nvim',
 	-- {
 	--   "xeluxee/competitest.nvim",
 	--   config = function ()
