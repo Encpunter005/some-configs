@@ -13,6 +13,7 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export FZF_DEFAULT_OPTS="--height 90% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+export OPENAI_API_KEY=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
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -164,15 +165,14 @@ function ranger_func {
 
 
 alias cls='clear'
-alias n='neofetch --w3m ~/Pictures/1.jpg'
+alias ai='aichat'
+alias n='neofetch'
 alias ra='ranger_func'
 alias lv='lvim'
 alias q='exit'
 alias lazy='lazygit'
-alias vpn='cd clash && sudo ./clash -d .'
-alias up='sudo pacman -Syyu'
-alias run='cd /home/encounter/mycode/build/linux-debug/ && ./coderun'
-alias r1='cd build/linux-debug/ && ./project'
+alias vpn='cd vpn/noob005/ && sudo ./clash -d .'
+alias up='sudo pacman -Syu'
 alias t='wd'
 alias tree='lsd --tree'
 alias homew='curl https://wttr.in/Zhangzhou'
@@ -189,6 +189,6 @@ alias v='vim'
 alias scr='scrcpy --max-size 1920 --max-fps 120'
 alias edit='nvim $(fzf)'
 alias cf='$(find * -type d | fzf)'
+alias ps='kitty +kitten icat' 
 
-source /.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"

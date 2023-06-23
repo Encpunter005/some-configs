@@ -136,9 +136,10 @@ end
 local compare = require("cmp.config.compare")
 -- load snippets from path/of/your/nvim/config/my-cool-snippets
 local luasnip_loader = require("luasnip.loaders.from_vscode")
-luasnip_loader.lazy_load()
-luasnip_loader.lazy_load({ paths = { "~/.config/nvim/snip/" } })
---require("luasnip.loaders.from_vscode").lazy_load({paths = {"~/.config/nvim/snippets/"}})
+
+-- luasnip_loader.lazy_load()
+luasnip_loader.load({  path = "~/.config/nvim/my-snippets/"})
+-- require("luasnip.loaders.from_snipmate").load({ path = { "./snips" } }) -- Load snippets from my-snippets folder
 
 --local keymap = vim.api.nvim_set_keymap
 --local opts = { noremap = true, silent = true }
@@ -249,7 +250,7 @@ cmp_config = {
 		{ name = "crates" },
 		{ name = "pandoc_references" },
 		{ name = "luasnip" },
-    { name = "nvim_lsp_signature_help" },
+		{ name = "nvim_lsp_signature_help" },
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),

@@ -74,9 +74,10 @@ require("lazy").setup({
 	-- snippets
 	{
 		"L3MON4D3/LuaSnip",
+    version= "v<CurrentMajor>.*",
 		build = "make install_jsregexp",
 	}, --snippet engine
-	"hrsh7th/cmp-vsnip", --snippt engine
+	-- "hrsh7th/cmp-vsnip", --snippt engine
 	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
 	-- edit enhance
 
@@ -125,7 +126,11 @@ require("lazy").setup({
 	"williamboman/mason-lspconfig.nvim", -- simple to use language server installer
 	"jose-elias-alvarez/null-ls.nvim", -- format
 	"ray-x/lsp_signature.nvim",
-	"j-hui/fidget.nvim", -- show the real status of lsp
+  {
+    "j-hui/fidget.nvim",
+    version = "legacy"
+
+  }, -- show the real status of lsp
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",
