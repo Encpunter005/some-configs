@@ -250,12 +250,13 @@ require("lazy").setup({
 	-- whiick key
 	"folke/which-key.nvim",
 	-- quickfix
-	"kevinhwang91/nvim-bqf",
+	-- "kevinhwang91/nvim-bqf",
 	-- translate some words
 	"voldikss/vim-translator",
 	"potamides/pantran.nvim",
 	-- cmake integration
 	"Shatur/neovim-cmake",
+  -- "Civitasv/cmake-tools.nvim",
 	-- sniprun
   {
     "michaelb/sniprun",

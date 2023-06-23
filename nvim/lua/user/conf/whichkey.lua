@@ -175,7 +175,7 @@ local mappings = {
 	},
 	c = {
 		name = "CMake",
-		g = { "<cmd>CMake configure<CR>", "Configure" },
+	  g = { "<cmd>CMake configure<CR>", "Configure" },
 		t = { "<cmd>CMake select_target<CR>", "SelectTarget" },
 		T = { "<cmd>CMake select_build_type<CR>", "SelectBuildType" },
 		b = { "<cmd>CMake build<CR>", "BuildTarget" },
@@ -185,7 +185,7 @@ local mappings = {
 		c = { "<cmd>CMake cancel<CR>", "Cancel" },
 		C = { "<cmd>CMake create_project<CR>", "New Project" },
 		s = { "<cmd>CMake set_target_args<CR>", "SetArg" },
-	},
+  },
 
 	d = {
 		name = "Debug",
