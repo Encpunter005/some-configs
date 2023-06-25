@@ -10,7 +10,8 @@ local servers = {
   "cmake",
   "marksman",
   -- "yamlls",
-  -- "grammarly"
+  "grammarly",
+  "jdtls"
 }
 
 local settings = {
