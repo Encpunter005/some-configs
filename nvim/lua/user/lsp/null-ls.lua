@@ -20,7 +20,7 @@ null_ls.setup({
 		formatting.markdown_toc,
 		-- formatting.docformatter,
 		formatting.fixjson,
-		formatting.google_java_format,
+		-- formatting.google_java_format,
 		formatting.prettier,
 		formatting.autoflake,
 
