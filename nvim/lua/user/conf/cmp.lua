@@ -137,9 +137,10 @@ local compare = require("cmp.config.compare")
 -- load snippets from path/of/your/nvim/config/my-cool-snippets
 local luasnip_loader = require("luasnip.loaders.from_vscode")
 
--- luasnip_loader.lazy_load()
-luasnip_loader.load({  path = "~/.config/nvim/my-snippets/"})
--- require("luasnip.loaders.from_snipmate").load({ path = { "./snips" } }) -- Load snippets from my-snippets folder
+local snippet_path = vim.fn.stdpath("config") .. "/my-snippets/"
+if not vim.tbl_contains(vim.opt.rtp:get(), snippet_path) then
+	vim.opt.rtp:append(snippet_path)
+end
 
 --local keymap = vim.api.nvim_set_keymap
 --local opts = { noremap = true, silent = true }
@@ -152,6 +153,10 @@ require("luasnip").config.setup({
 	region_check_events = "CursorHold,InsertLeave,InsertEnter",
 	delete_check_events = "TextChanged,InsertEnter",
 })
+
+require("luasnip.loaders.from_lua").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_snipmate").lazy_load()
 
 cmp_config = {
 	confirm_opts = {

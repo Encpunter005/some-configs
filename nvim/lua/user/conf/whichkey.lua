@@ -281,15 +281,21 @@ local mappings = {
 
 	R = {
 		name = "Replace",
-		f = { "<cmd>lua require('spectre').open_file_search()<CR>", "Replace File" },
-		p = { "<cmd>lua require('spectre').open()<CR>", "Replace Project" },
-		s = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Search" },
-		-- -- 全项目替换
-		-- vim.keybinds.gmap("n", "<leader>rp", "", vim.keybinds.opts)
-		-- -- 只替换当前文件
-		-- vim.keybinds.gmap("n", "<leader>rf", , vim.keybinds.opts)
-		-- -- 全项目中搜索当前单词
-		-- vim.keybinds.gmap("n", "<leader>rw", , vim.keybinds.opts)
+    s = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "SearchReplaceSingleBuffer [s]elction list" },
+    o = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
+    w = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" },
+    W = { "<CMD>SearchReplaceSingleBufferCWORD<CR>", "[W]ORD" },
+    e = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" },
+    f = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" },
+    b = {
+        name = "SearchReplaceMultiBuffer",
+        s = { "<CMD>SearchReplaceMultiBufferSelections<CR>", "SearchReplaceMultiBuffer [s]elction list" },
+        o = { "<CMD>SearchReplaceMultiBufferOpen<CR>", "[o]pen" },
+        w = { "<CMD>SearchReplaceMultiBufferCWord<CR>", "[w]ord" },
+        W = { "<CMD>SearchReplaceMultiBufferCWORD<CR>", "[W]ORD" },
+        e = { "<CMD>SearchReplaceMultiBufferCExpr<CR>", "[e]xpr" },
+        f = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
+    },
 	},
 
 	l = {

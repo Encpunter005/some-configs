@@ -19,7 +19,7 @@ require("lazy").setup({
 	"nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
 	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
 	-- colorschemes
-  "ray-x/aurora",
+	"ray-x/aurora",
 	"kvrohit/substrata.nvim",
 	"glepnir/zephyr-nvim",
 	"marko-cerovac/material.nvim",
@@ -74,7 +74,7 @@ require("lazy").setup({
 	-- snippets
 	{
 		"L3MON4D3/LuaSnip",
-    version= "v<CurrentMajor>.*",
+		version = "v<CurrentMajor>.*",
 		build = "make install_jsregexp",
 	}, --snippet engine
 	-- "hrsh7th/cmp-vsnip", --snippt engine
@@ -112,7 +112,7 @@ require("lazy").setup({
 				hide = {
 					virtual_text = true,
 					signs = false,
-					underline = false,
+					underline = true,
 				},
 			})
 		end,
@@ -120,17 +120,43 @@ require("lazy").setup({
 	--  "mptre/vim-printf"  -- NOTE : :cmdPrintf<CR> 自动帮你补全输出代码 :D
 	--  "windwp/nvim-spectre" -- replace some words
 
+	{
+		"roobert/search-replace.nvim",
+		lazy = true,
+		cmd = {
+			"SearchReplaceSingleBufferVisualSelection",
+			"SearchReplaceWithinVisualSelection",
+			"SearchReplaceWithinVisualSelectionCWord",
+			"SearchReplaceSingleBufferSelections",
+			"SearchReplaceSingleBufferCWord",
+			"SearchReplaceSingleBufferCWORD",
+			"SearchReplaceSingleBufferCExpr",
+			"SearchReplaceSingleBufferCFile",
+			"SearchReplaceMultiBufferSelections",
+			"SearchReplaceMultiBufferOpen",
+			"SearchReplaceMultiBufferCWord",
+			"SearchReplaceMultiBufferCWORD",
+			"SearchReplaceMultiBufferCExpr",
+			"SearchReplaceMultiBufferCFile",
+		},
+		config = function()
+			require("search-replace").setup({
+				default_replace_single_buffer_options = "gcI",
+				default_replace_multi_buffer_options = "egcI",
+			})
+		end,
+	},
+
 	-- LSP
 	"neovim/nvim-lspconfig", -- enable LSP
 	"williamboman/mason.nvim", -- simple to use language server installer
 	"williamboman/mason-lspconfig.nvim", -- simple to use language server installer
 	"jose-elias-alvarez/null-ls.nvim", -- format
 	"ray-x/lsp_signature.nvim",
-  {
-    "j-hui/fidget.nvim",
-    version = "legacy"
-
-  }, -- show the real status of lsp
+	{
+		"j-hui/fidget.nvim",
+		version = "legacy",
+	}, -- show the real status of lsp
 	{
 		"glepnir/lspsaga.nvim",
 		branch = "main",
@@ -157,10 +183,15 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 		},
 	},
+
+
+
+
 	-- UI
 	-- use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
 	--
 	--
+	-- "nvim-lualine/lualine.nvim",
 	"glepnir/galaxyline.nvim",
 	--use({"rebelot/heirline.nvim"})
 	{ "yamatsum/nvim-nonicons" },
@@ -193,15 +224,15 @@ require("lazy").setup({
 	{ "nvim-telescope/telescope-frecency.nvim" },
 	-- dap
 	"mfussenegger/nvim-dap",
-  'mfussenegger/nvim-dap-python',
-  "mfussenegger/nvim-jdtls",
+	"mfussenegger/nvim-dap-python",
+	"mfussenegger/nvim-jdtls",
 	"rcarriga/nvim-dap-ui",
 	"theHamsta/nvim-dap-virtual-text",
 	-- outline
 	"stevearc/aerial.nvim",
 	"rinx/nvim-minimap",
 	-- { 'echasnovski/mini.map'},
-	-- treesitter
+	-- Text object
 	"nvim-treesitter/nvim-treesitter",
 	"nvim-treesitter/nvim-treesitter-context",
 	{
@@ -219,9 +250,30 @@ require("lazy").setup({
 		lazy = true,
 		event = { "User FileOpened" },
 	},
+
+
+  {
+    "chrisgrieser/nvim-various-textobjs",
+    lazy = true,
+    event = { "User FileOpened" },
+    config = function()
+        require("various-textobjs").setup({
+            useDefaultKeymaps = true,
+            lookForwardLines = 10,
+        })
+        -- example: `an` for outer subword, `in` for inner subword
+        vim.keymap.set({ "o", "x" }, "aS", function()
+            require("various-textobjs").subword(false)
+        end)
+        vim.keymap.set({ "o", "x" }, "iS", function()
+            require("various-textobjs").subword(true)
+        end)
+    end,
+  },
+
 	-- dashboard
 	"goolord/alpha-nvim",
-	--"glepnir/dashboard-nvim", -- TODO : 有一个显示运势，暂时不知道咋搞
+	-- "glepnir/dashboard-nvim", -- TODO : 有一个显示运势，暂时不知道咋搞
 	-- vim-illuminate
 	"RRethy/vim-illuminate",
 	-- commend + search
@@ -258,12 +310,12 @@ require("lazy").setup({
 	"potamides/pantran.nvim",
 	-- cmake integration
 	"Shatur/neovim-cmake",
-  -- "Civitasv/cmake-tools.nvim",
+	-- "Civitasv/cmake-tools.nvim",
 	-- sniprun
-  {
-    "michaelb/sniprun",
-    build = "sh ./install.sh",
-  },
+	{
+		"michaelb/sniprun",
+		build = "sh ./install.sh",
+	},
 	-- jump
 	"nacro90/numb.nvim",
 	{
@@ -275,9 +327,9 @@ require("lazy").setup({
 		end,
 	},
 	-- start up time
-	"dstein64/vim-startuptime",
+	-- "dstein64/vim-startuptime",
 	--  'lewis6991/impatient.nvim', --optimize the startup time
-	-- "nathom/filetype.nvim",
+	"nathom/filetype.nvim",
 
 	-- web search
 	"lalitmee/browse.nvim",
@@ -294,7 +346,17 @@ require("lazy").setup({
 	--     }
 	--   end
 	-- }
-	"Shatur/neovim-session-manager",
+
+	-- Session manager
+	-- "Shatur/neovim-session-manager",
+
+	{
+		"folke/persistence.nvim",
+		-- Restore last session of current dir
+		lazy = true,
+		event = "BufReadPre", -- this will only start session saving when an actual file was opened
+	},
+
 	-- Highlight search
 	{
 		"glepnir/hlsearch.nvim",
@@ -348,7 +410,7 @@ require("lazy").setup({
 	-- "github/copilot.vim",
 	{
 		"jackMort/ChatGPT.nvim",
-		-- event = "VeryLazy",
+		event = "VeryLazy",
 		config = function()
 			require("chatgpt").setup({
 				keymaps = {
@@ -367,11 +429,9 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope.nvim",
 		},
-
-
 	},
-  -- file manager
-  'is0n/fm-nvim',
+	-- file manager
+	"is0n/fm-nvim",
 	-- {
 	--   "xeluxee/competitest.nvim",
 	--   config = function ()
