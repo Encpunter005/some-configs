@@ -11,6 +11,8 @@ filetype.setup({
         extensions = {
             -- Set the filetype of *.pn files to potion
             pn = "potion",
+            h = "cpp",
+            c = "cpp",
         },
         literal = {
             -- Set the filetype of files named "MyBackupFile" to lua
@@ -52,6 +54,5 @@ filetype.setup({
             dash = "sh",
         },
 
-        h = "cpp",
     },
 })
