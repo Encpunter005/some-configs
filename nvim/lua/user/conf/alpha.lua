@@ -88,6 +88,7 @@ dashboard.section.buttons.val = {
 
 local function footer()
 	local status = require("lazy").stats()
+  local start = status.startuptime
 	-- local startup = (math.floor(status.startuptime * 100 + 0.5) / 100)
 	-- NOTE: requires the fortune-mod package to work
 	--local handle = io.popen("fortune")
@@ -104,7 +105,7 @@ local function footer()
 		.. "  󰂖 "
 		.. status.count
 		.. " plugins"
-		-- .. startup
+		-- .. start
 		-- .. "ms"
 end
 

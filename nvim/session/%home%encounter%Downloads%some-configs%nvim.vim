@@ -13,10 +13,18 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +159 ~/Downloads/some-configs/nvim/lua/user/lazy_plugins.lua
+badd +20 ~/Downloads/some-configs/nvim/lua/user/conf/kirby.lua
+badd +1 ~/Downloads/some-configs/nvim/lua/user/conf/legendary.lua
+badd +27 ~/Downloads/some-configs/nvim/lua/user/conf/icons1.lua
+badd +8 lua/user/conf/whichkey.lua
 argglobal
 %argdel
-edit ~/Downloads/some-configs/nvim/lua/user/lazy_plugins.lua
+edit lua/user/conf/whichkey.lua
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -25,12 +33,13 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-let s:l = 159 - ((19 * winheight(0) + 18) / 37)
+balt ~/Downloads/some-configs/nvim/lua/user/conf/kirby.lua
+let s:l = 8 - ((7 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 159
-normal! 018|
+keepjumps 8
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

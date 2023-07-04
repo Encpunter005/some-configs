@@ -217,27 +217,17 @@ local mappings = {
 
 	b = {
 		name = "Buffers",
-		j = { "<cmd>BufferLinePick<cr>", "Jump" },
+		j = { "<cmd>BufferPick<cr>", "Jump" },
 		f = { "<cmd>Telescope buffers<cr>", "Find" },
-		b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-		n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-		c = { "<cmd>BufDel<cr>", "Close buffer" },
-		-- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
-		e = {
-			"<cmd>BufferLinePickClose<cr>",
-			"Pick which buffer to close",
-		},
-		h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-		l = {
-			"<cmd>BufferLineCloseRight<cr>",
-			"Close all to the right",
-		},
+		b = { "<cmd>BufferPrevious<cr>", "Previous" },
+		n = { "<cmd>BufferNext<cr>", "Next" },
+		c = { "<cmd>BufferClose<cr>", "Close buffer" },
 		D = {
-			"<cmd>BufferLineSortByDirectory<cr>",
+			"<cmd>BufferOrderByDirectory<cr>",
 			"Sort by directory",
 		},
 		L = {
-			"<cmd>BufferLineSortByExtension<cr>",
+			"<cmd>BufferSortByLanguage<cr>",
 			"Sort by language",
 		},
 	},

@@ -184,9 +184,6 @@ require("lazy").setup({
 		},
 	},
 
-
-
-
 	-- UI
 	-- use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
 	--
@@ -251,25 +248,24 @@ require("lazy").setup({
 		event = { "User FileOpened" },
 	},
 
-
-  {
-    "chrisgrieser/nvim-various-textobjs",
-    lazy = true,
-    event = { "User FileOpened" },
-    config = function()
-        require("various-textobjs").setup({
-            useDefaultKeymaps = true,
-            lookForwardLines = 10,
-        })
-        -- example: `an` for outer subword, `in` for inner subword
-        vim.keymap.set({ "o", "x" }, "aS", function()
-            require("various-textobjs").subword(false)
-        end)
-        vim.keymap.set({ "o", "x" }, "iS", function()
-            require("various-textobjs").subword(true)
-        end)
-    end,
-  },
+	{
+		"chrisgrieser/nvim-various-textobjs",
+		lazy = true,
+		event = { "User FileOpened" },
+		config = function()
+			require("various-textobjs").setup({
+				useDefaultKeymaps = true,
+				lookForwardLines = 10,
+			})
+			-- example: `an` for outer subword, `in` for inner subword
+			vim.keymap.set({ "o", "x" }, "aS", function()
+				require("various-textobjs").subword(false)
+			end)
+			vim.keymap.set({ "o", "x" }, "iS", function()
+				require("various-textobjs").subword(true)
+			end)
+		end,
+	},
 
 	-- dashboard
 	"goolord/alpha-nvim",
@@ -289,7 +285,25 @@ require("lazy").setup({
 	-- -- use "SmiteshP/nvim-gps"
 	-- use { 'fgheng/winbar.nvim' }
 	-- buffer
-	"akinsho/bufferline.nvim",
+	-- "akinsho/bufferline.nvim",
+	{
+		"romgrk/barbar.nvim",
+		dependencies = {
+			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
+		},
+
+		init = function()
+			vim.g.barbar_auto_setup = false
+		end,
+		opts = {
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+		version = "^1.0.0", -- optional: only update when a new 1.x version is released
+	},
 	"ojroques/nvim-bufdel", -- close buffer
 	{
 		"echasnovski/mini.indentscope",
@@ -432,10 +446,19 @@ require("lazy").setup({
 	},
 	-- file manager
 	"is0n/fm-nvim",
-	-- {
-	--   "xeluxee/competitest.nvim",
-	--   config = function ()
-	--     require("competitest").setup()
-	--   end
-	-- },
+	{
+		"romgrk/kirby.nvim",
+		dependencies = {
+			{ "romgrk/fzy-lua-native", build = "make" },
+			{ "romgrk/kui.nvim" },
+			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-lua/plenary.nvim" },
+		},
+	},
+	{
+	  "xeluxee/competitest.nvim",
+	  config = function ()
+	    require("competitest").setup()
+	  end
+	},
 })

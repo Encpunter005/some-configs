@@ -51,3 +51,7 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 -- nvim tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+
+-- java-debug
+vim.fn.glob("~/.local/share/nvim/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-0.47.0.jar/java-debug", 1)
