@@ -13,13 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +20 ~/Downloads/some-configs/nvim/lua/user/conf/kirby.lua
-badd +1 ~/Downloads/some-configs/nvim/lua/user/conf/legendary.lua
-badd +27 ~/Downloads/some-configs/nvim/lua/user/conf/icons1.lua
-badd +8 lua/user/conf/whichkey.lua
+badd +1 ~/Downloads/some-configs/nvim/lua/user/conf/autosave.lua
 argglobal
 %argdel
-edit lua/user/conf/whichkey.lua
+edit ~/Downloads/some-configs/nvim/lua/user/conf/autosave.lua
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -33,13 +30,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/Downloads/some-configs/nvim/lua/user/conf/kirby.lua
-let s:l = 8 - ((7 * winheight(0) + 18) / 37)
+let s:l = 19 - ((18 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 0
+keepjumps 19
+normal! 071|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

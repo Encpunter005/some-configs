@@ -13,9 +13,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +0 ~/Downloads/some-configs/neofetch/config.conf
+badd +11 ~/Downloads/some-configs/nvim/good-head.txt
+badd +17 ~/Downloads/some-configs/nvim/spell/en.utf-8.add
+badd +1 ~/Downloads/some-configs/nvim/spell/en.utf-8.add.spl
 argglobal
 %argdel
+edit ~/Downloads/some-configs/nvim/spell/en.utf-8.add.spl
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -23,6 +26,14 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+argglobal
+balt ~/Downloads/some-configs/nvim/spell/en.utf-8.add
+let s:l = 1 - ((0 * winheight(0) + 19) / 38)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 1
+normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
