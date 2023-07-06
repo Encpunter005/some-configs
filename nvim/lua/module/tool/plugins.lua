@@ -1,50 +1,78 @@
 return {
 	-- Support
-  {
-    "nathom/filetype.nvim",
-  },
-
 	{
-	  "xeluxee/competitest.nvim",
-    lazy = true,
-    event = "BufReadPre",
-	  config = function ()
-	    require("competitest").setup()
-	  end
+		"nathom/filetype.nvim",
 	},
-  -- web search
-	{
-    "lalitmee/browse.nvim",
-    lazy = true,
 
+  { --better quickfix window
+    "kevinhwang91/nvim-bqf",
+    lazy = true,
+    ft = 'qf',
   },
+
+  {
+    "junegunn/fzf",
+    lazy = true,
+    build = function ()
+      vim.fn['fzf#install']()
+    end
+  },
+
+	{
+		"xeluxee/competitest.nvim",
+		lazy = true,
+		event = "BufReadPre",
+		config = function()
+			require("competitest").setup()
+		end,
+	},
+	-- web search
+	{
+		"lalitmee/browse.nvim",
+		lazy = true,
+	},
+
+	-- Compiler
+	{ -- This plugin
+		"Zeioth/compiler.nvim",
+		cmd = { "CompilerOpen", "CompilerToggleResults" },
+		dependencies = { "stevearc/overseer.nvim" },
+    lazy = true,
+	},
+
+	{ -- The framework we use to run tasks
+		"stevearc/overseer.nvim",
+    lazy = true,
+		commit = "3047ede61cc1308069ad1184c0d447ebee92d749", -- Recommended to to avoid breaking changes
+		cmd = { "CompilerOpen", "CompilerToggleResults" },
+	},
 
 	-- auto-command
 	{
-    "jakelinnzy/autocmd-lua",
-    lazy = true,
-  },
-
-	{
-    "voldikss/vim-translator",
-    lazy = true,
-  },
-
-	{
-    "potamides/pantran.nvim",
-    lazy = true,
-  },
-
-	{
-		"michaelb/sniprun",
-		build = "sh ./install.sh",
-    lazy = true,
+		"jakelinnzy/autocmd-lua",
+		lazy = true,
 	},
+
+	{
+		"voldikss/vim-translator",
+		lazy = true,
+	},
+
+	{
+		"potamides/pantran.nvim",
+		lazy = true,
+	},
+
+	-- {
+	-- 	"michaelb/sniprun",
+	-- 	build = "sh ./install.sh",
+	-- 	lazy = true,
+	-- },
 	-- jump
 	{
-    "nacro90/numb.nvim",
-    lazy = true,
-  },
+		"nacro90/numb.nvim",
+		lazy = true,
+	},
 
 	{
 		"phaazon/hop.nvim",
@@ -227,7 +255,6 @@ return {
 		lazy = true,
 		event = { "BufEnter" },
 	},
-
 
 	-- Telescope
 	{

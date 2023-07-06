@@ -92,6 +92,7 @@ local vmappings = {
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Welcome" },
 	["r"] = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+  ["p"] = {"<cmd>Lazy<cr>" , "Plugins"},
 	-- ["b"] = {
 	--   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 	--   "Buffers",
@@ -138,6 +139,7 @@ local mappings = {
 		u = { "<cmd>UpdateToc<cr>", "Update content" },
 		t = { "<cmd>TableModeToggle<cr>", "Creat Table" },
 		o = { "<cmd>AerialToggle!<CR>", "Outline" },
+    m = { "<cmd>MarkmapOpen<CR>" , "Mindmap"},
 	},
 
 	-- ["o"] = {
@@ -316,13 +318,14 @@ local mappings = {
 			"Prev Diagnostic",
 		},
 		K = { "<cmd>Lspsaga hover_doc<CR>", "Signature" },
-		R = { "<cmd>Lspsaga rename<CR>", "Rename" },
+		r = { "<cmd>Lspsaga rename<CR>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		p = { "<cmd>Lspsaga peek_definition<CR>", "Peek_definition" },
 		g = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Go to definition" },
 		F = { "<cmd>Lspsaga lsp_finder<CR>", "Reference" },
 		h = { "<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls" },
 		u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
+    q = { "<cmd>lua vim.diagnostic.setloclist()<CR>" , "Set diagnostic list" },
 	},
   w = {
     name = "Windows",

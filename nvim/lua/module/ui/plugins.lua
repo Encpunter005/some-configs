@@ -13,10 +13,15 @@ return {
 		opts = {},
 	},
 
-	{
-		"glepnir/galaxyline.nvim", -- statusline
-		lazy = true,
-	},
+	-- {
+	-- 	"glepnir/galaxyline.nvim", -- statusline
+	-- 	lazy = true,
+	-- },
+
+  {
+    "freddiehaddad/feline.nvim",
+    lazy = true,
+  },
 
 	{
 		"yamatsum/nvim-nonicons",

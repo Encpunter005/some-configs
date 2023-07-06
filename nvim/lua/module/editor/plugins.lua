@@ -1,5 +1,5 @@
 return {
-  	-- LSP
+	-- LSP
 	"neovim/nvim-lspconfig", -- enable LSP
 	"williamboman/mason.nvim", -- simple to use language server installer
 	"williamboman/mason-lspconfig.nvim", -- simple to use language server installer
@@ -17,6 +17,9 @@ return {
 	},
 	-- lspkind
 	"onsails/lspkind-nvim",
+
+  --Clangd
+  "p00f/clangd_extensions.nvim",
 
 	-- vim-illuminate
 	"RRethy/vim-illuminate",
@@ -72,5 +75,12 @@ return {
 		},
 	},
 
-
+	{ --generate a mind-map
+		"Zeioth/markmap.nvim",
+		build = "yarn global add markmap-cli",
+		cmd = { "MarkmapOpen", "MarkmapSave", "MarkmapWatch", "MarkmapWatchStop" },
+    lazy = true,
+    ft = "markdown",
+    event = "BufReadPre",
+	},
 }
