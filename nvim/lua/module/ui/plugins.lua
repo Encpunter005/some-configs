@@ -4,9 +4,9 @@ return {
 
 	--UI
 
-  {
-    "rcarriga/nvim-notify", -- notify
-  },
+	{
+		"rcarriga/nvim-notify", -- notify
+	},
 
 	{
 		"stevearc/dressing.nvim",
@@ -18,10 +18,10 @@ return {
 	-- 	lazy = true,
 	-- },
 
-  {
-    "freddiehaddad/feline.nvim",
-    lazy = true,
-  },
+	{
+		"freddiehaddad/feline.nvim",
+		lazy = true,
+	},
 
 	{
 		"yamatsum/nvim-nonicons",
@@ -194,5 +194,4 @@ return {
 		lazy = true,
 		event = { "BufReadPre" },
 	},
-
 }

@@ -49,6 +49,15 @@ return {
 	-- "hrsh7th/cmp-vsnip", --snippt engine
 	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
 
+
+  -- {
+  --   "codota/tabnine-nvim",
+  --   name = "tabnine",
+  --   build = vim.loop.os_uname().sysname == "Windows_NT" and "pwsh.exe -file .\\dl_binaries.ps1" or "./dl_binaries.sh",
+  --   cmd = { "TabnineStatus", "TabnineDisable", "TabnineEnable", "TabnineToggle" },
+  --   event = "User FileOpened",
+  -- },
+
 	-- Markdown
 	{ -- gernerate contents
 		"mzlogin/vim-markdown-toc",
