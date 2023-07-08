@@ -6,7 +6,7 @@ return {
 
   { --better quickfix window
     "kevinhwang91/nvim-bqf",
-    lazy = true,
+    -- lazy = true,
     ft = 'qf',
   },
 

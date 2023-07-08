@@ -92,4 +92,11 @@ return {
     ft = "markdown",
     event = "BufReadPre",
 	},
+
+
+  {
+    'norcalli/nvim-colorizer.lua',
+    lazy = true,
+    event = "User Fileopened",
+  },
 }

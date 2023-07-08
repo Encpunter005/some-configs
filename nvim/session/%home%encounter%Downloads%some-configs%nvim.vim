@@ -13,9 +13,6 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +8 ~/Downloads/some-configs/nvim/lua/module/editor/cmp/tabnine.lua
-badd +4 ~/Downloads/some-configs/nvim/lua/module/editor/cmp/init.lua
-badd +59 ~/Downloads/some-configs/nvim/lua/module/editor/plugins.lua
 argglobal
 %argdel
 wincmd t

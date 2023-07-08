@@ -189,9 +189,4 @@ return {
 		event = { "BufEnter" },
 	},
 
-	{
-		"norcalli/nvim-colorizer.lua",
-		lazy = true,
-		event = { "BufReadPre" },
-	},
 }
