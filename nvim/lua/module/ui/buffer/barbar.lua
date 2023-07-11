@@ -69,7 +69,7 @@ barbar.setup({
 			-- Requires `nvim-web-devicons` if `true`
 			enabled = true,
 		},
-		separator = { left = "▎", right = "" },
+		separator = { left = "▎", right = "▎" },
 		-- If true, add an additional separator at the end of the buffer list
 		separator_at_end = true,
 

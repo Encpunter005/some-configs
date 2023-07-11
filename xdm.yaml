@@ -1,0 +1,11 @@
+link:
+  ./wlogout/ : ~/.config/wlogout
+  ./swww/ : ~/.config/swww
+  ./ranger/ : ~/.config/ranger
+  ./nvim/ : ~/.config/nvim
+  ./Typora/ : ~/.config/Typora
+  ./zellij/ : ~/.config/zellij
+  ./wlogout/ : ~/.config/wlogout
+  ./wlogout/ : ~/.config/wlogout
+  ./wlogout/ : ~/.config/wlogout
+  ./wlogout/ : ~/.config/wlogout

@@ -55,10 +55,10 @@ tooltip label{
 
 #custom-launch_wofi,
 #custom-lock_screen,
-#custom-clock
 #custom-light_dark,
 #custom-power_btn,
 #custom-power_profile,
+#custom-cava
 #custom-weather,
 #window,
 #cpu,
@@ -81,11 +81,9 @@ tooltip label{
     border: 0px;
 }
 
-#tray, #custom-lock_screen, #temperature, #backlight, #custom-launch_wofi, #cpu  {
+#tray, #custom-lock_screen, #temperature, #backlight, #custom-launch_wofi, #cpu {
     border-radius: 10px 0px 0px 10px;
 }
-
-
 
 #custom-light_dark, #custom-power_btn, #workspaces, #pulseaudio.microphone, #battery, #disk {
     border-radius: 0px 10px 10px 0px;
@@ -113,14 +111,6 @@ tooltip label{
     margin-left: 20px;
     margin-right: 20px;
 }
-#custom-clock {
-    background: #1C1F33;
-    color: #89b4fa;
-    border-style: hidden;
-    border-radius: 10px;
-    margin-top: 5px;
-    
-}
 
 #custom-launch_wofi {
     color: #89b4fa;
@@ -143,4 +133,11 @@ tooltip label{
 #battery {
     color: #a6e3a1;
     border-left: 0px;
+}
+
+#custom-cava {
+  font-family: "Hack Nerd Font";
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-right: 10px;
 }
