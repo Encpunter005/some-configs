@@ -13,10 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +11 ~/Downloads/some-configs/nvim/lua/module/editor/text/color.lua
+badd +92 ~/Downloads/some-configs/nvim/lua/default/keymaps.lua
 argglobal
 %argdel
-edit ~/Downloads/some-configs/nvim/lua/module/editor/text/color.lua
+edit ~/Downloads/some-configs/nvim/lua/default/keymaps.lua
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -25,12 +25,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-let s:l = 11 - ((10 * winheight(0) + 20) / 41)
+let s:l = 92 - ((10 * winheight(0) + 10) / 20)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 11
-normal! 067|
+keepjumps 92
+normal! 08|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -46,7 +46,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

@@ -13,10 +13,21 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +16 ~/code/acm/main.cpp
+badd +13 ~/code/acm/main.cpp
+badd +3 ~/code/acm/data.txt
+badd +34 ~/code/acm/code.cpp
 argglobal
 %argdel
 edit ~/code/acm/main.cpp
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -24,13 +35,30 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+wincmd =
 argglobal
-let s:l = 16 - ((15 * winheight(0) + 20) / 40)
+balt ~/code/acm/code.cpp
+let s:l = 13 - ((12 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 16
+keepjumps 13
+normal! 041|
+wincmd w
+argglobal
+if bufexists(fnamemodify("~/code/acm/code.cpp", ":p")) | buffer ~/code/acm/code.cpp | else | edit ~/code/acm/code.cpp | endif
+if &buftype ==# 'terminal'
+  silent file ~/code/acm/code.cpp
+endif
+balt ~/code/acm/main.cpp
+let s:l = 34 - ((33 * winheight(0) + 22) / 45)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 34
 normal! 0
+wincmd w
+wincmd =
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
