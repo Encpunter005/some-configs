@@ -4,11 +4,11 @@ return {
 		"nathom/filetype.nvim",
 	},
 
-  { --better quickfix window
-    "kevinhwang91/nvim-bqf",
-    -- lazy = true,
-    ft = 'qf',
-  },
+  -- { --better quickfix window
+  --   "kevinhwang91/nvim-bqf",
+  --   -- lazy = true,
+  --   ft = 'qf',
+  -- },
 
   {
     "junegunn/fzf",
@@ -33,25 +33,19 @@ return {
 	},
 
 	-- Compiler
-	{ -- This plugin
-		"Zeioth/compiler.nvim",
-		cmd = { "CompilerOpen", "CompilerToggleResults" },
-		dependencies = { "stevearc/overseer.nvim" },
-    lazy = true,
-	},
+	-- { -- This plugin
+	-- 	"Zeioth/compiler.nvim",
+	-- 	cmd = { "CompilerOpen", "CompilerToggleResults" },
+	-- 	dependencies = { "stevearc/overseer.nvim" },
+ --    lazy = true,
+	-- },
 
-	{ -- The framework we use to run tasks
-		"stevearc/overseer.nvim",
-    lazy = true,
-		commit = "3047ede61cc1308069ad1184c0d447ebee92d749", -- Recommended to to avoid breaking changes
-		cmd = { "CompilerOpen", "CompilerToggleResults" },
-	},
-
-	-- auto-command
-	{
-		"jakelinnzy/autocmd-lua",
-		lazy = true,
-	},
+	-- { -- The framework we use to run tasks
+	-- 	"stevearc/overseer.nvim",
+ --    lazy = true,
+	-- 	commit = "3047ede61cc1308069ad1184c0d447ebee92d749", -- Recommended to to avoid breaking changes
+	-- 	cmd = { "CompilerOpen", "CompilerToggleResults" },
+	-- },
 
 	{
 		"voldikss/vim-translator",
