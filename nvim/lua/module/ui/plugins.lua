@@ -147,6 +147,12 @@ return {
 		event = { "BufEnter" },
 	},
 
+  {
+    "tanvirtin/monokai.nvim",
+    lazy = true,
+    event = { "BufEnter"},
+  },
+
 	{
 		"olimorris/onedarkpro.nvim",
 		lazy = true,

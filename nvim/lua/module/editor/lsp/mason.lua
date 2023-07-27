@@ -2,16 +2,19 @@ local servers = {
   "lua_ls",
   "cssls",
   "html",
-  -- "tsserver",
+  "tsserver",
   "pyright",
   "bashls",
   "jsonls",
   "clangd",
   "cmake",
   "marksman",
-  -- "yamlls",
+  "yamlls",
   "grammarly",
-  "jdtls"
+  "jdtls",
+  "bashls",
+  "vimls",
+  "volar"
 }
 
 local settings = {

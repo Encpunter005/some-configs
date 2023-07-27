@@ -50,13 +50,13 @@ require("clangd_extensions").setup {
                  ["template argument"] = "🆃",
             },
             kind_icons = {
-                Compound = "🄲",
-                Recovery = "🅁",
-                TranslationUnit = "🅄",
-                PackExpansion = "🄿",
-                TemplateTypeParm = "🅃",
-                TemplateTemplateParm = "🅃",
-                TemplateParamObject = "🅃",
+                Compound = "🄲 ",
+                Recovery = "🅁 ",
+                TranslationUnit = "🅄 ",
+                PackExpansion = "🄿 ",
+                TemplateTypeParm = "🅃 ",
+                TemplateTemplateParm = "🅃 ",
+                TemplateParamObject = "🅃 ",
             },
             --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
             role_icons = {

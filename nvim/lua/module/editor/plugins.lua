@@ -4,7 +4,7 @@ return {
 	"williamboman/mason.nvim", -- simple to use language server installer
 	"williamboman/mason-lspconfig.nvim", -- simple to use language server installer
 	"jose-elias-alvarez/null-ls.nvim", -- format
-	"ray-x/lsp_signature.nvim",
+	-- "ray-x/lsp_signature.nvim",
 	{
 		"j-hui/fidget.nvim",
 		branch = "legacy",
@@ -99,4 +99,5 @@ return {
     lazy = true,
     event = "User Fileopened",
   },
+  { "folke/neodev.nvim", opts = {} }
 }
