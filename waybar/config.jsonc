@@ -4,6 +4,7 @@
   "exclusive": "true",
   "fixed-center": "true",
   "gtk-layer-shell": "false",
+  // "output" : "eDP-1",
   "modules-left": [
     "custom/launch_wofi",
     "wlr/workspaces",
@@ -12,6 +13,7 @@
     "memory",
     "disk",
     "battery",
+    "custom/notify",
     "custom/cava"
     // "hyprland/window"
   ],
@@ -29,13 +31,13 @@
     "pulseaudio#microphone",
     "tray"
   ],
-  // "hyprland/window": {
-  //   "interval": 30,
-  //   "format": "{}"
-  // },
+  "hyprland/window": {
+    "interval": 30,
+    "format": "{}"
+  },
   "custom/launch_wofi": {
     "format": "  ",
-    "on-click": "~/.config/rofi/scripts/launcher_t3",
+    "on-click": "bash ~/.config/waybar/scripts/random.sh",
     "tooltip": false
   },
   "custom/lock_screen": {
@@ -109,7 +111,7 @@
   },
   "clock": {
     "interval": 1,
-    "format": "{:󱦺 %I:%M %p  %A %b %d}",
+    "format": "{:󱦺 %I:%M %p  %A %b %d}",
     "tooltip": true,
     /* "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>" */
     "tooltip-format": "上午：睡觉\n下午：写题\n晚上：看课\n<tt>{calendar}</tt>"
@@ -120,7 +122,8 @@
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-scroll-up": "brightnessctl set 1%+",
     "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6
+    "min-length": 6,
+    "tooltip": false
   },
   "battery": {
     "states": {
@@ -194,5 +197,25 @@
   "custom/cava": {
     "tooltip": false,
     "exec": "~/.config/waybar/scripts/Cava.sh"
+  },
+  "custom/notify": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " <span foreground='red'><sup></sup></span>",
+      "none": " ",
+      "dnd-notification": " <span foreground='red'><sup></sup></span>",
+      "dnd-none": " ",
+      "inhibited-notification": " <span foreground='red'><sup></sup></span>",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }
