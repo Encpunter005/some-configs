@@ -3,24 +3,24 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		-- lazy = true,
-		event = { "User Fileopened" },
+		event = { "VeryLazy" },
 	},
 
 	{
 		"mfussenegger/nvim-dap-python",
 		-- lazy = true,
-		event = { "User Fileopened" },
+		event = { "VeryLazy" },
 	},
 
 	{
 		"rcarriga/nvim-dap-ui",
 		-- lazy = true,
-		event = { "User Fileopened" },
+		event = { "VeryLazy" },
 	},
 
 	{
 		"theHamsta/nvim-dap-virtual-text",
 		-- lazy = true,
-		event = { "User Fileopened" },
+		event = { "VeryLazy" },
 	},
 }

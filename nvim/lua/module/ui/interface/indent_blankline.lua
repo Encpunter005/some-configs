@@ -27,7 +27,7 @@ indent_blankline.setup({
   char = "│",
   filetype_exclude = {
     "help",
-    "alpha",
+    "Alpha",
     "dashboard",
     "neo-tree",
     "Trouble",
@@ -35,6 +35,7 @@ indent_blankline.setup({
     "mason",
     "notify",
     "toggleterm",
+    "term",
     "lazyterm",
   },
   show_trailing_blankline_indent = false,

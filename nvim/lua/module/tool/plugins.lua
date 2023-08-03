@@ -70,6 +70,7 @@ return {
 
 	{
 		"phaazon/hop.nvim",
+    event = "BufRead",
 		version = "v2", -- optional but strongly recommended
 		config = function()
 			-- you can configure Hop the way you like here; see :h hop-config
