@@ -13,12 +13,10 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +17 ~/code/acm/main.cpp
-badd +1 ~/code/acm/code.cpp
-badd +4 ~/code/acm/data.txt
+badd +18 ~/code/acm/main.cpp
 argglobal
 %argdel
-edit ~/code/acm/code.cpp
+edit ~/code/acm/main.cpp
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -27,13 +25,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-balt ~/code/acm/data.txt
-let s:l = 1 - ((0 * winheight(0) + 20) / 41)
+let s:l = 18 - ((17 * winheight(0) + 20) / 41)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 18
+normal! 02|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

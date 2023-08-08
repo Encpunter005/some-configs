@@ -1,26 +1,14 @@
-return {	
+return {
   -- DAP
-	{
-		"mfussenegger/nvim-dap",
-		-- lazy = true,
-		event = { "VeryLazy" },
-	},
-
-	{
-		"mfussenegger/nvim-dap-python",
-		-- lazy = true,
-		event = { "VeryLazy" },
-	},
-
-	{
-		"rcarriga/nvim-dap-ui",
-		-- lazy = true,
-		event = { "VeryLazy" },
-	},
-
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		-- lazy = true,
-		event = { "VeryLazy" },
-	},
+  {
+    "mfussenegger/nvim-dap",
+    lazy = true,
+    event = { "VeryLazy" },
+    dependencies = {
+      "mfussenegger/nvim-dap-python",
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
+      "ravenxrz/DAPInstall.nvim",
+    },
+  },
 }

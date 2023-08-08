@@ -9,6 +9,12 @@ return {
   --   -- lazy = true,
   --   ft = 'qf',
   -- },
+  {
+    "akinsho/toggleterm.nvim",
+    lazy = true,
+    event = {"VeryLazy"},
+    opts = {},
+  },
 
   {
     "junegunn/fzf",

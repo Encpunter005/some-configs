@@ -190,9 +190,9 @@ local mappings = {
   },
   C = {
     name = "CompetiTest",
-    a = {"<cmd>CompetiTestReceive testcases<CR>" , "Receive Test cases"},
-    d = {"<cmd>CompetiTestDelete<CR>" , "Delete Test cases"},
-    r = {"<cmd>CompetiTestRun<CR>" , "Run Test cases"},
+    a = {"<cmd>CompetiTest receive testcases<CR>" , "Receive Test cases"},
+    d = {"<cmd>CompetiTest delete<CR>" , "Delete Test cases"},
+    r = {"<cmd>CompetiTest run<CR>" , "Run Test cases"},
   },
 
 	d = {

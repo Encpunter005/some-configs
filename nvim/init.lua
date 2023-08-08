@@ -1,2 +1,2 @@
-require "default"
-require "module.load"
+require("default")
+require("module.load")
