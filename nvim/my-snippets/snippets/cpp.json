@@ -15,7 +15,7 @@
   "ac": {
     "prefix": "ac",
     "body": [
-      "#pragma GCC optimize(2)",
+      "//#pragma GCC optimize(2)",
       "#include <bits/stdc++.h>",
       "using namespace std;",
       "using ll = long long;",

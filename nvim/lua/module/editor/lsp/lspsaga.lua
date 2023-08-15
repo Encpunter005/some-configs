@@ -46,6 +46,7 @@ lspsaga.setup({
         auto_preview = true,
         auto_refresh = true,
         auto_close = true,
+        detail = true,
         custom_sort = nil,
         keys = {
           jump = "o",

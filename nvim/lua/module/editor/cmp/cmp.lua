@@ -158,8 +158,8 @@ cmp_config = {
 		},
 	},
 	experimental = {
-		ghost_text = false,
-		native_menu = false,
+		ghost_text = true,
+		-- native_menu = true,
 	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },

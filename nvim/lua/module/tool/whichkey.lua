@@ -333,6 +333,8 @@ local mappings = {
     v = { "<cmd>WindowsMaximizeVertically<CR>" , "Window Vertically Maximize"},
     h = { "<cmd>WindowsMaximizeHorizontally<CR>" , "Window Horizontally Maximize"},
     e = { "<cmd>WindowsEqualize<CR>" , "Window Equalize"},
+    s = { "<cmd>vsplit<CR>", "Window Vertical Split" },
+    V = { "<cmd>split<CR>", "Window Split" },
   },
 	-- h = {
 	--   a = { "<cmd>HSHighlight 1<cr>", "Hightlight 1" },

@@ -23,8 +23,8 @@ neo.setup({
 				},
 			},
 			["<bs>"] = "navigate_up",
-			["/"] = "fuzzy_finder",
-			["D"] = "fuzzy_finder_directory",
+			-- ["/"] = "fuzzy_finder",
+			-- ["D"] = "fuzzy_finder_directory",
 		},
 	},
 	default_component_configs = {
