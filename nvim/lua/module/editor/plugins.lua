@@ -12,51 +12,70 @@ return {
     {
         "weilbith/nvim-code-action-menu",
         cmd = "CodeActionMenu",
+        lazy = true,
     },
     {
         "j-hui/fidget.nvim",
         branch = "legacy",
+        lazy = true,
+        event = "User Fileopened",
     }, -- show the real status of lsp
 
     {
         "glepnir/lspsaga.nvim",
         branch = "main",
         dependencies = { { "nvim-tree/nvim-web-devicons" } },
+        lazy = true,
+        event = "User Fileopened",
     },
     -- lspkind
-    "onsails/lspkind-nvim",
+    {
+        "onsails/lspkind-nvim",
+        lazy = true,
+        event = "User Fileopened",
+    },
 
     -- --Clangd
     -- "p00f/clangd_extensions.nvim",
 
     -- vim-illuminate
-    "RRethy/vim-illuminate",
+    {
+        "RRethy/vim-illuminate",
+        lazy = true,
+        event = "User Fileopened",
+    },
 
     --CMP
-    "hrsh7th/nvim-cmp",      -- The completion plugin
-    "hrsh7th/cmp-buffer",    -- buffer completions
-    "hrsh7th/cmp-path",      -- path completions
-    "hrsh7th/cmp-cmdline",   -- cmdline completions
-    "saadparwaiz1/cmp_luasnip", -- snippet completions
     {
-        "tzachar/cmp-tabnine",
-        build = "./install.sh",
-        dependencies = "hrsh7th/nvim-cmp",
+        "hrsh7th/nvim-cmp",    -- The completion plugin
+        lazy = true,
+        event = {"User FileOpened"},
+        dependencies = {
+            "hrsh7th/cmp-buffer", -- buffer completions
+            "hrsh7th/cmp-path", -- path completions
+            "hrsh7th/cmp-cmdline", -- cmdline completions
+            "saadparwaiz1/cmp_luasnip", -- snippet completions
+            {
+                "tzachar/cmp-tabnine",
+                build = "./install.sh",
+            },
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-nvim-lua",
+            "f3fora/cmp-spell",
+            "jc-doyle/cmp-pandoc-references",
+            "hrsh7th/cmp-nvim-lsp-signature-help",
+            -- snippets
+            {
+                "L3MON4D3/LuaSnip",
+                -- follow latest release.
+                version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+                -- install jsregexp (optional!).
+                build = "make install_jsregexp",
+            },                     --snippet engine
+            "hrsh7th/cmp-vsnip", --snippt engine
+            "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+        },
     },
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-nvim-lua",
-    "f3fora/cmp-spell",
-    "jc-doyle/cmp-pandoc-references",
-    "hrsh7th/cmp-nvim-lsp-signature-help",
-    -- snippets
-    {
-        "L3MON4D3/LuaSnip",
-        version = "v<CurrentMajor>.*",
-        build = "make install_jsregexp",
-    },                           --snippet engine
-    -- "hrsh7th/cmp-vsnip", --snippt engine
-    "rafamadriz/friendly-snippets", -- a bunch of snippets to use
-
     -- {
     --   "codota/tabnine-nvim",
     --   name = "tabnine",
@@ -107,12 +126,17 @@ return {
     },
     { "folke/neodev.nvim", opts = {} },
 
-    -- {
-    --     "kevinhwang91/nvim-ufo",
-    --     lazy = true,
-    --     event = { "BufEnter" },
-    --     dependencies = {
-    --         "kevinhwang91/promise-async",
-    --     },
-    -- },
+    --Rust
+    {
+        "rust-lang/rust.vim",
+        lazy = true,
+        ft = "rust",
+    },
+
+    {
+        "simrat39/rust-tools.nvim",
+        ft = "rust",
+        lazy = true,
+        dependencies = "neovim/nvim-lspconfig",
+    },
 }

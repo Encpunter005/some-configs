@@ -1,9 +1,7 @@
 return {
     "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
-
     --UI
-
     {
         "rcarriga/nvim-notify", -- notify
     },
@@ -21,6 +19,7 @@ return {
     {
         "freddiehaddad/feline.nvim",
         lazy = true,
+        event = { "User Fileopened" },
     },
 
     {
@@ -48,13 +47,13 @@ return {
     {
         "gen740/SmoothCursor.nvim",
         lazy = true,
-        event = { "BufEnter" },
+        event = { "User Fileopened" },
     },
 
     {
         "xiyaowong/nvim-cursorword",
         lazy = true,
-        event = { "BufEnter" },
+        event = { "User Fileopened" },
     },
 
     -- Buffer
@@ -75,6 +74,7 @@ return {
             -- …etc.
         },
         version = "^1.0.0", -- optional: only update when a new 1.x version is released
+        lazy = true,
     },
 
     "ojroques/nvim-bufdel", -- close buffer

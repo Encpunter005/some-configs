@@ -70,10 +70,8 @@ local function config_debuggers()
   -- require("user.dap.dap-cpp")
   -- require("user.dap.di-go")
 
-  require("user.dap.dap-cpp")
-  require("user.dap.dap-python")
-  -- require("user.dap.dap-java")
-  -- require("config.dap.python").setup()
+  require("module.dap.dap-cpp")
+  require("module.dap.dap-python")
   -- require("config.dap.rust").setup()
   -- require("config.dap.go").setup()
 end
