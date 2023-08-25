@@ -38,6 +38,4 @@ indent_blankline.setup({
     "term",
     "lazyterm",
   },
-  show_trailing_blankline_indent = false,
-  show_current_context = false,
 })

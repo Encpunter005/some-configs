@@ -32,17 +32,21 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim", -- beautify indent
         lazy = true,
-        event = { "User Fileopened" },
+        event = { "UIEnter" },
     },
-
-    "goolord/alpha-nvim",
 
     {
-        "echasnovski/mini.indentscope",
-        lazy = true,
-        version = false,
-        event = { "BufEnter" },
+        "shellRaining/hlchunk.nvim",
+        event = { "UIEnter" },
     },
+    "goolord/alpha-nvim",
+
+    -- {
+    --     "echasnovski/mini.indentscope",
+    --     lazy = true,
+    --     version = false,
+    --     event = { "BufEnter" },
+    -- },
 
     {
         "gen740/SmoothCursor.nvim",
@@ -88,18 +92,6 @@ return {
     --Colorscheme
 
     {
-        "voidekh/kyotonight.vim",
-        lazy = true,
-        event = { "BufEnter" },
-    },
-
-    {
-        "ray-x/aurora",
-        lazy = true,
-        event = { "BufEnter" },
-    },
-
-    {
         "kvrohit/substrata.nvim",
         lazy = true,
         event = { "BufEnter" },
@@ -125,12 +117,6 @@ return {
 
     {
         "rockerBOO/boo-colorscheme-nvim",
-        lazy = true,
-        event = { "BufEnter" },
-    },
-
-    {
-        "pineapplegiant/spaceduck",
         lazy = true,
         event = { "BufEnter" },
     },
@@ -172,12 +158,6 @@ return {
     },
 
     {
-        "projekt0n/github-nvim-theme",
-        lazy = true,
-        event = { "BufEnter" },
-    },
-
-    {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
@@ -185,18 +165,6 @@ return {
 
     {
         "cocopon/iceberg.vim",
-        lazy = true,
-        event = { "BufEnter" },
-    },
-
-    {
-        "Tsuzat/NeoSolarized.nvim",
-        lazy = true,
-        event = { "BufEnter" },
-    },
-
-    {
-        "lunarvim/lunar.nvim",
         lazy = true,
         event = { "BufEnter" },
     },

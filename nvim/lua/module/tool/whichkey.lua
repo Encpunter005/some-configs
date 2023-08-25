@@ -364,8 +364,8 @@ local mappings = {
     -- },
     u = {
         name = "UFO",
-        u = {"<cmd>UfoEnableFold<CR>" , "Open Fold"},
-        f = {"<cmd>UfoDisableFold<CR>" , "Close Fold"},
+        u = { "<cmd>UfoEnableFold<CR>", "Open Fold" },
+        f = { "<cmd>UfoDisableFold<CR>", "Close Fold" },
     },
 }
 

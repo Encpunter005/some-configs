@@ -25,8 +25,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Window split
-keymap("n" , "sv" , ":vsplit<CR>", opts)
-keymap("n" , "sh" , ":split<CR>", opts)
+keymap("n", "sv", ":vsplit<CR>", opts)
+keymap("n", "sh", ":split<CR>", opts)
 
 -- Save files
 keymap("n", "<C-s>", ":w<CR>", opts)
@@ -37,7 +37,7 @@ vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", {})
 
 -- float terminal
 local path = vim.api.nvim_buf_get_name(0)
-keymap("n" , "<C-\\>" , ":ToggleTerm size=60 dir=path  direction=vertical<CR>" , opts)
+keymap("n", "<C-\\>", ":ToggleTerm size=60 dir=path  direction=vertical<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -47,23 +47,23 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 -- Goto buffer in position...
-keymap('n', '<C-1>', '<Cmd>BufferGoto 1<CR>', opts)
-keymap('n', '<C-2>', '<Cmd>BufferGoto 2<CR>', opts)
-keymap('n', '<C-3>', '<Cmd>BufferGoto 3<CR>', opts)
-keymap('n', '<C-4>', '<Cmd>BufferGoto 4<CR>', opts)
-keymap('n', '<C-5>', '<Cmd>BufferGoto 5<CR>', opts)
-keymap('n', '<C-6>', '<Cmd>BufferGoto 6<CR>', opts)
-keymap('n', '<C-7>', '<Cmd>BufferGoto 7<CR>', opts)
-keymap('n', '<C-8>', '<Cmd>BufferGoto 8<CR>', opts)
-keymap('n', '<C-9>', '<Cmd>BufferGoto 9<CR>', opts)
-keymap('n', '<C-0>', '<Cmd>BufferLast<CR>', opts)
-keymap('n', '<C-w>', '<Cmd>BufferClose<CR>', opts)
+keymap("n", "<C-1>", "<Cmd>BufferGoto 1<CR>", opts)
+keymap("n", "<C-2>", "<Cmd>BufferGoto 2<CR>", opts)
+keymap("n", "<C-3>", "<Cmd>BufferGoto 3<CR>", opts)
+keymap("n", "<C-4>", "<Cmd>BufferGoto 4<CR>", opts)
+keymap("n", "<C-5>", "<Cmd>BufferGoto 5<CR>", opts)
+keymap("n", "<C-6>", "<Cmd>BufferGoto 6<CR>", opts)
+keymap("n", "<C-7>", "<Cmd>BufferGoto 7<CR>", opts)
+keymap("n", "<C-8>", "<Cmd>BufferGoto 8<CR>", opts)
+keymap("n", "<C-9>", "<Cmd>BufferGoto 9<CR>", opts)
+keymap("n", "<C-0>", "<Cmd>BufferLast<CR>", opts)
+keymap("n", "<C-w>", "<Cmd>BufferClose<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
 -- keymap("i", "<esc>", "<nop>", opts) -- NOTE: Just get used to use "jk" or "<C-c>" to escape
 keymap("i", "jk", "<ESC>", opts)
-keymap("i", "<C-c>", "<ESC>" , opts)
+keymap("i", "<C-c>", "<ESC>", opts)
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<A-l>", "<gv", opts)
@@ -87,15 +87,12 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-
-
 -- Set wrap
-keymap("n" , '<A-w>' , "&wrap == 1 ? ':set nowrap<CR>' : ':set wrap<CR>'" , {noremap = true , expr = true})
+keymap("n", "<A-w>", "&wrap == 1 ? ':set nowrap<CR>' : ':set wrap<CR>'", { noremap = true, expr = true })
 
--- Compiler
+-- Operations of Debugging
 
--- Open compiler
-keymap("n" , "<F5>" , ":CompilerOpen<CR>" , opts)
--- Toggle output resume
-keymap("n" , "<F6>" , ":CompilerToggleResults<CR>" , opts)
-
+keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
+keymap("n", "<F6>", "<cmd>lua require'dap'.step_into()<CR>", opts)
+keymap("n", "<F7>", "<cmd>lua require'dap'.step_over()<CR>", opts)
+keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<CR>", opts)

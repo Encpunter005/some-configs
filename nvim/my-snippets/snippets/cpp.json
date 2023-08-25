@@ -42,8 +42,9 @@
       "",
       "\tint T = 1;",
       "\t//cin >> T;",
-      "\twhile(T--)",
+      "\twhile(T--){",
       "\t\tsolve();",
+      "\t}",
       "",
       "\treturn 0;",
       "}"
