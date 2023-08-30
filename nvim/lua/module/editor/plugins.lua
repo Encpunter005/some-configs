@@ -3,7 +3,7 @@ return {
     "neovim/nvim-lspconfig",          -- enable LSP
     "williamboman/mason.nvim",        -- simple to use language server installer
     "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
-    "jose-elias-alvarez/null-ls.nvim", -- format
+    -- "jose-elias-alvarez/null-ls.nvim", -- format
     "ray-x/lsp_signature.nvim",
     {                                 -- inlay_hint
         "lvimuser/lsp-inlayhints.nvim",
@@ -24,7 +24,7 @@ return {
     {
         "glepnir/lspsaga.nvim",
         branch = "main",
-        dependencies = { { "nvim-tree/nvim-web-devicons" } },
+        dependencies = { { "nvim-tree/nvim-web-devicons" }, "nvimdev/guard.nvim" },
         lazy = true,
         event = "User Fileopened",
     },

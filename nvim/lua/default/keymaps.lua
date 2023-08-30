@@ -47,16 +47,16 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 -- Goto buffer in position...
-keymap("n", "<C-1>", "<Cmd>BufferGoto 1<CR>", opts)
-keymap("n", "<C-2>", "<Cmd>BufferGoto 2<CR>", opts)
-keymap("n", "<C-3>", "<Cmd>BufferGoto 3<CR>", opts)
-keymap("n", "<C-4>", "<Cmd>BufferGoto 4<CR>", opts)
-keymap("n", "<C-5>", "<Cmd>BufferGoto 5<CR>", opts)
-keymap("n", "<C-6>", "<Cmd>BufferGoto 6<CR>", opts)
-keymap("n", "<C-7>", "<Cmd>BufferGoto 7<CR>", opts)
-keymap("n", "<C-8>", "<Cmd>BufferGoto 8<CR>", opts)
-keymap("n", "<C-9>", "<Cmd>BufferGoto 9<CR>", opts)
-keymap("n", "<C-0>", "<Cmd>BufferLast<CR>", opts)
+keymap("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
+keymap("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
+keymap("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
+keymap("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
+keymap("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
+keymap("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
+keymap("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
+keymap("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
+keymap("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
+keymap("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
 keymap("n", "<C-w>", "<Cmd>BufferClose<CR>", opts)
 
 -- Insert --
@@ -96,3 +96,4 @@ keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F6>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F7>", "<cmd>lua require'dap'.step_over()<CR>", opts)
 keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<CR>", opts)
+

@@ -15,6 +15,13 @@ return {
         event = { "VeryLazy" },
         opts = {},
     },
+    {
+        "kevinhwang91/nvim-ufo",
+        event = {"User FileOpened"},
+        dependencies = {
+            "kevinhwang91/promise-async"
+        },
+    },
 
     {
         "junegunn/fzf",

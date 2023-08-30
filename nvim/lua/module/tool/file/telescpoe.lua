@@ -222,3 +222,12 @@ telescope.load_extension("project")
 telescope.load_extension("media_files")
 -- telescope.load_extension("file_browser")
 -- load project extension. see project.lua file
+
+vim.cmd[[
+    
+augroup _fold_bug_solution
+    autocmd!
+    autocmd Bufread * autocmd BufWinEnter * ++once normal! zx
+augroup end
+
+]]
