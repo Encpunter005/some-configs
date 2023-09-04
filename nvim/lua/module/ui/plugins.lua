@@ -1,5 +1,5 @@
 return {
-    "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+    "nvim-lua/popup.nvim",   -- An implementation of the Popup API from vim in Neovim
     "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
     --UI
     {
@@ -64,7 +64,7 @@ return {
     {
         "romgrk/barbar.nvim",
         dependencies = {
-            "lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+            "lewis6991/gitsigns.nvim",     -- OPTIONAL: for git status
             "nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
         },
 
@@ -165,12 +165,6 @@ return {
 
     {
         "cocopon/iceberg.vim",
-        lazy = true,
-        event = { "BufEnter" },
-    },
-
-    {
-        "xiyaowong/transparent.nvim",
         lazy = true,
         event = { "BufEnter" },
     },

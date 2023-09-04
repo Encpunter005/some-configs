@@ -13,6 +13,7 @@ ft("lua"):fmt('lsp')
 ft("python"):fmt("lsp")
     :lint("pylint")
 ft("markdown"):fmt("prettier")
+ft("jsonc"):fmt("prettier")
 
 guard.setup({
     fmt_on_save = false,

@@ -9,6 +9,7 @@ end
 local function jumpable(dir)
     local luasnip_ok, luasnip = pcall(require, "luasnip")
     if not luasnip_ok then
+        vim.notify("luasnip not found")
         return
     end
 

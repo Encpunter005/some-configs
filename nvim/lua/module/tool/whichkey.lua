@@ -160,10 +160,6 @@ local mappings = {
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         l = { "<cmd>Legendars<cr>", "Details of commends" },
         s = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
-        o = {
-            "<cmd>lua require('telescope').extensions.neoclip.default(require('telescope.themes').get_ivy())<cr>",
-            "Outline tags",
-        },
     },
     j = {
         name = "Hop",
@@ -304,7 +300,7 @@ local mappings = {
 
     l = {
         name = "LSP",
-        a = { "<cmd>Lspsaga code_action<CR>", "Code Action" },
+        a = { "<cmd>CodeActionMenu<CR>", "Code Action" },
         d = {
             "<cmd>Telescope diagnostics<cr>",
             "Diagnostics",

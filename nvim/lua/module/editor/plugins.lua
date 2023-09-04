@@ -1,18 +1,19 @@
 return {
     -- LSP
-    "neovim/nvim-lspconfig",          -- enable LSP
-    "williamboman/mason.nvim",        -- simple to use language server installer
+    "neovim/nvim-lspconfig",             -- enable LSP
+    "williamboman/mason.nvim",           -- simple to use language server installer
     "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
     -- "jose-elias-alvarez/null-ls.nvim", -- format
     "ray-x/lsp_signature.nvim",
-    {                                 -- inlay_hint
+    { -- inlay_hint
         "lvimuser/lsp-inlayhints.nvim",
         lazy = true,
     },
     {
         "weilbith/nvim-code-action-menu",
-        cmd = "CodeActionMenu",
         lazy = true,
+        -- event = { "User FileOpened" },
+        cmd = "CodeActionMenu",
     },
     {
         "j-hui/fidget.nvim",
@@ -47,13 +48,13 @@ return {
 
     --CMP
     {
-        "hrsh7th/nvim-cmp",    -- The completion plugin
+        "hrsh7th/nvim-cmp", -- The completion plugin
         lazy = true,
-        event = {"User FileOpened"},
+        event = { "User FileOpened" },
         dependencies = {
-            "hrsh7th/cmp-buffer", -- buffer completions
-            "hrsh7th/cmp-path", -- path completions
-            "hrsh7th/cmp-cmdline", -- cmdline completions
+            "hrsh7th/cmp-buffer",       -- buffer completions
+            "hrsh7th/cmp-path",         -- path completions
+            "hrsh7th/cmp-cmdline",      -- cmdline completions
             "saadparwaiz1/cmp_luasnip", -- snippet completions
             {
                 "tzachar/cmp-tabnine",
@@ -71,8 +72,8 @@ return {
                 version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
                 -- install jsregexp (optional!).
                 build = "make install_jsregexp",
-            },                     --snippet engine
-            "hrsh7th/cmp-vsnip", --snippt engine
+            },                              --snippet engine
+            "hrsh7th/cmp-vsnip",            --snippt engine
             "rafamadriz/friendly-snippets", -- a bunch of snippets to use
         },
     },
@@ -138,5 +139,18 @@ return {
         ft = "rust",
         lazy = true,
         dependencies = "neovim/nvim-lspconfig",
+    },
+
+    {
+        "roobert/action-hints.nvim",
+        config = function()
+            require("action-hints").setup({
+                template = {
+                    definition = { text = " ⊛", color = "#add8e6" },
+                    references = { text = " ↱%s", color = "#ff6666" },
+                },
+                use_virtual_text = true,
+            })
+        end,
     },
 }

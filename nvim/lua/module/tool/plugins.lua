@@ -4,11 +4,11 @@ return {
         "nathom/filetype.nvim",
     },
 
-    -- { --better quickfix window
-    --   "kevinhwang91/nvim-bqf",
-    --   -- lazy = true,
-    --   ft = 'qf',
-    -- },
+    { --better quickfix window
+        "kevinhwang91/nvim-bqf",
+        lazy = true,
+        ft = 'qf',
+    },
     {
         "akinsho/toggleterm.nvim",
         lazy = true,
@@ -17,7 +17,7 @@ return {
     },
     {
         "kevinhwang91/nvim-ufo",
-        event = {"User FileOpened"},
+        event = { "User FileOpened" },
         dependencies = {
             "kevinhwang91/promise-async"
         },
@@ -78,7 +78,7 @@ return {
     -- jump
     {
         "nacro90/numb.nvim",
-        lazy = true,
+        event = { "BufEnter" }
     },
 
     {
