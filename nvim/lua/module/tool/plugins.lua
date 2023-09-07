@@ -158,11 +158,21 @@ return {
     },
 
     -- Outline
-    "stevearc/aerial.nvim",
-    "rinx/nvim-minimap",
+    {
+        "stevearc/aerial.nvim",
+        lazy = true,
+        event = {"BufEnter"},
+    },
+    {
+        "rinx/nvim-minimap",
+        lazy = true,
+        event = {"BufEnter"},
+    },
 
     {
         "numToStr/Comment.nvim",
+        lazy = true,
+        event = "BufEnter",
         config = function()
             require("Comment").setup()
         end,
@@ -182,16 +192,18 @@ return {
 
     {
         "windwp/nvim-autopairs",
+        lazy = true,
+        event = "BufEnter",
         config = function()
             require("nvim-autopairs").setup({})
         end,
     },
-    {
-        -- 将没有使用的变量进行暗淡处理
-        "zbirenbaum/neodim",
-        lazy = true,
-        event = "LspAttach",
-    },
+    -- {
+    --     -- 将没有使用的变量进行暗淡处理
+    --     "zbirenbaum/neodim",
+    --     lazy = true,
+    --     event = "LspAttach",
+    -- },
 
     {
         "roobert/search-replace.nvim",
@@ -277,8 +289,15 @@ return {
         "nvim-telescope/telescope-fzf-native.nvim",
         build =
         "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        event = { "BufRead" },
     },
-    "nvim-telescope/telescope-project.nvim",
+    {
+        "nvim-telescope/telescope-project.nvim",
+        event = "BufWinEnter",
+        setup = function()
+            vim.cmd [[packadd telescope.nvim]]
+        end,
+    },
     {
         "nvim-telescope/telescope-live-grep-args.nvim",
     },

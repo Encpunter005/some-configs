@@ -12,8 +12,10 @@ return {
     },
 
     -- {
-    -- 	"glepnir/galaxyline.nvim", -- statusline
-    -- 	lazy = true,
+    --     "glepnir/galaxyline.nvim", -- statusline
+    --     lazy = true,
+    --     version = 'main',
+    --     event = {"User Fileopened"}
     -- },
 
     {
@@ -39,7 +41,22 @@ return {
         "shellRaining/hlchunk.nvim",
         event = { "UIEnter" },
     },
-    "goolord/alpha-nvim",
+
+    {
+        "goolord/alpha-nvim",
+        event = { "VimEnter" },
+    },
+    -- {
+    --     'glepnir/dashboard-nvim',
+    --     event = 'VimEnter',
+    --     config = function()
+    --         require('dashboard').setup {
+    --             -- config
+    --             theme = 'hyper'
+    --         }
+    --     end,
+    --     dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    -- },
 
     -- {
     --     "echasnovski/mini.indentscope",

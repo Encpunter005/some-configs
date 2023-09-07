@@ -6,16 +6,15 @@ end
 
 
 local ft = require("guard.filetype")
-ft('c'):fmt('clang-format')
+ft("c" , "cpp"):fmt('clang-format')
     :lint("clang-tidy")
-ft("cpp"):fmt('clang-format')
-ft("lua"):fmt('lsp')
+ft("lua"):fmt('stylua')
+    :lint("luacheck")
 ft("python"):fmt("lsp")
     :lint("pylint")
-ft("markdown"):fmt("prettier")
-ft("jsonc"):fmt("prettier")
+ft("markdown" , "css" , "jsonc"):fmt("prettier")
 
 guard.setup({
     fmt_on_save = false,
-    lsp_as_default_formatter = false,
+    lsp_as_default_formatter = true,
 })

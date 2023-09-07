@@ -158,6 +158,7 @@ local mappings = {
         C = { "<cmd>Telescope commands<cr>", "Commands" },
         h = { "<cmd>Telescope highlights<cr>", "Find hightlight groups" },
         R = { "<cmd>Telescope registers<cr>", "Registers" },
+        p = { "<cmd>Telescope project<cr>", "Projects" },
         l = { "<cmd>Legendars<cr>", "Details of commends" },
         s = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
     },

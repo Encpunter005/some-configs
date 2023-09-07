@@ -9,6 +9,13 @@ return {
         "lvimuser/lsp-inlayhints.nvim",
         lazy = true,
     },
+    -- {
+    --     "ahmedkhalf/lsp-rooter.nvim",
+    --     event = "BufRead",
+    --     config = function()
+    --         require("lsp-rooter").setup()
+    --     end,
+    -- },
     {
         "weilbith/nvim-code-action-menu",
         lazy = true,
