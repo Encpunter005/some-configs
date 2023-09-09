@@ -5,6 +5,8 @@ if not status_cmp_ok then
     return
 end
 
+local lsp = require("lspconfig")
+
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = cmp_nvim_lsp.default_capabilities(M.capabilities)
@@ -102,7 +104,5 @@ M.on_attach = function(client, bufnr)
     end
     illuminate.on_attach(client)
 end
-
--- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]
 
 return M

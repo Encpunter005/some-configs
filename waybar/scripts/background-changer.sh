@@ -40,3 +40,4 @@ case "$1" in
 		change_current
 		;;
 esac
+

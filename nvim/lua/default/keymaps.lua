@@ -37,7 +37,7 @@ vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", {})
 
 -- float terminal
 local path = vim.api.nvim_buf_get_name(0)
-keymap("n", "<C-\\>", ":ToggleTerm size=60 dir=path  direction=vertical<CR>", opts)
+keymap("n", "<C-\\>", ":ToggleTerm size=95 direction=vertical<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)

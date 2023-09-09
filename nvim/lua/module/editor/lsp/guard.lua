@@ -8,7 +8,7 @@ end
 local ft = require("guard.filetype")
 ft("c" , "cpp"):fmt('clang-format')
     :lint("clang-tidy")
-ft("lua"):fmt('stylua')
+ft("lua"):fmt('lsp')
     :lint("luacheck")
 ft("python"):fmt("lsp")
     :lint("pylint")

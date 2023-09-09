@@ -1,221 +1,190 @@
 {
-  "layer": "top",
-  "position": "top",
-  "exclusive": "true",
-  "fixed-center": "true",
-  "gtk-layer-shell": "false",
-  // "output" : "eDP-1",
-  "modules-left": [
-    "custom/launch_wofi",
-    "wlr/workspaces",
-    "idle_inhibitor",
-    "cpu",
-    "memory",
-    "disk",
-    "battery",
-    "custom/notify",
-    "custom/cava"
-    // "hyprland/window"
-  ],
-  "modules-center": [
-    "custom/lock_screen",
-    "clock",
-    "custom/weather",
-    "custom/power_btn"
-  ],
-  "modules-right": [
-    "temperature",
-    "network",
-    "backlight",
-    "pulseaudio",
-    "pulseaudio#microphone",
-    "tray"
-  ],
-  "hyprland/window": {
-    "interval": 30,
-    "format": "{}"
-  },
-  "custom/launch_wofi": {
-    "format": "  ",
-    "on-click": "bash ~/.config/waybar/scripts/random.sh",
-    "tooltip": false
-  },
-  "custom/lock_screen": {
-    "format": "  ",
-    "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
-    "tooltip": false
-  },
-  "custom/power_btn": {
-    "format": "  ",
-    "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
-    "tooltip": false
-  },
-  "cpu": {
-    "interval": 10,
-    "format": "  {usage}%",
-    "max-length": 10,
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-  },
-  "disk": {
-    "interval": 30,
-    "format": " 󰋊 {percentage_used}% ",
-    "path": "/",
-    "tooltip": true,
-    "tooltip-format": "HDD - {used} used out of {total} on {path} ({percentage_used}%)",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-  },
-  "memory": {
-    "interval": 30,
-    "format": " {}%",
-    "max-length": 10,
-    "tooltip": true,
-    "tooltip-format": "Memory - {used:0.1f}GB used",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-  },
-  "wlr/workspaces": {
-    "disable-scroll": true,
-    "all-outputs": true,
-    "on-click": "activate",
-    "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": [],
-      "10": []
+    "layer": "top",
+    "position": "top",
+    "exclusive": "true",
+    "mod": "dock",
+    "gtk-layer-shell": true,
+    "passthrough": false,
+    "spacing": 5,
+    "fixed-center": "true",
+    "modules-left": [
+        "custom/launcher",
+        "cpu",
+        "memory",
+        "custom/notify",
+        "network",
+        "tray"
+        // "custom/cava"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "wlr/taskbar"
+    ],
+    "modules-right": [
+        "custom/updates",
+        "custom/wallpaper",
+        "backlight",
+        "pulseaudio",
+        "clock",
+        "battery",
+        "custom/power"
+    ],
+    "custom/cava": {
+        "tooltip": false,
+        "exec": "~/.config/waybar/scripts/cava.sh"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "on-click": "pamixer -t",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        }
+    },
+    "hyprland/window": {
+        "format": "👉 {}"
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "icon-theme": "Tela-circle-nord-dark",
+        "spacing": 0,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        }
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "on-click": "activate",
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    "network": {
+        "tooltip": false,
+        "format-wifi": "  {essid}",
+        "format-ethernet": " {ifname} ({ipaddr})",
+        "format-linked": "  {essid} (No IP)",
+        "format-disconnected": "  Disconnected"
+    },
+    "backlight": {
+        "tooltip": false,
+        "format": " {}%",
+        "interval": 1,
+        "format-icons": [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "min-length": 6
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{: %I:%M %p   %d/%m/%Y}",
+        "tooltip": true,
+        /* "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>" */
+        "tooltip-format": "上午：睡觉\n下午：写题\n晚上：看课\n <tt>\n{calendar}\n</tt>"
+    },
+    "cpu": {
+        "interval": 15,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {}%",
+        "max-length": 10
+    },
+    "custom/notify": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": " <span foreground='red'><sup></sup></span>",
+            "none": " ",
+            "dnd-notification": " <span foreground='red'><sup></sup></span>",
+            "dnd-none": " ",
+            "inhibited-notification": " <span foreground='red'><sup></sup></span>",
+            "inhibited-none": " ",
+            "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": " "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "bash ~/.config/rofi/scripts/launcher_t3"
+    },
+    "custom/power": {
+        "format": " ",
+        "on-click": "wlogout --protocol layer-shell"
+    },
+    "custom/updates": {
+        "format": "{} Update(s)",
+        "exec": "checkupdates | wc -l",
+        "exec-if": "[[ $(checkupdates | wc -l) != 0 ]]",
+        "interval": 15,
+        "on-click": "kitty -e yay -Syu && notify-send 'The system has been updated' "
+    },
+    "custom/wallpaper": {
+        "format": " ",
+        "on-click": "bash ~/.config/waybar/scripts/background-changer.sh"
     }
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    },
-    "tooltip": false
-  },
-  "custom/weather": {
-    //shows the current weather and forecast
-    "tooltip": true,
-    "format": "{}",
-    "interval": 30,
-    "exec": "~/.config/waybar/scripts/waybar-wttr.py",
-    "return-type": "json"
-  },
-  "tray": {
-    "icon-size": 18,
-    "spacing": 10
-  },
-  "clock": {
-    "interval": 1,
-    "format": "{:󱦺 %I:%M %p  %A %b %d}",
-    "tooltip": true,
-    /* "tooltip-format": "{:%A, %d %B %Y}\n<tt>{calendar}</tt>" */
-    "tooltip-format": "上午：睡觉\n下午：写题\n晚上：看课\n<tt>{calendar}</tt>"
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon} {percent}%",
-    "format-icons": ["󰃞", "󰃟", "󰃠"],
-    "on-scroll-up": "brightnessctl set 1%+",
-    "on-scroll-down": "brightnessctl set 1%-",
-    "min-length": 6,
-    "tooltip": false
-  },
-  "battery": {
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{time} {icon}",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "",
-    "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol",
-    "on-scroll-up": "pamixer -i 5",
-    "on-scroll-down": "pamixer -d 5",
-    "scroll-step": 5,
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
-    }
-  },
-  "pulseaudio#microphone": {
-    "format": "{format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": "",
-    "on-click": "pamixer --default-source -t",
-    "on-click-right": "pavucontrol",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5
-  },
-  "temperature": {
-    "thermal-zone": 1,
-    "format": " {temperatureC}°C",
-    "critical-threshold": 70,
-    "format-critical": " {temperatureC}°C",
-    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-  },
-  "network": {
-    "interval": 1,
-    "format-wifi": "說 {essid}",
-    "format-ethernet": "  {ifname} ({ipaddr})",
-    "format-linked": "說 {essid} (No IP)",
-    "format-disconnected": "說 Disconnected",
-    "tooltip": false
-  },
-  "mpd": {
-    "max-length": 25,
-    "format": "<span foreground='#bb9af7'></span> {title}",
-    "format-paused": " {title}",
-    "format-stopped": "<span foreground='#bb9af7'></span>",
-    "format-disconnected": "",
-    "on-click": "mpc --quiet toggle",
-    "on-click-right": "mpc ls | mpc add",
-    "on-click-middle": "kitty ncmpcpp",
-    "on-scroll-up": "mpc --quiet prev",
-    "on-scroll-down": "mpc --quiet next",
-    "smooth-scrolling-threshold": 5,
-    "tooltip-format": "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})"
-  },
-  "custom/cava": {
-    "tooltip": false,
-    "exec": "~/.config/waybar/scripts/Cava.sh"
-  },
-  "custom/notify": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": " <span foreground='red'><sup></sup></span>",
-      "none": " ",
-      "dnd-notification": " <span foreground='red'><sup></sup></span>",
-      "dnd-none": " ",
-      "inhibited-notification": " <span foreground='red'><sup></sup></span>",
-      "inhibited-none": " ",
-      "dnd-inhibited-notification": " <span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": " "
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  }
 }
