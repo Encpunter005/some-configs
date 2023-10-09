@@ -91,9 +91,6 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<A-w>", "&wrap == 1 ? ':set nowrap<CR>' : ':set wrap<CR>'", { noremap = true, expr = true })
 
 -- Operations of Debugging
-
 keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F6>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F7>", "<cmd>lua require'dap'.step_over()<CR>", opts)
-keymap("n", "<F8>", "<cmd>lua require'dap'.step_out()<CR>", opts)
-

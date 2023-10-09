@@ -213,5 +213,8 @@
         "/home/encounter/Downloads/some-configs/nvim/lua",
         "/home/encounter/Downloads/some-configs/nvim/lua",
         "${3rd}/luv/library"
+    ],
+    "diagnostics.disable": [
+        "deprecated"
     ]
 }

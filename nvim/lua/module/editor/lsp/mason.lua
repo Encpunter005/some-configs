@@ -1,6 +1,7 @@
 local servers = {
     "lua_ls",
     "cssls",
+    "cssmodules_ls",
     "html",
     "tsserver",
     "pyright",
@@ -16,6 +17,7 @@ local servers = {
     "vimls",
     "volar",
     "rust_analyzer",
+    "gopls",
 }
 
 local settings = {
@@ -39,15 +41,17 @@ require("mason-lspconfig").setup({
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
+    vim.notify("lspconfig not found")
     return
 end
 
 local opts = {}
 
-for _, server in pairs(servers) do
+for _, server in ipairs(servers) do
     opts = {
         on_attach = require("module.editor.lsp.handlers").on_attach,
-        capabilities = require("module.editor.lsp.handlers").capabilities,
+        -- capabilities = require("module.editor.lsp.handlers").capabilities,
+        capabilities = require('cmp_nvim_lsp').default_capabilities()
     }
 
     server = vim.split(server, "@")[1]
@@ -57,5 +61,5 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", conf_opts, opts)
     end
 
-    lspconfig[server].setup(opts)
+    lspconfig[server].setup{opts}
 end

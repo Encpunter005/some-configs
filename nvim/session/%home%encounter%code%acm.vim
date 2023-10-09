@@ -13,10 +13,9 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +22 main.cpp
+badd +62 main.cpp
 argglobal
 %argdel
-$argadd main.cpp
 edit main.cpp
 wincmd t
 let s:save_winminheight = &winminheight
@@ -26,12 +25,12 @@ set winheight=1
 set winminwidth=0
 set winwidth=1
 argglobal
-let s:l = 22 - ((21 * winheight(0) + 20) / 41)
+let s:l = 62 - ((10 * winheight(0) + 17) / 34)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 22
-normal! 023|
+keepjumps 62
+normal! 05|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

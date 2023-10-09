@@ -102,7 +102,7 @@ local mappings = {
     ["q"] = { "<cmd>q!<CR>", "Quit" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
     -- ["S"] = { "<cmd>SessionManager save_current_session<CR>", "Save session" },
-    ["L"] = { "<cmd>Lazy<cr> ", "Lazy" },
+    -- ["L"] = { "<cmd>Lazy<cr> ", "Lazy" },
     -- ["w"] = { "<cmd>lua print(require('window-picker').pick_window())<CR>" , "Picker a window"},
     -- ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
@@ -117,7 +117,7 @@ local mappings = {
         p = { "<cmd>Printf<CR>", "Print" },
         o = { "<cmd>Lspsaga outline<cr>", "Outline" },
         s = { "<cmd>BrowseInputSearch<cr>", "WebSearch" },
-        S = { "<cmd>BrowseBookmarks<cr>", "BookMarkSearch" },
+        b = { "<cmd>BrowseBookmarks<cr>", "BookMarkSearch" },
         w = { "<cmd>Pantran<CR>", "Sentences" },
         m = { "<cmd>MinimapToggle<cr>", "Show minimap window" },
     },

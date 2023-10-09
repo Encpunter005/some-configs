@@ -333,7 +333,7 @@ cmp_config = {
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "luasnip" },
-        -- { name = "cmp_tabnine" },
+        { name = "cmp_tabnine" },
         { name = "nvim_lua" },
         { name = "buffer" },
         { name = "spell" },
@@ -343,6 +343,7 @@ cmp_config = {
         { name = "crates" },
         { name = "pandoc_references" },
         { name = "luasnip" },
+        { name = 'nvim_lsp_signature_help' }
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),

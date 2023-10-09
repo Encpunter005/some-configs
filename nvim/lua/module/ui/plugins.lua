@@ -11,19 +11,12 @@ return {
         opts = {},
     },
 
-    -- {
-    --     "glepnir/galaxyline.nvim", -- statusline
-    --     lazy = true,
-    --     version = 'main',
-    --     event = {"User Fileopened"}
-    -- },
 
     {
-        "freddiehaddad/feline.nvim",
+        "nvimdev/galaxyline.nvim",
         lazy = true,
         event = { "User Fileopened" },
     },
-
     {
         "yamatsum/nvim-nonicons",
         lazy = true,

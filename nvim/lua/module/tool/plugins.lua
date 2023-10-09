@@ -43,6 +43,7 @@ return {
     {
         "lalitmee/browse.nvim",
         lazy = true,
+        dependencies = { "nvim-telescope/telescope.nvim" },
     },
 
     -- Compiler
@@ -63,6 +64,7 @@ return {
     {
         "voldikss/vim-translator",
         lazy = true,
+        event = {"UIEnter"},
     },
 
     {
@@ -161,12 +163,12 @@ return {
     {
         "stevearc/aerial.nvim",
         lazy = true,
-        event = {"BufEnter"},
+        event = { "BufEnter" },
     },
     {
         "rinx/nvim-minimap",
         lazy = true,
-        event = {"BufEnter"},
+        event = { "BufEnter" },
     },
 
     {

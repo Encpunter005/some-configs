@@ -1,4 +1,4 @@
-require("clangd_extensions").setup {
+require("clangd_extensions").setup({
     server = {
         -- options to pass to nvim-lspconfig
         -- i.e. the arguments to require("lspconfig").clangd.setup({})
@@ -41,24 +41,24 @@ require("clangd_extensions").setup {
         },
         ast = {
             -- These are unicode, should be available in any font
-            role_icons = {
-                 type = "🄣",
-                 declaration = "🄓",
-                 expression = "🄔",
-                 statement = ";",
-                 specifier = "🄢",
-                 ["template argument"] = "🆃",
-            },
-            kind_icons = {
-                Compound = "🄲 ",
-                Recovery = "🅁 ",
-                TranslationUnit = "🅄 ",
-                PackExpansion = "🄿 ",
-                TemplateTypeParm = "🅃 ",
-                TemplateTemplateParm = "🅃 ",
-                TemplateParamObject = "🅃 ",
-            },
-            --[[ These require codicons (https://github.com/microsoft/vscode-codicons)
+            -- role_icons = {
+            --      type = "🄣",
+            --      declaration = "🄓",
+            --      expression = "🄔",
+            --      statement = ";",
+            --      specifier = "🄢",
+            --      ["template argument"] = "🆃",
+            -- },
+            -- kind_icons = {
+            --     Compound = "🄲 ",
+            --     Recovery = "🅁 ",
+            --     TranslationUnit = "🅄 ",
+            --     PackExpansion = "🄿 ",
+            --     TemplateTypeParm = "🅃 ",
+            --     TemplateTemplateParm = "🅃 ",
+            --     TemplateParamObject = "🅃 ",
+            -- },
+
             role_icons = {
                 type = "",
                 declaration = "",
@@ -76,7 +76,7 @@ require("clangd_extensions").setup {
                 TemplateTypeParm = "",
                 TemplateTemplateParm = "",
                 TemplateParamObject = "",
-            }, ]]
+            },
 
             highlights = {
                 detail = "Comment",
@@ -89,4 +89,4 @@ require("clangd_extensions").setup {
             border = "rounded",
         },
     },
-}
+})

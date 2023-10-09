@@ -24,8 +24,8 @@ local bookmarks = {
   "https://www.acwing.com",
   "https://luogu.com.cn",
   "https://zh.cppreference.com/w/cpp",
-  -- "https://github.com/neovim/neovim",
-  -- "https://neovim.discourse.group/",
+  "https://github.com/neovim/neovim",
+  "https://neovim.discourse.group/",
 }
 
 local function command(name, rhs, opts)

@@ -9,13 +9,13 @@ return {
         "lvimuser/lsp-inlayhints.nvim",
         lazy = true,
     },
-    -- {
-    --     "ahmedkhalf/lsp-rooter.nvim",
-    --     event = "BufRead",
-    --     config = function()
-    --         require("lsp-rooter").setup()
-    --     end,
-    -- },
+    {
+        "ahmedkhalf/lsp-rooter.nvim",
+        event = "BufRead",
+        config = function()
+            require("lsp-rooter").setup()
+        end,
+    },
     {
         "weilbith/nvim-code-action-menu",
         lazy = true,
@@ -32,7 +32,7 @@ return {
     {
         "glepnir/lspsaga.nvim",
         branch = "main",
-        dependencies = { { "nvim-tree/nvim-web-devicons" }, "nvimdev/guard.nvim" },
+        dependencies = { "nvim-tree/nvim-web-devicons", "nvimdev/guard.nvim" },
         lazy = true,
         event = "User Fileopened",
     },
@@ -84,13 +84,13 @@ return {
             "rafamadriz/friendly-snippets", -- a bunch of snippets to use
         },
     },
-    -- {
-    --   "codota/tabnine-nvim",
-    --   name = "tabnine",
-    --   build = vim.loop.os_uname().sysname == "Windows_NT" and "pwsh.exe -file .\\dl_binaries.ps1" or "./dl_binaries.sh",
-    --   cmd = { "TabnineStatus", "TabnineDisable", "TabnineEnable", "TabnineToggle" },
-    --   event = "User FileOpened",
-    -- },
+    {
+      "codota/tabnine-nvim",
+      name = "tabnine",
+      build = vim.loop.os_uname().sysname == "Windows_NT" and "pwsh.exe -file .\\dl_binaries.ps1" or "./dl_binaries.sh",
+      cmd = { "TabnineStatus", "TabnineDisable", "TabnineEnable", "TabnineToggle" },
+      event = "User FileOpened",
+    },
 
     -- Markdown
     { -- gernerate contents
