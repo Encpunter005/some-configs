@@ -26,8 +26,10 @@ return {
 
     {
         "lukas-reineke/indent-blankline.nvim", -- beautify indent
+        main = "ibl",
         lazy = true,
         event = { "UIEnter" },
+        opts = {},
     },
 
     {
@@ -100,6 +102,12 @@ return {
     },
 
     --Colorscheme
+
+    {
+        "embark-theme/vim",
+        lazy = true,
+        event = {"BufEnter"},
+    },
 
     {
         "kvrohit/substrata.nvim",
