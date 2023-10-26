@@ -4,16 +4,15 @@ if not status_guard_ok then
     return
 end
 
-
 local ft = require("guard.filetype")
 ft("c" , "cpp"):fmt('clang-format')
     :lint("clang-tidy")
 ft("lua"):fmt('lsp')
     :lint("luacheck")
-ft("go"):fmt('lsp')
+ft("go"):fmt('gofumpt')
 ft("python"):fmt("lsp")
     :lint("pylint")
-ft("markdown" , "css" , "jsonc"):fmt("prettier")
+ft("markdown" , "css" , "jsonc" , "js" , "html"):fmt("prettier")
 
 guard.setup({
     fmt_on_save = false,
