@@ -1,9 +1,9 @@
 local servers = {
     "lua_ls",
     "cssls",
-    "cssmodules_ls",
     "html",
     "tsserver",
+    "templ",
     "pyright",
     "bashls",
     "jsonls",
@@ -50,8 +50,8 @@ local opts = {}
 for _, server in ipairs(servers) do
     opts = {
         on_attach = require("module.editor.lsp.handlers").on_attach,
-        -- capabilities = require("module.editor.lsp.handlers").capabilities,
-        capabilities = require('cmp_nvim_lsp').default_capabilities()
+        capabilities = require("module.editor.lsp.handlers").capabilities,
+        -- capabilities = require('cmp_nvim_lsp').default_capabilities()
     }
 
     server = vim.split(server, "@")[1]
@@ -63,3 +63,11 @@ for _, server in ipairs(servers) do
 
     lspconfig[server].setup{opts}
 end
+
+
+require("rust-tools").setup({
+    sever = {
+        on_attach = require("module.editor.lsp.handlers").on_attach,
+        capabilities = require("module.editor.lsp.handlers").capabilities,
+    },
+})

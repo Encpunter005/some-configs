@@ -9,6 +9,21 @@ return {
         "lvimuser/lsp-inlayhints.nvim",
         lazy = true,
     },
+    -- {
+    --     "ray-x/navigator.lua",
+    --     dependencies = {
+    --         { 'ray-x/guihua.lua',     build = 'cd lua/fzy && make' },
+    --         { 'neovim/nvim-lspconfig' },
+    --     },
+    --     config = function()
+    --         require("navigator").setup({})
+    --         if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
+    --             require 'cmp'.setup.buffer { completion = { enable = false } }
+    --         end
+    --         vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
+    --         vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
+    --     end
+    -- },
     {
         "ahmedkhalf/lsp-rooter.nvim",
         event = "BufRead",
@@ -32,7 +47,7 @@ return {
     {
         "glepnir/lspsaga.nvim",
         branch = "main",
-        dependencies = { "nvim-tree/nvim-web-devicons", "nvimdev/guard.nvim" },
+        dependencies = { "nvim-tree/nvim-web-devicons", "nvimdev/guard.nvim", "nvimdev/guard-collection" },
         lazy = true,
         event = "User Fileopened",
     },
@@ -85,14 +100,20 @@ return {
         },
     },
     {
-      "codota/tabnine-nvim",
-      name = "tabnine",
-      build = vim.loop.os_uname().sysname == "Windows_NT" and "pwsh.exe -file .\\dl_binaries.ps1" or "./dl_binaries.sh",
-      cmd = { "TabnineStatus", "TabnineDisable", "TabnineEnable", "TabnineToggle" },
-      event = "User FileOpened",
+        "codota/tabnine-nvim",
+        name = "tabnine",
+        build = vim.loop.os_uname().sysname == "Windows_NT" and "pwsh.exe -file .\\dl_binaries.ps1" or "./dl_binaries.sh",
+        cmd = { "TabnineStatus", "TabnineDisable", "TabnineEnable", "TabnineToggle" },
+        event = "User FileOpened",
     },
 
     -- Markdown
+    {
+        'jghauser/follow-md-links.nvim',
+        lazy = true,
+        ft = "markdown",
+        vim.keymap.set('n', '<bs>', ':edit #<cr>', { silent = true })
+    },
     { -- gernerate contents
         "mzlogin/vim-markdown-toc",
         ft = {
@@ -147,4 +168,16 @@ return {
         lazy = true,
         dependencies = "neovim/nvim-lspconfig",
     },
+
+    -- HTML & CSS
+    {
+        "Jezda1337/nvim-html-css",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-lua/plenary.nvim"
+        },
+        config = function()
+            require("html-css"):setup()
+        end
+    }
 }
