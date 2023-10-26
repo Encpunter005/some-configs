@@ -1,3 +1,5 @@
 .task
 nvim/.task
 nvim/session
+nvim/session
+nvim/lazy-lock.json
