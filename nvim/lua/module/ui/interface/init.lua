@@ -1,5 +1,5 @@
 require "module.ui.interface.colorscheme"
-require "module.ui.interface.indent_blankline"
+--require "module.ui.interface.indent_blankline"
 require "module.ui.interface.alpha"
 require "module.ui.interface.noice"
 require "module.ui.interface.smoothcursor"
