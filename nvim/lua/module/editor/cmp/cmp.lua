@@ -6,6 +6,9 @@ end
 ---when inside a snippet, seeks to the nearest luasnip field if possible, and checks if it is jumpable
 ---@param dir number 1 for forward, -1 for backward; defaults to 1
 ---@return boolean true if a jumpable luasnip field is found while inside a snippet
+
+
+
 local function jumpable(dir)
     local luasnip_ok, luasnip = pcall(require, "luasnip")
     if not luasnip_ok then
@@ -155,53 +158,33 @@ if not status_lspkind_ok then
     return
 end
 
-local compare = require("cmp.config.compare")
 
 -- Customization for Pmenu
-vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#24283B", fg = "NONE" })
-vim.api.nvim_set_hl(0, "Pmenu", { fg = "#C5CDD9", bg = "#24283B" })
+-- gray
+vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
+-- blue
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatch', { bg = 'NONE', fg = '#569CD6' })
+vim.api.nvim_set_hl(0, 'CmpItemAbbrMatchFuzzy', { link = 'CmpIntemAbbrMatch' })
+-- light blue
+vim.api.nvim_set_hl(0, 'CmpItemKindVariable', { bg = 'NONE', fg = '#9CDCFE' })
+vim.api.nvim_set_hl(0, 'CmpItemKindInterface', { link = 'CmpItemKindVariable' })
+vim.api.nvim_set_hl(0, 'CmpItemKindText', { link = 'CmpItemKindVariable' })
+-- pink
+vim.api.nvim_set_hl(0, 'CmpItemKindFunction', { bg = 'NONE', fg = '#C586C0' })
+vim.api.nvim_set_hl(0, 'CmpItemKindMethod', { link = 'CmpItemKindFunction' })
+-- front
+vim.api.nvim_set_hl(0, 'CmpItemKindKeyword', { bg = 'NONE', fg = '#D4D4D4' })
+vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
+vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
 
-vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { fg = "#7E8294", bg = "NONE", strikethrough = true })
-vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#82AAFF", bg = "NONE", bold = true })
-vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#82AAFF", bg = "NONE", bold = true })
-vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = "#C792EA", bg = "NONE", italic = true })
 
-vim.api.nvim_set_hl(0, "CmpItemKindField", { fg = "#EED8DA", bg = "#B5585F" })
-vim.api.nvim_set_hl(0, "CmpItemKindProperty", { fg = "#EED8DA", bg = "#B5585F" })
-vim.api.nvim_set_hl(0, "CmpItemKindEvent", { fg = "#EED8DA", bg = "#B5585F" })
+-- Custom memnu icons
 
-vim.api.nvim_set_hl(0, "CmpItemKindText", { fg = "#C3E88D", bg = "#9FBD73" })
-vim.api.nvim_set_hl(0, "CmpItemKindTabNine", { fg = "#C3E88D", bg = "#9FBD73" })
-vim.api.nvim_set_hl(0, "CmpItemKindEnum", { fg = "#C3E88D", bg = "#9FBD73" })
-vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { fg = "#C3E88D", bg = "#9FBD73" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindConstant", { fg = "#FFE082", bg = "#D4BB6C" })
-vim.api.nvim_set_hl(0, "CmpItemKindConstructor", { fg = "#FFE082", bg = "#D4BB6C" })
-vim.api.nvim_set_hl(0, "CmpItemKindReference", { fg = "#FFE082", bg = "#D4BB6C" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindFunction", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindStruct", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindClass", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindModule", { fg = "#EADFF0", bg = "#A377BF" })
-vim.api.nvim_set_hl(0, "CmpItemKindOperator", { fg = "#EADFF0", bg = "#A377BF" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindVariable", { fg = "#C5CDD9", bg = "#7E8294" })
-vim.api.nvim_set_hl(0, "CmpItemKindFile", { fg = "#C5CDD9", bg = "#7E8294" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindUnit", { fg = "#F5EBD9", bg = "#D4A959" })
-vim.api.nvim_set_hl(0, "CmpItemKindSnippet", { fg = "#F5EBD9", bg = "#D4A959" })
-vim.api.nvim_set_hl(0, "CmpItemKindFolder", { fg = "#F5EBD9", bg = "#D4A959" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindMethod", { fg = "#DDE5F5", bg = "#6C8ED4" })
-vim.api.nvim_set_hl(0, "CmpItemKindValue", { fg = "#DDE5F5", bg = "#6C8ED4" })
-vim.api.nvim_set_hl(0, "CmpItemKindEnumMember", { fg = "#DDE5F5", bg = "#6C8ED4" })
-
-vim.api.nvim_set_hl(0, "CmpItemKindInterface", { fg = "#D8EEEB", bg = "#58B5A8" })
-vim.api.nvim_set_hl(0, "CmpItemKindColor", { fg = "#D8EEEB", bg = "#58B5A8" })
-vim.api.nvim_set_hl(0, "CmpItemKindTypeParameter", { fg = "#D8EEEB", bg = "#58B5A8" })
+local custom_icons = {
+    tabnine = " 󰯩 ",
+}
 
 -- CMP settings
-
 cmp_config = {
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
@@ -223,8 +206,11 @@ cmp_config = {
             cmp.config.compare.order,
         },
     },
+    view = {
+        entries = { name = 'custom', selection_order = 'near_cursor' }
+    },
     experimental = {
-        ghost_text = true,
+        -- ghost_text = true,
         -- native_menu = true,
     },
 
@@ -233,23 +219,16 @@ cmp_config = {
         format = function(entry, vim_item)
             local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
             local strings = vim.split(kind.kind, "%s", { trimempty = true })
-            kind.kind = " " .. (strings[1] or "") .. " "
+            if entry.source.name == "cmp_tabnine" then
+                vim_item.kind = custom_icons.tabnine
+                vim_item.menu = "Tabnine"
+            else
+                kind.kind = " " .. (strings[1] or "") .. " "
+            end
             kind.menu = "    (" .. (strings[2] or "") .. ")"
-
             return kind
         end,
     },
-
-    -- formatting = {
-    --     format = lspkind.cmp_format({
-    --         mode = "symbol_text",
-    --         maxwidth = 50,
-    --
-    --         before = function(entry, vim_item)
-    --             return vim_item
-    --         end,
-    --     }),
-    -- },
 
     -- formatting = {
     --     fields = { "kind", "abbr", "menu" },
@@ -281,18 +260,18 @@ cmp_config = {
     --         Value = " ",
     --         Variable = " ",
     --     },
-    --     source_names = {
-    --         nvim_lsp = "(LSP)",
-    --         treesitter = "(TS)",
-    --         emoji = "(Emoji)",
-    --         path = "(Path)",
-    --         calc = "(Calc)",
-    --         cmp_tabnine = "(Tabnine)",
-    --         luasnip = "(Snippet)",
-    --         buffer = "(Buffer)",
-    --         spell = "(Spell)",
-    --         pandoc_references = "(References)",
-    --     },
+        -- source_names = {
+        --     nvim_lsp = "(LSP)",
+        --     treesitter = "(TS)",
+        --     emoji = "(Emoji)",
+        --     path = "(Path)",
+        --     calc = "(Calc)",
+        --     cmp_tabnine = "(Tabnine)",
+        --     luasnip = "(Snippet)",
+        --     buffer = "(Buffer)",
+        --     spell = "(Spell)",
+        --     pandoc_references = "(References)",
+        -- },
     --     duplicates = {
     --         buffer = 1,
     --         path = 1,
@@ -331,6 +310,7 @@ cmp_config = {
     },
     sources = {
         { name = "nvim_lsp" },
+        { name = "html-css" },
         { name = "path" },
         { name = "luasnip" },
         { name = "cmp_tabnine" },
@@ -343,7 +323,6 @@ cmp_config = {
         { name = "crates" },
         { name = "pandoc_references" },
         { name = "luasnip" },
-        { name = 'nvim_lsp_signature_help' }
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -427,7 +406,9 @@ cmp.setup.cmdline(":", {
 })
 
 -- disable autocompletion for guihua
-vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
-vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
+-- vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
+-- vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
+
+
 
 cmp.setup(cmp_config)
