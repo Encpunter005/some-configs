@@ -1,20 +1,31 @@
 return {
     -- Support
-    {
-        "nathom/filetype.nvim",
-    },
-
+    -- {
+    --     "nathom/filetype.nvim",
+    -- },
+    --
     { --better quickfix window
         "kevinhwang91/nvim-bqf",
         lazy = true,
         ft = 'qf',
     },
     {
+        's1n7ax/nvim-window-picker',
+        name = 'window-picker',
+        event = 'VeryLazy',
+        version = '2.*',
+        config = function()
+            require 'window-picker'.setup()
+        end,
+    },
+
+    {
         "akinsho/toggleterm.nvim",
         lazy = true,
         event = { "VeryLazy" },
         opts = {},
     },
+
     {
         "kevinhwang91/nvim-ufo",
         event = { "User FileOpened" },
@@ -29,6 +40,7 @@ return {
         build = function()
             vim.fn["fzf#install"]()
         end,
+        event = "UIEnter"
     },
 
     {
@@ -36,13 +48,39 @@ return {
         lazy = true,
         event = "BufReadPre",
         config = function()
-            require("competitest").setup()
+            require("competitest").setup({
+                compile_command = {
+                    cpp = { exec = 'g++', args = { '-std=c++20', '$(FNAME)', '-o', '$(FNOEXT)' } },
+                },
+                runner_ui = {
+                    interface = "popup",
+                },
+                split_ui = {
+                    position = "right",
+                    relative_to_editor = true,
+                    total_width = 0.3,
+                    vertical_layout = {
+                        { 1, "tc" },
+                        { 1, { { 1, "so" }, { 1, "eo" } } },
+                        { 1, { { 1, "si" }, { 1, "se" } } },
+                    },
+                    total_height = 0.4,
+                    horizontal_layout = {
+                        { 2, "tc" },
+                        { 3, { { 1, "so" }, { 1, "si" } } },
+                        { 3, { { 1, "eo" }, { 1, "se" } } },
+                    },
+                },
+                view_output_diff = true,
+
+            })
         end,
     },
     -- web search
     {
         "lalitmee/browse.nvim",
         lazy = true,
+        event = "BufReadPre",
         dependencies = { "nvim-telescope/telescope.nvim" },
     },
 
@@ -64,7 +102,7 @@ return {
     {
         "voldikss/vim-translator",
         lazy = true,
-        event = {"UIEnter"},
+        event = { "UIEnter" },
     },
 
     {
@@ -320,5 +358,29 @@ return {
                 require("spectre").setup()
             end,
         },
+    },
+
+
+    -- Web-tools
+    {
+        "ray-x/web-tools.nvim",
+        lazy = true,
+        ft = { "html", "js" },
+        config = function()
+            require('web-tools').setup({
+                keymaps = {
+                    rename = nil,        -- by default use same setup of lspconfig
+                    repeat_rename = '.', -- . to repeat
+                },
+                hurl = {                 -- hurl default
+                    show_headers = false, -- do not show http headers
+                    floating = false,    -- use floating windows (need guihua.lua)
+                    formatters = {       -- format the result by filetype
+                        json = { 'jq' },
+                        html = { 'prettier', '--parser', 'html' },
+                    },
+                },
+            })
+        end
     },
 }
