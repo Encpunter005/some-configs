@@ -51,23 +51,27 @@ for _, server in ipairs(servers) do
     opts = {
         on_attach = require("module.editor.lsp.handlers").on_attach,
         capabilities = require("module.editor.lsp.handlers").capabilities,
-        -- capabilities = require('cmp_nvim_lsp').default_capabilities()
     }
 
-    server = vim.split(server, "@")[1]
+    -- server = vim.split(server, "@")[1]
 
-    local require_ok, conf_opts = pcall(require, "module.editor.lsp.settings." .. server)
-    if require_ok then
-        opts = vim.tbl_deep_extend("force", conf_opts, opts)
-    end
+    -- local require_ok, conf_opts = pcall(require, "module.editor.lsp.settings." .. server)
+    -- if require_ok then
+    --     opts = vim.tbl_deep_extend("force", conf_opts, opts)
+    -- end
 
     lspconfig[server].setup{opts}
 end
+ 	
 
-
-require("rust-tools").setup({
-    sever = {
-        on_attach = require("module.editor.lsp.handlers").on_attach,
-        capabilities = require("module.editor.lsp.handlers").capabilities,
-    },
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client.server_capabilities.inlayHintProvider then
+            vim.lsp.inlay_hint(0, true)
+        end
+        -- whatever other lsp config you want
+    end
 })
+

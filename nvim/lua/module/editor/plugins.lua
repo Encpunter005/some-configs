@@ -5,10 +5,6 @@ return {
     "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
     -- "jose-elias-alvarez/null-ls.nvim", -- format
     "ray-x/lsp_signature.nvim",
-    { -- inlay_hint
-        "lvimuser/lsp-inlayhints.nvim",
-        lazy = true,
-    },
     -- {
     --     "ray-x/navigator.lua",
     --     dependencies = {
@@ -24,13 +20,13 @@ return {
     --         vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
     --     end
     -- },
-    {
-        "ahmedkhalf/lsp-rooter.nvim",
-        event = "BufRead",
-        config = function()
-            require("lsp-rooter").setup()
-        end,
-    },
+    -- {
+    --     "ahmedkhalf/lsp-rooter.nvim",
+    --     event = "BufRead",
+    --     config = function()
+    --         require("lsp-rooter").setup()
+    --     end,
+    -- },
     {
         "weilbith/nvim-code-action-menu",
         lazy = true,
@@ -176,6 +172,8 @@ return {
             "nvim-treesitter/nvim-treesitter",
             "nvim-lua/plenary.nvim"
         },
+        -- lazy = true,
+        -- ft = {"html" , "css"},
         config = function()
             require("html-css"):setup()
         end
