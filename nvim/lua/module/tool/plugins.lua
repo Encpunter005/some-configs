@@ -319,7 +319,6 @@ return {
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        version = "0.1.1",
         -- or                            , branch = '0.1.x',
         dependencies = { { "nvim-lua/plenary.nvim" } },
     },
@@ -364,8 +363,8 @@ return {
     -- Web-tools
     {
         "ray-x/web-tools.nvim",
-        lazy = true,
-        ft = { "html", "js" },
+        -- lazy = true,
+        -- ft = { "html", "js" },
         config = function()
             require('web-tools').setup({
                 keymaps = {
