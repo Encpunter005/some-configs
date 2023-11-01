@@ -303,6 +303,7 @@ local mappings = {
     l = {
         name = "LSP",
         a = { "<cmd>CodeActionMenu<CR>", "Code Action" },
+        c = {"<cmd>Lspsaga incoming_calls ++normal<CR>" , "Callhierarchy"},
         d = {
             "<cmd>Telescope diagnostics<cr>",
             "Diagnostics",
@@ -321,13 +322,12 @@ local mappings = {
             "<cmd>Lspsaga diagnostic_jump_prev<CR>",
             "Prev Diagnostic",
         },
+        g = {"<cmd>Lspsaga goto_definition<CR>" , "Goto definition"},
         K = { "<cmd>Lspsaga hover_doc<CR>", "Signature" },
         r = { "<cmd>Lspsaga rename<CR>", "Rename" },
         s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
         p = { "<cmd>Lspsaga peek_definition<CR>", "Peek_definition" },
-        g = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Go to definition" },
-        F = { "<cmd>Lspsaga lsp_finder<CR>", "Reference" },
-        h = { "<cmd>Lspsaga incoming_calls<CR>", "Show function incoming_calls" },
+        F = { "<cmd>Lspsaga finder def+ref<CR>", "Reference" },
         u = { "<cmd>Trouble lsp_references<cr>", "Usage" },
         q = { "<cmd>lua vim.diagnostic.setloclist()<CR>", "Set diagnostic list" },
     },
