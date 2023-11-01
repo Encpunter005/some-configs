@@ -182,8 +182,13 @@ vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
 
 local custom_icons = {
     tabnine = " 󰯩 ",
+    html = "  ",
 }
-
+local has_words_before = function()
+    unpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
 -- CMP settings
 cmp_config = {
     confirm_opts = {
@@ -222,6 +227,9 @@ cmp_config = {
             if entry.source.name == "cmp_tabnine" then
                 vim_item.kind = custom_icons.tabnine
                 vim_item.menu = "Tabnine"
+            elseif entry.source.name == "html-css" then
+                vim_item.kind = custom_icons.html
+                vim_item.menu = "HTML"
             else
                 kind.kind = " " .. (strings[1] or "") .. " "
             end
@@ -260,18 +268,18 @@ cmp_config = {
     --         Value = " ",
     --         Variable = " ",
     --     },
-        -- source_names = {
-        --     nvim_lsp = "(LSP)",
-        --     treesitter = "(TS)",
-        --     emoji = "(Emoji)",
-        --     path = "(Path)",
-        --     calc = "(Calc)",
-        --     cmp_tabnine = "(Tabnine)",
-        --     luasnip = "(Snippet)",
-        --     buffer = "(Buffer)",
-        --     spell = "(Spell)",
-        --     pandoc_references = "(References)",
-        -- },
+    -- source_names = {
+    --     nvim_lsp = "(LSP)",
+    --     treesitter = "(TS)",
+    --     emoji = "(Emoji)",
+    --     path = "(Path)",
+    --     calc = "(Calc)",
+    --     cmp_tabnine = "(Tabnine)",
+    --     luasnip = "(Snippet)",
+    --     buffer = "(Buffer)",
+    --     spell = "(Spell)",
+    --     pandoc_references = "(References)",
+    -- },
     --     duplicates = {
     --         buffer = 1,
     --         path = 1,
@@ -379,8 +387,7 @@ cmp_config = {
             end
         end),
     }),
-}
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+} -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
