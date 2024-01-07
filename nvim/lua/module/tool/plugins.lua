@@ -6,6 +6,7 @@ return {
     --
     { --better quickfix window
         "kevinhwang91/nvim-bqf",
+        event = { "BufRead", "BufNew" },
         lazy = true,
         ft = 'qf',
     },
@@ -23,7 +24,9 @@ return {
         "akinsho/toggleterm.nvim",
         lazy = true,
         event = { "VeryLazy" },
-        opts = {},
+        config = function()
+            require("toggleterm").setup()
+        end
     },
 
     {
@@ -34,14 +37,6 @@ return {
         },
     },
 
-    {
-        "junegunn/fzf",
-        lazy = true,
-        build = function()
-            vim.fn["fzf#install"]()
-        end,
-        event = "UIEnter"
-    },
 
     {
         "xeluxee/competitest.nvim",
@@ -206,7 +201,7 @@ return {
     {
         "rinx/nvim-minimap",
         lazy = true,
-        event = { "BufEnter" },
+        event = { "BufRead" },
     },
 
     {
@@ -276,14 +271,14 @@ return {
 
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/nvim-treesitter-context",
+    "luckasRanarison/tree-sitter-hypr",
 
     { -- Highlight, jump between pairs like if..else
         "andymass/vim-matchup",
         lazy = true,
-        event = { "User FileOpened" },
+        event = { "CursorMoved" },
         config = function()
             vim.g.matchup_matchparen_offscreen = { method = "popup" }
-            lvim.builtin.treesitter.matchup.enable = true
         end,
     },
 

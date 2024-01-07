@@ -12,8 +12,13 @@ return {
     },
 
 
+    -- {
+    --      "nvimdev/galaxyline.nvim",
+    --      lazy = true,
+    --      event = { "User Fileopened" },
+    -- },
     {
-        "nvimdev/galaxyline.nvim",
+        "MunifTanjim/nougat.nvim",
         lazy = true,
         event = { "User Fileopened" },
     },
@@ -31,7 +36,7 @@ return {
         event = { "UIEnter" },
         opts = {},
     },
-
+G
     {
         "shellRaining/hlchunk.nvim",
         event = { "UIEnter" },

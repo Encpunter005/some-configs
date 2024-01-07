@@ -149,7 +149,7 @@ return {
         lazy = true,
         event = "User Fileopened",
     },
-    { "folke/neodev.nvim", opts = {} },
+    -- { "folke/neodev.nvim", opts = {} },
 
     --Rust
     {
@@ -164,18 +164,4 @@ return {
         lazy = true,
         dependencies = "neovim/nvim-lspconfig",
     },
-
-    -- HTML & CSS
-    {
-        "Jezda1337/nvim-html-css",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-lua/plenary.nvim"
-        },
-        -- lazy = true,
-        -- ft = {"html" , "css"},
-        config = function()
-            require("html-css"):setup()
-        end
-    }
 }

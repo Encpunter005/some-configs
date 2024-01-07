@@ -211,9 +211,9 @@ cmp_config = {
             cmp.config.compare.order,
         },
     },
-    view = {
-        entries = { name = 'custom', selection_order = 'near_cursor' }
-    },
+    -- view = {
+    --     entries = { name = 'custom', selection_order = 'near_cursor' }
+    -- },
     experimental = {
         -- ghost_text = true,
         -- native_menu = true,
@@ -228,8 +228,7 @@ cmp_config = {
                 vim_item.kind = custom_icons.tabnine
                 vim_item.menu = "Tabnine"
             elseif entry.source.name == "html-css" then
-                vim_item.kind = custom_icons.html
-                vim_item.menu = "HTML"
+                vim_item.menu = entry.completion_item.menu
             else
                 kind.kind = " " .. (strings[1] or "") .. " "
             end
@@ -318,7 +317,6 @@ cmp_config = {
     },
     sources = {
         { name = "nvim_lsp" },
-        { name = "html-css" },
         { name = "path" },
         { name = "luasnip" },
         { name = "cmp_tabnine" },

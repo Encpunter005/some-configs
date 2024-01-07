@@ -6,7 +6,7 @@ end
 require("module.editor.lsp.lspsaga")
 -- require("module.editor.lsp.null-ls")
 require("module.editor.lsp.guard")
-require("neodev").setup({})
+--require("neodev").setup({})
 require("module.editor.lsp.handlers").setup()
 require "module.editor.lsp.lsp-signature"
 require("module.editor.lsp.illuminate")
