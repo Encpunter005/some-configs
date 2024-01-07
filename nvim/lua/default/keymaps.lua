@@ -36,7 +36,6 @@ vim.api.nvim_set_keymap("n", "j", "<Plug>(accelerated_jk_gj)", {})
 vim.api.nvim_set_keymap("n", "k", "<Plug>(accelerated_jk_gk)", {})
 
 -- float terminal
-local path = vim.api.nvim_buf_get_name(0)
 keymap("n", "<C-\\>", ":ToggleTerm size=95 direction=vertical<CR>", opts)
 
 -- Resize with arrows
@@ -94,3 +93,6 @@ keymap("n", "<A-w>", "&wrap == 1 ? ':set nowrap<CR>' : ':set wrap<CR>'", { norem
 keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>", opts)
 keymap("n", "<F6>", "<cmd>lua require'dap'.step_into()<CR>", opts)
 keymap("n", "<F7>", "<cmd>lua require'dap'.step_over()<CR>", opts)
+
+-- use register
+keymap("v" , "y","\"+y" , {noremap = true})
