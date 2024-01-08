@@ -195,6 +195,15 @@ cmp_config = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
+    enabled = function()
+        local context = require("cmp.config.context")
+        if vim.api.nvim_get_mode() == 'c' then
+            return true
+        else
+            return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+        end
+    end,
+
     completion = {
         ---@usage The minimum length of a word to complete on.
         keyword_length = 1,
@@ -203,20 +212,16 @@ cmp_config = {
         comparators = {
             cmp.config.compare.offset,
             cmp.config.compare.exact,
-            cmp.config.compare.recently_used,
-            --			require("clangd_extensions.cmp_scores"),
+            cmp.config.compare.score,
+            require "cmp-under-comparator".under,
             cmp.config.compare.kind,
             cmp.config.compare.sort_text,
             cmp.config.compare.length,
             cmp.config.compare.order,
         },
     },
-    -- view = {
-    --     entries = { name = 'custom', selection_order = 'near_cursor' }
-    -- },
-    experimental = {
-        -- ghost_text = true,
-        -- native_menu = true,
+    view = {
+        entries = { name = 'custom' }
     },
 
     formatting = {
@@ -237,67 +242,6 @@ cmp_config = {
         end,
     },
 
-    -- formatting = {
-    --     fields = { "kind", "abbr", "menu" },
-    --     max_width = 0,
-    --     kind_icons = {
-    --         Class = " ",
-    --         Color = " ",
-    --         Constant = "ﲀ ",
-    --         Constructor = " ",
-    --         Enum = "練",
-    --         EnumMember = " ",
-    --         Event = " ",
-    --         Field = " ",
-    --         File = "",
-    --         Folder = " ",
-    --         Function = " ",
-    --         Interface = "ﰮ ",
-    --         Keyword = " ",
-    --         Method = " ",
-    --         Module = " ",
-    --         Operator = "",
-    --         Property = " ",
-    --         Reference = " ",
-    --         Snippet = " ",
-    --         Struct = " ",
-    --         Text = " ",
-    --         TypeParameter = " ",
-    --         Unit = "塞",
-    --         Value = " ",
-    --         Variable = " ",
-    --     },
-    -- source_names = {
-    --     nvim_lsp = "(LSP)",
-    --     treesitter = "(TS)",
-    --     emoji = "(Emoji)",
-    --     path = "(Path)",
-    --     calc = "(Calc)",
-    --     cmp_tabnine = "(Tabnine)",
-    --     luasnip = "(Snippet)",
-    --     buffer = "(Buffer)",
-    --     spell = "(Spell)",
-    --     pandoc_references = "(References)",
-    -- },
-    --     duplicates = {
-    --         buffer = 1,
-    --         path = 1,
-    --         nvim_lsp = 0,
-    --         luasnip = 1,
-    --     },
-    --     duplicates_default = 0,
-    --     format = function(entry, vim_item)
-    --         local max_width = cmp_config.formatting.max_width
-    --         if max_width ~= 0 and #vim_item.abbr > max_width then
-    --             vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. "…"
-    --         end
-    --         vim_item.kind = cmp_config.formatting.kind_icons[vim_item.kind]
-    --         vim_item.menu = cmp_config.formatting.source_names[entry.source.name]
-    --         vim_item.dup = cmp_config.formatting.duplicates[entry.source.name]
-    --             or cmp_config.formatting.duplicates_default
-    --         return vim_item
-    --     end,
-    -- },
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
@@ -330,61 +274,33 @@ cmp_config = {
         { name = "pandoc_references" },
         { name = "luasnip" },
     },
-    mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(),
-        ["<C-j>"] = cmp.mapping.select_next_item(),
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        -- TODO: potentially fix emmet nonsense
+    mapping = {
+
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            elseif jumpable(1) then
-                luasnip.jump(1)
-            elseif check_backspace() then
-                fallback()
-            elseif is_emmet_active() then
-                return vim.fn["cmp#complete"]()
+                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+                -- that way you will only jump inside the snippet region
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
+        end, { "i", "s" }),
+
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            elseif jumpable(-1) then
+            elseif luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
-        ["<C-p>"] = cmp.mapping.complete(),
-        ["<C-e>"] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping(function(fallback)
-            if cmp.visible() and cmp.confirm(cmp_config.confirm_opts) then
-                if jumpable(1) then
-                    luasnip.jump(1)
-                end
-                return
-            end
+        end, { "i", "s" }),
 
-            if jumpable(1) then
-                if not luasnip.jump(1) then
-                    fallback()
-                end
-            else
-                fallback()
-            end
-        end),
-    }),
+    },
 } -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),

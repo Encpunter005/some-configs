@@ -4,7 +4,7 @@ return {
     "williamboman/mason.nvim",           -- simple to use language server installer
     "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
     -- "jose-elias-alvarez/null-ls.nvim", -- format
-    "ray-x/lsp_signature.nvim",
+    -- "ray-x/lsp_signature.nvim",
     -- {
     --     "ray-x/navigator.lua",
     --     dependencies = {
@@ -74,6 +74,7 @@ return {
             "hrsh7th/cmp-path",         -- path completions
             "hrsh7th/cmp-cmdline",      -- cmdline completions
             "saadparwaiz1/cmp_luasnip", -- snippet completions
+            "lukas-reineke/cmp-under-comparator", -- better sorting
             {
                 "tzachar/cmp-tabnine",
                 build = "./install.sh",
