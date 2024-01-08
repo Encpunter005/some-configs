@@ -36,7 +36,6 @@ return {
         event = { "UIEnter" },
         opts = {},
     },
-G
     {
         "shellRaining/hlchunk.nvim",
         event = { "UIEnter" },
