@@ -32,8 +32,7 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim", -- beautify indent
         main = "ibl",
-        lazy = true,
-        event = { "UIEnter" },
+        event = { "VeryLazy" },
         opts = {},
     },
     {

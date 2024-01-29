@@ -16,5 +16,6 @@ return {
         "sakhnik/nvim-gdb",
         ft = { "cpp" },
         lazy = true,
+        event = {"VeryLazy"},
     },
 }

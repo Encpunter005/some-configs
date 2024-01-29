@@ -1,8 +1,18 @@
 return {
     -- LSP
-    "neovim/nvim-lspconfig",             -- enable LSP
-    "williamboman/mason.nvim",           -- simple to use language server installer
-    "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
+    {
+        "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "folke/neodev.nvim",
+        },
+    }, -- enable LSP
+    {
+        "williamboman/mason.nvim",
+        dependencies = {
+            "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
+        },
+    },                                           -- simple to use language server installer
     -- "jose-elias-alvarez/null-ls.nvim", -- format
     -- "ray-x/lsp_signature.nvim",
     -- {
@@ -67,34 +77,109 @@ return {
     --CMP
     {
         "hrsh7th/nvim-cmp", -- The completion plugin
-        lazy = true,
-        event = { "User FileOpened" },
+        event = "InsertEnter",
         dependencies = {
-            "hrsh7th/cmp-buffer",       -- buffer completions
-            "hrsh7th/cmp-path",         -- path completions
-            "hrsh7th/cmp-cmdline",      -- cmdline completions
-            "saadparwaiz1/cmp_luasnip", -- snippet completions
-            "lukas-reineke/cmp-under-comparator", -- better sorting
+            {
+                "hrsh7th/cmp-buffer", -- buffer completions
+                event = "InsertEnter",
+            },
+            {
+
+                "hrsh7th/cmp-path", -- path completions
+                event = "InsertEnter",
+            },
+
+            {
+                "hrsh7th/cmp-cmdline", -- cmdline completions
+                event = "InsertEnter",
+            },
+
+            {
+                "saadparwaiz1/cmp_luasnip", -- snippet completions
+                event = "InsertEnter",
+            },
+
+            {
+                "lukas-reineke/cmp-under-comparator", -- better sorting
+                event = "InsertEnter",
+            },
             {
                 "tzachar/cmp-tabnine",
                 build = "./install.sh",
+                event = "InsertEnter",
             },
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-nvim-lua",
-            "f3fora/cmp-spell",
-            "jc-doyle/cmp-pandoc-references",
-            "hrsh7th/cmp-nvim-lsp-signature-help",
+
+            {
+                "hrsh7th/cmp-nvim-lsp",
+                event = "InsertEnter",
+            },
+
+            {
+                "hrsh7th/cmp-nvim-lua",
+            },
+
+            {
+                "f3fora/cmp-spell",
+                event = "InsertEnter",
+            },
+
+            {
+                "jc-doyle/cmp-pandoc-references",
+                event = "InsertEnter",
+            },
+
+            {
+                "hrsh7th/cmp-nvim-lsp-signature-help",
+                event = "InsertEnter",
+
+
+            },
             -- snippets
             {
                 "L3MON4D3/LuaSnip",
+                event = "InsertEnter",
                 -- follow latest release.
                 version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
                 -- install jsregexp (optional!).
                 build = "make install_jsregexp",
-            },                              --snippet engine
-            "hrsh7th/cmp-vsnip",            --snippt engine
-            "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+                dependencies = {
+                    "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+                },
+            },                                      --snippet engine
         },
+    },
+    {
+        "kawre/neotab.nvim",
+        event = "InsertEnter",
+        config = function()
+            require("neotab").setup
+            {
+                tabkey = "<Tab>",
+                act_as_tab = true, -- fallback to tab, if `tabout` action is not available
+                behavior = "nested", ---@type ntab.behavior
+                pairs = { ---@type ntab.pair[]
+                    { open = "(", close = ")" },
+                    { open = "[", close = "]" },
+                    { open = "{", close = "}" },
+                    { open = "'", close = "'" },
+                    { open = '"', close = '"' },
+                    { open = "`", close = "`" },
+                    { open = "<", close = ">" },
+                },
+                exclude = {},
+                smart_punctuators = {
+                    enabled = false,
+                    semicolon = {
+                        enabled = false,
+                        ft = { "cs", "c", "cpp", "java" },
+                    },
+                    escape = {
+                        enabled = false,
+                        triggers = {}, ---@type table<string, ntab.trigger>
+                    },
+                },
+            }
+        end,
     },
     {
         "codota/tabnine-nvim",

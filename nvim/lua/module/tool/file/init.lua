@@ -1,3 +1,3 @@
 require "module.tool.file.neo-tree"
-require "module.tool.file.telescpoe"
+require "module.tool.file.telescope"
 

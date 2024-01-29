@@ -6,8 +6,7 @@ return {
     --
     { --better quickfix window
         "kevinhwang91/nvim-bqf",
-        event = { "BufRead", "BufNew" },
-        lazy = true,
+        event = {"VeryLazy"},
         ft = 'qf',
     },
     {
@@ -314,44 +313,59 @@ return {
     -- Telescope
     {
         "nvim-telescope/telescope.nvim",
-        -- or                            , branch = '0.1.x',
-        dependencies = { { "nvim-lua/plenary.nvim" } },
+        dependencies = {
+            "nvim-telescope/telescope-ui-select.nvim",
+            event = { "BufRead" },
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build =
+                "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+                event = { "BufRead" },
+            },
+            {
+                "nvim-telescope/telescope-project.nvim",
+                event = "BufWinEnter",
+                setup = function()
+                    vim.cmd [[packadd telescope.nvim]]
+                end,
+            },
+            {
+                "nvim-telescope/telescope-live-grep-args.nvim",
+                event = { "BufRead" },
+            },
+            {
+                "nvim-telescope/telescope-media-files.nvim",
+                event = { "BufRead" },
+            },
+            {
+                "nvim-telescope/telescope-frecency.nvim",
+                event = { "BufRead" },
+            },
+        },
     },
-    "nvim-telescope/telescope-dap.nvim",
-    "nvim-telescope/telescope-ui-select.nvim",
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build =
-        "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-        event = { "BufRead" },
-    },
-    {
-        "nvim-telescope/telescope-project.nvim",
-        event = "BufWinEnter",
-        setup = function()
-            vim.cmd [[packadd telescope.nvim]]
-        end,
-    },
-    {
-        "nvim-telescope/telescope-live-grep-args.nvim",
-    },
-    "nvim-telescope/telescope-media-files.nvim",
     { "kkharji/sqlite.lua" },
-    { "nvim-telescope/telescope-frecency.nvim" },
 
     -- Git
 
-    "lewis6991/gitsigns.nvim",
-    { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
     {
-        {
-            "windwp/nvim-spectre",
-            lazy = true,
-            cmd = { "Spectre" },
-            config = function()
-                require("spectre").setup()
-            end,
-        },
+        "lewis6991/gitsigns.nvim",
+        event = "BufEnter",
+        cmd = "Gitsigns",
+    },
+
+    {
+        "sindrets/diffview.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+        event = "VeryLazy",
+        cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+    },
+    {
+        "windwp/nvim-spectre",
+        lazy = true,
+        cmd = { "Spectre" },
+        config = function()
+            require("spectre").setup()
+        end,
     },
 
 
@@ -363,13 +377,13 @@ return {
         config = function()
             require('web-tools').setup({
                 keymaps = {
-                    rename = nil,        -- by default use same setup of lspconfig
-                    repeat_rename = '.', -- . to repeat
+                    rename = nil,         -- by default use same setup of lspconfig
+                    repeat_rename = '.',  -- . to repeat
                 },
-                hurl = {                 -- hurl default
+                hurl = {                  -- hurl default
                     show_headers = false, -- do not show http headers
-                    floating = false,    -- use floating windows (need guihua.lua)
-                    formatters = {       -- format the result by filetype
+                    floating = false,     -- use floating windows (need guihua.lua)
+                    formatters = {        -- format the result by filetype
                         json = { 'jq' },
                         html = { 'prettier', '--parser', 'html' },
                     },

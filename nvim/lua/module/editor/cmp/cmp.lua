@@ -9,13 +9,67 @@ end
 
 
 
-local function jumpable(dir)
-    local luasnip_ok, luasnip = pcall(require, "luasnip")
-    if not luasnip_ok then
-        vim.notify("luasnip not found")
-        return
-    end
 
+---checks if emmet_ls is available and active in the buffer
+---@return boolean true if available, false otherwise
+local is_emmet_active = function()
+    local clients = vim.lsp.get_active_clients()
+
+    for _, client in pairs(clients) do
+        if client.name == "emmet_ls" then
+            return true
+        end
+    end
+    return false
+end
+
+local function border(hl_name)
+    --[[ { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" }, ]]
+    --[[ {"─", "│", "─", "│", "┌", "┐", "┘", "└"}, ]]
+    return {
+        { "┌", hl_name },
+        { "─", hl_name },
+        { "┐", hl_name },
+        { "│", hl_name },
+        { "┘", hl_name },
+        { "─", hl_name },
+        { "└", hl_name },
+        { "│", hl_name },
+    }
+end
+
+local status_cmp_ok, cmp = pcall(require, "cmp")
+if not status_cmp_ok then
+    return
+end
+
+local status_luasnip_ok, luasnip = pcall(require, "luasnip")
+if not status_luasnip_ok then
+    return
+end
+
+local status_lspkind_ok, lspkind = pcall(require, "lspkind")
+if not status_lspkind_ok then
+    vim.notify("lspkind not found")
+    return
+end
+
+
+local snippet_path = vim.fn.stdpath("config") .. "/my-snippets/"
+if not vim.tbl_contains(vim.opt.rtp:get(), snippet_path) then
+    vim.opt.rtp:append(snippet_path)
+end
+
+require("luasnip.loaders.from_lua").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
+
+local has_words_before = function()
+    unpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
+local function jumpable(dir)
     local win_get_cursor = vim.api.nvim_win_get_cursor
     local get_current_buf = vim.api.nvim_get_current_buf
 
@@ -114,50 +168,7 @@ local function jumpable(dir)
         return inside_snippet() and seek_luasnip_cursor_node() and luasnip.jumpable()
     end
 end
-
----checks if emmet_ls is available and active in the buffer
----@return boolean true if available, false otherwise
-local is_emmet_active = function()
-    local clients = vim.lsp.get_active_clients()
-
-    for _, client in pairs(clients) do
-        if client.name == "emmet_ls" then
-            return true
-        end
-    end
-    return false
-end
-
-local function border(hl_name)
-    --[[ { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" }, ]]
-    --[[ {"─", "│", "─", "│", "┌", "┐", "┘", "└"}, ]]
-    return {
-        { "┌", hl_name },
-        { "─", hl_name },
-        { "┐", hl_name },
-        { "│", hl_name },
-        { "┘", hl_name },
-        { "─", hl_name },
-        { "└", hl_name },
-        { "│", hl_name },
-    }
-end
-
-local status_cmp_ok, cmp = pcall(require, "cmp")
-if not status_cmp_ok then
-    return
-end
-local status_luasnip_ok, luasnip = pcall(require, "luasnip")
-if not status_luasnip_ok then
-    return
-end
-
-local status_lspkind_ok, lspkind = pcall(require, "lspkind")
-if not status_lspkind_ok then
-    vim.notify("lspkind not found")
-    return
-end
-
+local types = require("cmp.types");
 
 -- Customization for Pmenu
 -- gray
@@ -204,10 +215,10 @@ cmp_config = {
         end
     end,
 
-    completion = {
-        ---@usage The minimum length of a word to complete on.
-        keyword_length = 1,
-    },
+    -- completion = {
+    --     ---@usage The minimum length of a word to complete on.
+    --     keyword_length = 2,
+    -- },
     sorting = {
         comparators = {
             cmp.config.compare.offset,
@@ -274,22 +285,58 @@ cmp_config = {
         { name = "pandoc_references" },
         { name = "luasnip" },
     },
-    mapping = {
-
+    mapping = cmp.mapping.preset.insert {
+        ["<C-k>"] = cmp.mapping(
+            cmp.mapping.select_prev_item { behavior = types.cmp.SelectBehavior.Select },
+            { "i", "c" }
+        ),
+        ["<C-j>"] = cmp.mapping(
+            cmp.mapping.select_next_item { behavior = types.cmp.SelectBehavior.Select },
+            { "i", "c" }
+        ),
+        ["<C-p>"] = cmp.mapping(
+            cmp.mapping.select_prev_item { behavior = types.cmp.SelectBehavior.Select },
+            { "i", "c" }
+        ),
+        ["<C-n>"] = cmp.mapping(
+            cmp.mapping.select_next_item { behavior = types.cmp.SelectBehavior.Select },
+            { "i", "c" }
+        ),
+        ["<C-h>"] = function()
+            if cmp.visible_docs() then
+                cmp.close_docs()
+            else
+                cmp.open_docs()
+            end
+        end,
+        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+        ["<C-e>"] = cmp.mapping {
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        },
+        -- Accept currently selected item. If none selected, `select` first item.
+        -- Set `select` to `false` to only confirm explicitly selected items.
+        ["<CR>"] = cmp.mapping.confirm { select = true },
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-                -- that way you will only jump inside the snippet region
+            elseif luasnip.expandable() then
+                luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.complete()
+            elseif check_backspace() then
+                -- fallback()
+                require("neotab").tabout()
             else
+                require("neotab").tabout()
                 fallback()
             end
-        end, { "i", "s" }),
-
+        end, {
+            "i",
+            "s",
+        }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -298,10 +345,13 @@ cmp_config = {
             else
                 fallback()
             end
-        end, { "i", "s" }),
-
+        end, {
+            "i",
+            "s",
+        }),
     },
-} -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+
+}                                                   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
