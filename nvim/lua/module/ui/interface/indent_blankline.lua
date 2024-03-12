@@ -23,7 +23,6 @@ vim.cmd([[highlight IndentBlanklineIndent6 guifg=#C678DD gui=nocombine]])
 -- }
 
 indent_blankline.setup({
--- char = "▏",
   char = "│",
   filetype_exclude = {
     "help",
