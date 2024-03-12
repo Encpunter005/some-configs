@@ -216,5 +216,8 @@
     ],
     "diagnostics.disable": [
         "deprecated"
+    ],
+    "diagnostics.globals": [
+        "reuqire"
     ]
 }
