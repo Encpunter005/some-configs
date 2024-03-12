@@ -12,10 +12,4 @@ return {
             "nvim-neotest/neotest-python"
         },
     },
-    {
-        "sakhnik/nvim-gdb",
-        ft = { "cpp" },
-        lazy = true,
-        event = {"VeryLazy"},
-    },
 }
