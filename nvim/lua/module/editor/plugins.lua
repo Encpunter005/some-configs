@@ -4,39 +4,32 @@ return {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "folke/neodev.nvim",
+            {
+                "folke/neodev.nvim",
+                ft = "lua",
+                lazy = true,
+            },
+            {
+                "simrat39/rust-tools.nvim",
+                ft = "rust",
+                lazy = true,
+            },
+
+            --Rust
+            {
+                "rust-lang/rust.vim",
+                lazy = true,
+                ft = "rust",
+            },
         },
+
     }, -- enable LSP
     {
         "williamboman/mason.nvim",
         dependencies = {
             "williamboman/mason-lspconfig.nvim", -- simple to use language server installer
         },
-    },                                           -- simple to use language server installer
-    -- "jose-elias-alvarez/null-ls.nvim", -- format
-    -- "ray-x/lsp_signature.nvim",
-    -- {
-    --     "ray-x/navigator.lua",
-    --     dependencies = {
-    --         { 'ray-x/guihua.lua',     build = 'cd lua/fzy && make' },
-    --         { 'neovim/nvim-lspconfig' },
-    --     },
-    --     config = function()
-    --         require("navigator").setup({})
-    --         if vim.o.ft == 'clap_input' and vim.o.ft == 'guihua' and vim.o.ft == 'guihua_rust' then
-    --             require 'cmp'.setup.buffer { completion = { enable = false } }
-    --         end
-    --         vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
-    --         vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
-    --     end
-    -- },
-    -- {
-    --     "ahmedkhalf/lsp-rooter.nvim",
-    --     event = "BufRead",
-    --     config = function()
-    --         require("lsp-rooter").setup()
-    --     end,
-    -- },
+    },
     {
         "weilbith/nvim-code-action-menu",
         lazy = true,
@@ -57,6 +50,13 @@ return {
         lazy = true,
         event = "User Fileopened",
     },
+
+
+    {
+         "ray-x/lsp_signature.nvim",
+        event = "VeryLazy",
+
+    },
     -- lspkind
     {
         "onsails/lspkind-nvim",
@@ -64,10 +64,6 @@ return {
         event = "User Fileopened",
     },
 
-    -- --Clangd
-    -- "p00f/clangd_extensions.nvim",
-
-    -- vim-illuminate
     {
         "RRethy/vim-illuminate",
         lazy = true,
@@ -77,41 +73,31 @@ return {
     --CMP
     {
         "hrsh7th/nvim-cmp", -- The completion plugin
-        event = "InsertEnter",
+        event = { "InsertEnter" },
         dependencies = {
-            {
-                "hrsh7th/cmp-buffer", -- buffer completions
-                event = "InsertEnter",
-            },
             {
 
                 "hrsh7th/cmp-path", -- path completions
-                event = "InsertEnter",
             },
 
             {
                 "hrsh7th/cmp-cmdline", -- cmdline completions
-                event = "InsertEnter",
             },
 
             {
                 "saadparwaiz1/cmp_luasnip", -- snippet completions
-                event = "InsertEnter",
             },
 
             {
                 "lukas-reineke/cmp-under-comparator", -- better sorting
-                event = "InsertEnter",
             },
             {
                 "tzachar/cmp-tabnine",
                 build = "./install.sh",
-                event = "InsertEnter",
             },
 
             {
                 "hrsh7th/cmp-nvim-lsp",
-                event = "InsertEnter",
             },
 
             {
@@ -120,19 +106,6 @@ return {
 
             {
                 "f3fora/cmp-spell",
-                event = "InsertEnter",
-            },
-
-            {
-                "jc-doyle/cmp-pandoc-references",
-                event = "InsertEnter",
-            },
-
-            {
-                "hrsh7th/cmp-nvim-lsp-signature-help",
-                event = "InsertEnter",
-
-
             },
             -- snippets
             {
@@ -221,6 +194,7 @@ return {
         },
     },
 
+
     { --generate a mind-map
         "Zeioth/markmap.nvim",
         build = "yarn global add markmap-cli",
@@ -229,25 +203,9 @@ return {
         ft = "markdown",
         event = "BufReadPre",
     },
-
     {
         "norcalli/nvim-colorizer.lua",
         lazy = true,
         event = "User Fileopened",
-    },
-    -- { "folke/neodev.nvim", opts = {} },
-
-    --Rust
-    {
-        "rust-lang/rust.vim",
-        lazy = true,
-        ft = "rust",
-    },
-
-    {
-        "simrat39/rust-tools.nvim",
-        ft = "rust",
-        lazy = true,
-        dependencies = "neovim/nvim-lspconfig",
     },
 }

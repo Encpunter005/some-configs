@@ -206,19 +206,20 @@ cmp_config = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
     },
-    enabled = function()
-        local context = require("cmp.config.context")
-        if vim.api.nvim_get_mode() == 'c' then
-            return true
-        else
-            return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
-        end
-    end,
+    -- enabled = function()
+    --     local context = require("cmp.config.context")
+    --     if vim.api.nvim_get_mode() == 'c' then
+    --         return true
+    --     else
+    --         return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+    --     end
+    -- end,
 
     -- completion = {
     --     ---@usage The minimum length of a word to complete on.
-    --     keyword_length = 2,
+    --     keyword_length = 1,
     -- },
+    --
     sorting = {
         comparators = {
             cmp.config.compare.offset,
@@ -276,67 +277,36 @@ cmp_config = {
         { name = "luasnip" },
         { name = "cmp_tabnine" },
         { name = "nvim_lua" },
-        { name = "buffer" },
         { name = "spell" },
         { name = "calc" },
-        { name = "emoji" },
         { name = "treesitter" },
         { name = "crates" },
-        { name = "pandoc_references" },
         { name = "luasnip" },
     },
-    mapping = cmp.mapping.preset.insert {
-        ["<C-k>"] = cmp.mapping(
-            cmp.mapping.select_prev_item { behavior = types.cmp.SelectBehavior.Select },
-            { "i", "c" }
-        ),
-        ["<C-j>"] = cmp.mapping(
-            cmp.mapping.select_next_item { behavior = types.cmp.SelectBehavior.Select },
-            { "i", "c" }
-        ),
-        ["<C-p>"] = cmp.mapping(
-            cmp.mapping.select_prev_item { behavior = types.cmp.SelectBehavior.Select },
-            { "i", "c" }
-        ),
-        ["<C-n>"] = cmp.mapping(
-            cmp.mapping.select_next_item { behavior = types.cmp.SelectBehavior.Select },
-            { "i", "c" }
-        ),
-        ["<C-h>"] = function()
-            if cmp.visible_docs() then
-                cmp.close_docs()
-            else
-                cmp.open_docs()
-            end
-        end,
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+    mapping = {
+        ["<Up>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+        ["<Down>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+        ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ["<C-k>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        ["<C-j>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-e>"] = cmp.mapping {
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        },
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<C-y>"] = cmp.config.disable,
+        ["<C-e>"] = cmp.mapping { i = cmp.mapping.abort(), c = cmp.mapping.close() },
+        ["<CR>"] = cmp.mapping.confirm { select = false },
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            elseif luasnip.expandable() then
-                luasnip.expand()
-            elseif luasnip.expand_or_jumpable() then
+            elseif luasnip.expand_or_locally_jumpable() then
                 luasnip.expand_or_jump()
-            elseif check_backspace() then
-                -- fallback()
-                require("neotab").tabout()
+            elseif has_words_before() then
+                cmp.complete()
             else
-                require("neotab").tabout()
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
+        end, { "i", "s" }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -345,18 +315,27 @@ cmp_config = {
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
+        end, { "i", "s" }),
     },
 
-}                                                   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+} -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = "buffer" },
     },
+    enabled = function()
+        -- Set of commands where cmp will be disabled
+        local disabled = {
+            IncRename = true
+        }
+        -- Get first word of cmdline
+        local cmd = vim.fn.getcmdline():match("%S+")
+        -- Return true if cmd isn't disabled
+        -- else call/return cmp.close(), which returns false
+        return not disabled[cmd] or cmp.close()
+    end
+
 })
 
 cmp.setup.cmdline("?", {
@@ -376,10 +355,12 @@ cmp.setup.cmdline(":", {
     }),
 })
 
--- disable autocompletion for guihua
--- vim.cmd("autocmd FileType guihua lua require('cmp').setup.buffer { enabled = false }")
--- vim.cmd("autocmd FileType guihua_rust lua require('cmp').setup.buffer { enabled = false }")
-
-
 
 cmp.setup(cmp_config)
+-- Add parentheses after selecting function or method item
+-- If you want insert `(` after select function or method item
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on(
+    'confirm_done',
+    cmp_autopairs.on_confirm_done()
+)
