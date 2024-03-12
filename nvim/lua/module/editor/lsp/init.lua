@@ -8,7 +8,7 @@ require("module.editor.lsp.lspsaga")
 require("module.editor.lsp.guard")
 --require("neodev").setup({})
 require("module.editor.lsp.handlers").setup()
--- require "module.editor.lsp.lsp-signature"
+require "module.editor.lsp.lsp-signature"
 require("module.editor.lsp.illuminate")
 require("module.editor.lsp.mason")
 

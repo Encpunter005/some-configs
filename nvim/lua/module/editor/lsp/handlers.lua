@@ -10,7 +10,7 @@ if not status_lsp_ok then
     return
 end
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()
--- M.capabilities.textDocument.completion.completionItem.snippetSupport = true
+M.capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.general_on_attach = function(client, bufnr)
     if client.resolved_capabilities.completion then
