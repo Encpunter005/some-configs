@@ -6,7 +6,7 @@ return {
     --
     { --better quickfix window
         "kevinhwang91/nvim-bqf",
-        event = {"VeryLazy"},
+        event = { "VeryLazy" },
         ft = 'qf',
     },
     {
@@ -75,7 +75,6 @@ return {
         "lalitmee/browse.nvim",
         lazy = true,
         event = "BufReadPre",
-        dependencies = { "nvim-telescope/telescope.nvim" },
     },
 
     -- Compiler
@@ -166,15 +165,6 @@ return {
         end,
     },
 
-    -- { -- AI
-    -- 	"jackMort/ChatGPT.nvim",
-    -- 	event = "VeryLazy",
-    -- 	dependencies = {
-    -- 		"MunifTanjim/nui.nvim",
-    -- 		"nvim-lua/plenary.nvim",
-    -- 		"nvim-telescope/telescope.nvim",
-    -- 	},
-    -- },
     { -- auto save
         "Pocco81/auto-save.nvim",
         lazy = true,
@@ -314,8 +304,10 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
-            "nvim-telescope/telescope-ui-select.nvim",
-            event = { "BufRead" },
+            {
+                "nvim-telescope/telescope-ui-select.nvim",
+                event = { "BufRead" },
+            },
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build =
@@ -323,22 +315,11 @@ return {
                 event = { "BufRead" },
             },
             {
-                "nvim-telescope/telescope-project.nvim",
-                event = "BufWinEnter",
-                setup = function()
-                    vim.cmd [[packadd telescope.nvim]]
-                end,
-            },
-            {
                 "nvim-telescope/telescope-live-grep-args.nvim",
                 event = { "BufRead" },
             },
             {
                 "nvim-telescope/telescope-media-files.nvim",
-                event = { "BufRead" },
-            },
-            {
-                "nvim-telescope/telescope-frecency.nvim",
                 event = { "BufRead" },
             },
         },
@@ -373,7 +354,7 @@ return {
     {
         "ray-x/web-tools.nvim",
         -- lazy = true,
-        -- ft = { "html", "js" },
+        ft = { "html", "js", "css" },
         config = function()
             require('web-tools').setup({
                 keymaps = {
