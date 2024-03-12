@@ -68,11 +68,24 @@ return {
         lazy = true,
         event = { "User Fileopened" },
     },
-
     {
-        "xiyaowong/nvim-cursorword",
+        "yamatsum/nvim-cursorline",
+        event = {"User Fileopened"},
         lazy = true,
-        event = { "User Fileopened" },
+        config = function()
+            require("nvim-cursorline").setup({
+                cursorline = {
+                    enable = true,
+                    timeout = 1000,
+                    number = true,
+                },
+                cursorword = {
+                    enable = true,
+                    min_length = 3,
+                    hl = {underline = true},
+                },
+            })
+        end,
     },
 
     -- Buffer
@@ -95,8 +108,6 @@ return {
         version = "^1.0.0", -- optional: only update when a new 1.x version is released
         lazy = true,
     },
-
-    "ojroques/nvim-bufdel", -- close buffer
 
     {
         "luukvbaal/stabilize.nvim", -- stabilize buffer events
