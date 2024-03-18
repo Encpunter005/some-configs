@@ -1,5 +1,4 @@
 return {
-    -- Support
     -- {
     --     "nathom/filetype.nvim",
     -- },
@@ -318,13 +317,9 @@ return {
                 "nvim-telescope/telescope-live-grep-args.nvim",
                 event = { "BufRead" },
             },
-            {
-                "nvim-telescope/telescope-media-files.nvim",
-                event = { "BufRead" },
-            },
         },
     },
-    { "kkharji/sqlite.lua" },
+    -- { "kkharji/sqlite.lua" },
 
     -- Git
 
