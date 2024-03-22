@@ -7,11 +7,11 @@ local servers = {
     "pyright",
     "bashls",
     "jsonls",
+    "emmet_ls",
     "clangd",
     "cmake",
     "marksman",
     "yamlls",
-    "grammarly",
     "jdtls",
     "bashls",
     "vimls",
@@ -64,7 +64,7 @@ for _, server in ipairs(servers) do
     lspconfig[server].setup { opts }
 end
 
-
+-- Automatically open lsp-inlayhints
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("UserLspConfig", {}),
     callback = function(args)
