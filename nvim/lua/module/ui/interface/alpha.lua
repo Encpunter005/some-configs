@@ -110,25 +110,22 @@ dashboard.section.buttons.val = {
 
 local function footer()
     local stats = require("lazy").stats()
-    -- local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-    -- local ms = stats.startuptime
+    local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
     -- NOTE: requires the fortune-mod package to work
     --local handle = io.popen("fortune")
     --local fortune = handle:read("*a")
     --handle:close()
     --return fortune
     return "   Have Fun with neovim  -- Encounter005"
-        .. "  󰀨 v"
-        .. vim.version().major
-        .. "."
-        .. vim.version().minor
-        .. "."
-        .. vim.version().patch
-        .. "  󰂖 "
-        -- .. stats.count
-        -- .. " plugins in "
-        -- .. ms
-        -- .. "ms"
+    .. "  󰀨 v"
+    .. vim.version().major
+    .. "."
+    .. vim.version().minor
+    .. "."
+    .. vim.version().patch
+    .. "  󰂖 "
+    .. stats.count
+    .. " plugins"
 end
 
 dashboard.section.footer.val = footer()

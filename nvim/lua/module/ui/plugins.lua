@@ -6,22 +6,16 @@ return {
         "rcarriga/nvim-notify", -- notify
     },
 
+    -- statuslines
+    {
+      "glepnir/galaxyline.nvim",
+      event = {"VimEnter"}
+    },
     {
         "stevearc/dressing.nvim",
         opts = {},
     },
 
-
-    -- {
-    --      "nvimdev/galaxyline.nvim",
-    --      lazy = true,
-    --      event = { "User Fileopened" },
-    -- },
-    {
-        "MunifTanjim/nougat.nvim",
-        lazy = true,
-        event = { "User Fileopened" },
-    },
     {
         "yamatsum/nvim-nonicons",
         lazy = true,
@@ -44,24 +38,6 @@ return {
         "goolord/alpha-nvim",
         event = { "VimEnter" },
     },
-    -- {
-    --     'glepnir/dashboard-nvim',
-    --     event = 'VimEnter',
-    --     config = function()
-    --         require('dashboard').setup {
-    --             -- config
-    --             theme = 'hyper'
-    --         }
-    --     end,
-    --     dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-    -- },
-
-    -- {
-    --     "echasnovski/mini.indentscope",
-    --     lazy = true,
-    --     version = false,
-    --     event = { "BufEnter" },
-    -- },
 
     {
         "gen740/SmoothCursor.nvim",
@@ -70,7 +46,7 @@ return {
     },
     {
         "yamatsum/nvim-cursorline",
-        event = {"User Fileopened"},
+        event = { "User Fileopened" },
         lazy = true,
         config = function()
             require("nvim-cursorline").setup({
@@ -82,7 +58,7 @@ return {
                 cursorword = {
                     enable = true,
                     min_length = 3,
-                    hl = {underline = true},
+                    hl = { underline = true },
                 },
             })
         end,
@@ -120,7 +96,7 @@ return {
     {
         "embark-theme/vim",
         lazy = true,
-        event = {"BufEnter"},
+        event = { "BufEnter" },
     },
 
     {

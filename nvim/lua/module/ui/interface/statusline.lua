@@ -1,9 +1,4 @@
-local status_ok, gl = require("galaxyline")
-if not status_ok then
-    vim.notify("galaxyline not found\n")
-    return
-end
-
+local gl = require('galaxyline')
 local gls = gl.section
 
 local current_scheme = vim.g.colors_name
