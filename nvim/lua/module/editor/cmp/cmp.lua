@@ -43,16 +43,12 @@ if not status_cmp_ok then
     return
 end
 
+
 local status_luasnip_ok, luasnip = pcall(require, "luasnip")
 if not status_luasnip_ok then
     return
 end
 
-local status_lspkind_ok, lspkind = pcall(require, "lspkind")
-if not status_lspkind_ok then
-    vim.notify("lspkind not found")
-    return
-end
 
 
 local snippet_path = vim.fn.stdpath("config") .. "/my-snippets/"
@@ -194,14 +190,16 @@ vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
 local custom_icons = {
     tabnine = " 󰯩 ",
     html = "  ",
+    calc = " 󰃬 ",
 }
 local has_words_before = function()
     unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
+
 -- CMP settings
-cmp_config = {
+local cmp_config = {
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false,
@@ -213,47 +211,37 @@ cmp_config = {
     --     else
     --         return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
     --     end
-    -- end,
+    -- enddefaults
 
-    -- completion = {
-    --     ---@usage The minimum length of a word to complete on.
-    --     keyword_length = 1,
-    -- },
-    --
-    sorting = {
-        comparators = {
-            cmp.config.compare.offset,
-            cmp.config.compare.exact,
-            cmp.config.compare.score,
-            require "cmp-under-comparator".under,
-            cmp.config.compare.kind,
-            cmp.config.compare.sort_text,
-            cmp.config.compare.length,
-            cmp.config.compare.order,
+    completion = {
+        completeopt = "menu,menuone,noinsert",
+    },
+    experimental = {
+        ghost_text = {
+            hl_group = "CmpGhostText",
         },
     },
     view = {
         entries = { name = 'custom' }
     },
-
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
             local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
             local strings = vim.split(kind.kind, "%s", { trimempty = true })
+            kind.menu = "    (" .. (strings[2] or "") .. ")"
             if entry.source.name == "cmp_tabnine" then
                 vim_item.kind = custom_icons.tabnine
-                vim_item.menu = "Tabnine"
-            elseif entry.source.name == "html-css" then
-                vim_item.menu = entry.completion_item.menu
+                vim_item.menu = "(Tabnine)"
+            elseif entry.source.name == "calc" then
+                vim_item.kind = custom_icons.calc
+                vim_item.menu = "(Calc)"
             else
                 kind.kind = " " .. (strings[1] or "") .. " "
             end
-            kind.menu = "    (" .. (strings[2] or "") .. ")"
             return kind
         end,
     },
-
     snippet = {
         expand = function(args)
             require("luasnip").lsp_expand(args.body)
@@ -319,31 +307,13 @@ cmp_config = {
     },
 
 } -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline("/", {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = "buffer" },
-    },
-    enabled = function()
-        -- Set of commands where cmp will be disabled
-        local disabled = {
-            IncRename = true
-        }
-        -- Get first word of cmdline
-        local cmd = vim.fn.getcmdline():match("%S+")
-        -- Return true if cmd isn't disabled
-        -- else call/return cmp.close(), which returns false
-        return not disabled[cmd] or cmp.close()
-    end
-
-})
-
-cmp.setup.cmdline("?", {
+cmp.setup.cmdline({ "/", "?" }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = "buffer" },
     },
 })
+
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
@@ -361,6 +331,6 @@ cmp.setup(cmp_config)
 -- If you want insert `(` after select function or method item
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on(
-    'confirm_done',
-    cmp_autopairs.on_confirm_done()
+    "confirm_done",
+    cmp_autopairs.on_confirm_done { map_char = { tex = "" } }
 )
