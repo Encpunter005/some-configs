@@ -1,6 +1,0 @@
-require "module.editor.text.treesitter"
-require "module.editor.text.treesitter-context"
-require "module.editor.text.nvim-various-textobjs"
-require "module.editor.text.markmap"
-require "module.editor.text.color"
--- require "module.editor.text.ufo"
