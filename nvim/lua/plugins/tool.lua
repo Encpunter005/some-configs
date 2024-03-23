@@ -339,35 +339,17 @@ return {
 
                 b = {
                     name = "Buffers",
-                    j = { "<cmd>BufferLinePick<cr>", "Jump" },
+                    j = { "<cmd>BufferPick<cr>", "Jump" },
                     f = { "<cmd>Telescope buffers<cr>", "Find" },
-                    b = { "<cmd>BufferLineMovePrev<cr>", "Previous" },
-                    n = { "<cmd>BufferLineMoveNext<cr>", "Next" },
-                    c = { "<cmd>BufferLineCloseRight<cr>", "Close Right Buffer" },
                     d = {
-                        "<cmd>BufferLineSortByDirectory<cr>",
+                        "<cmd>BufferOrderByDirectory<cr>",
                         "Sort by directory",
                     },
-                    r = {
-                        "<cmd>BufferLineSortByRelativeDirectory<cr>",
+                    l = {
+                        "<cmd>BufferOrderByLanguage<cr>",
                         "Sort by Relative Directory",
                     },
                 },
-
-                -- g = {
-                --   name = "Git",
-                --   b = { "<cmd>VGit buffer_gutter_blame_preview<cr>", "File Blame" },
-                --   d = { "<cmd>VGit buffer_diff_preview<cr>", "Diff File" },
-                --   D = { "<cmd>VGit project_diff_preview<cr>", "Diff Project" },
-                --   s = { "<cmd>VGit buffer_stage<cr>", "Stage File" },
-                --   u = { "<cmd>VGit buffer_unstage<cr>", "Unstage File" },
-                --   r = { "<cmd>VGit buffer_reset<cr>", "Reset File" },
-                --   f = { "<cmd>VGit buffer_history_preview <cr>", "Reset File" },
-                --
-                --   B = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-                --   c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-                -- },
-
                 g = {
                     name = "Git",
                     f = { "<cmd>DiffviewFileHistory<CR>", "File History" },
@@ -450,11 +432,12 @@ return {
         cmd = { "TroubleToggle", "Trouble" },
         event = { "BufReadPost", "BufWritePost", "BufNewFile" },
         opts = { use_diagnostic_signs = true },
-        {
-            "folke/todo-comments.nvim",
-            cmd = { "TodoTrouble", "TodoTelescope" },
-            config = true,
-        }
+    },
+
+    {
+        "folke/todo-comments.nvim",
+        event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+        opts = {},
     },
     {
         "folke/persistence.nvim",
@@ -467,7 +450,7 @@ return {
     {
         "Civitasv/cmake-tools.nvim",
         lazy = true,
-        ft = {'cpp', c},
+        ft = { 'cpp', c },
         init = function()
             local loaded = false
             local function check()
@@ -987,7 +970,11 @@ return {
         lazy = true,
         event = { "BufReadPost", "BufWritePost", "BufNewFile" },
         config = function()
-            require('aerial').setup()
+            require('aerial').setup({
+                layout = {
+                    min_width = 30,
+                }
+            })
         end
     },
 
