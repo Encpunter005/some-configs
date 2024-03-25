@@ -1,3 +1,8 @@
+-- Disable lsp inlayhints
+local enabled_inlay_hints = true
+if vim.fn.has("nvim-0.10.0") == 1 then
+  enabled_inlay_hints = false
+end
 
 -- Set colorscheme
 local colorscheme = "kanagawa-wave"
