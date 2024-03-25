@@ -1,41 +1,31 @@
 return {
+
     {
-        "folke/flash.nvim",
-        event = "VeryLazy",
-        vscode = true,
-        ---@type Flash.Config
-        opts = {},
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
     },
+
     {
         "nvim-telescope/telescope.nvim",
         cmd = "Telescope",
         dependencies = {
             "nvim-telescope/telescope-ui-select.nvim",
             "nvim-telescope/telescope-live-grep-args.nvim",
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = vim.fn.executable("make") == 1 and "make"
+                    or
+                    "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+                enabled = vim.fn.executable("make") == 1 or vim.fn.executable("cmake") == 1,
+                config = function()
+                    require("telescope").load_extension("fzf")
+                end,
+            },
         },
-        opts = function(_, opts)
-            local function flash(prompt_bufnr)
-                require("flash").jump({
-                    pattern = "^",
-                    label = { after = { 0, 0 } },
-                    search = {
-                        mode = "search",
-                        exclude = {
-                            function(win)
-                                return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
-                            end,
-                        },
-                    },
-                    action = function(match)
-                        local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
-                        picker:set_selection(match.pos[1] - 1)
-                    end,
-                })
-            end
-            opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
-                mappings = { n = { s = flash }, i = { ["<c-s>"] = flash } },
-            })
-        end,
         config = function()
             local telescope = require("telescope")
             vim.cmd [[
@@ -292,10 +282,9 @@ return {
                     n = { "<cmd>Telescope notify<CR>", "Notifications" },
                 },
                 j = {
-                    name = "Flash",
-                    w = { "<cmd>lua require('flash').jump()<cr>", "Flash word" },
-                    r = { "<cmd>lua require('flash').remote()<cr>", 'Flash remote' },
-                    t = { "<cmd>Lua require('flash').toggle()<cr>", "Toogle Flash Search" },
+                    name = "Hop",
+                    w = { "<cmd>HopWord<CR>", "Jump a word" },
+                    s = { "<cmd>HopLine<CR>", "Jump a line" },
                 },
                 c = {
                     name = "CMake",
@@ -387,6 +376,7 @@ return {
                         "<cmd>Telescope diagnostics<cr>",
                         "Diagnostics",
                     },
+                    h = { "<cmd>lua require('lsp-inlayhints').toggle()<CR>", "Enable Inlayhints" },
                     f = { "<cmd>GuardFmt<CR>", "Format" },
                     w = {
                         "<cmd>Telescope lsp_workspace_diagnostics<cr>",
